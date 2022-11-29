@@ -1,0 +1,28 @@
+
+<h1>My challenges</h1>
+
+<%= link_to "Add new challenges", challenges_path %>
+
+<h3>On going challenges</h3>
+
+<ol>
+  <% @on_going_bookings.each do |booking| %>
+    <li>
+      <p><%= Challenge.find(booking.challenge_id).name %></p>
+      <p><%= Challenge.find(booking.challenge_id).category %></p>
+      <p><%= Challenge.find(booking.challenge_id).description %></p>
+    </li>
+  <% end %>
+</ol>
+
+<h3>Past challenges</h3>
+
+<ol>
+  <% @past_bookings.each do |booking| %>
+    <li>
+      <p><%= Challenge.find(booking.challenge_id).name %></p>
+      <p><%= Challenge.find(booking.challenge_id).category %></p>
+      <p><%= Challenge.find(booking.challenge_id).description %></p>
+    </li>
+  <% end %>
+</ol>

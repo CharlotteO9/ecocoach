@@ -7,6 +7,7 @@ class User < ApplicationRecord
   belongs_to :seniority
   has_many :usertips, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :challenges, through: :bookings
 
   validates :email, :password, :username, presence: true
   validates :username, :email, uniqueness: true
