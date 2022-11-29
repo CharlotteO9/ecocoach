@@ -1,0 +1,11 @@
+<h1>My Challenges</h1>
+
+<ol>
+  <% @challenges.each do |challenge| %>
+    <li>
+      <p><%= challenge.name %> - <%= challenge.id %></p>
+      <p>category: <%= challenge.category %></p>
+      <p>description: <%= challenge.description %></p><br>
+    </li>
+  <% end %>
+</ol>

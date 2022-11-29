@@ -1,0 +1,2 @@
+class SenioritiesController < ApplicationController
+end
