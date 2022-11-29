@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :senority
-  has_many :usertips, :bookings, dependent: :destroy
+  belongs_to :seniority
+  has_many :usertips, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   validates :email, :password, :username, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 7 }
