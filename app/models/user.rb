@@ -5,7 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  has_many :usertips, :bookings, dependent: :destroy
+  belongs_to :seniority
+  has_many :usertips, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+
   validates :email, :password, :username, presence: true
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 7 }
