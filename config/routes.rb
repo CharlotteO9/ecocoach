@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:show, :edit, :update, :destroy] do
-    resources :usertips, only: [:new, :create, :edit, :update]
+    resources :usertips, only: [:new, :create]
   end
 
-  get 'usertips', to: 'usertips#destroy'
+  resources :usertips, only: [:edit, :update, :destroy]
+  
   get 'profile', to: 'pages#profile'
 end
