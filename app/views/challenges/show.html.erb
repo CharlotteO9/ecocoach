@@ -1,0 +1,23 @@
+<h1><%= @challenge.name%></h1>
+
+<ul>
+    <li>
+      <p>category: <%= @challenge.category %></p>
+    </li>
+    <li>
+      <p>description: <%= @challenge.description %></p>
+    </li>
+</ul>
+
+<h4>Tips</h4>
+
+<ul>
+  <% @tips.each do |tip| %>
+    <li>
+      <%= tip.name %><br>
+      <%= tip.description %><br>
+    </li>
+  <% end %>
+</ul>
+
+<%# button à mettre pour ajouter ce challenge/create a booking %>

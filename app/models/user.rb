@@ -13,6 +13,4 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 7 }
   # has_one_attached :photo //à voir avec cloudinary
-  belongs_to :seniority
-
 end
