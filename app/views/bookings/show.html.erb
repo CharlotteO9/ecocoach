@@ -1,0 +1,11 @@
+<h1>My challenges </h1>
+
+<ol>
+  <% @bookings.each do |booking| %>
+    <li>
+      <p><%= booking.goal %></p>
+      <p>: <%= challenge.status %></p>
+      <p>week number: <%= challenge.weeknumber %></p><br>
+    </li>
+  <% end %>
+</ol>

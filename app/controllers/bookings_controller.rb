@@ -3,17 +3,18 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @challenge = Challenge.find(params[:challenge_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @challenge = Challenge.find(params[:id])
+    @challenge = Challenge.find(params[:challenge_id])
     @booking.challenge = @challenge
     if @booking.save
       redirect_to profile_path
     else
-      render challenge_path(@challenge), status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -39,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:goal, :status, :weeknumber)
+    params.require(:booking).permit(:goal, :status)
   end
 end
