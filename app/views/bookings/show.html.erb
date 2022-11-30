@@ -9,3 +9,12 @@
     </li>
   <% end %>
 </ol>
+
+<li>
+<% if policy(@booking).edit? %>
+  <%= link_to "Edit", edit_booking_path(@booking) %>
+<% end %>
+</li>
+<li>
+<%= button_to "Destroy", @booking, method: :delete if policy(@booking).destroy? %>
+</li>

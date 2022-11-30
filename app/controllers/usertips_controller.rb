@@ -4,6 +4,7 @@ before_action :set_usertip, only: [:edit, :update]
 
   def new
     @usertip = Usertip.new()
+    authorize @usertip
   end
 
   def create
@@ -15,14 +16,17 @@ before_action :set_usertip, only: [:edit, :update]
     else
       render :new, status: :unprocessable_entity
     end
+    @usertip
   end
 
   def edit
+    @usertip
   end
 
   def update
     @usertip.update(usertip_params)
     redirect_to root_path
+    @usertip
   end
 
   private

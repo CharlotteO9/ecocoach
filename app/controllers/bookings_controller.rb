@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @challenge = Challenge.find(params[:challenge_id])
+    authorize @booking
   end
 
   def create
@@ -16,21 +17,26 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @booking
   end
 
   def show
+    authorize @booking
   end
 
   def edit
+    authorize @booking
   end
 
   def update
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
+    authorize @booking
   end
 
   def destroy
     @booking.destroy
+    authorize @booking
   end
 
   private
