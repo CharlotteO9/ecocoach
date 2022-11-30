@@ -10,5 +10,6 @@ class PagesController < ApplicationController
     @past_bookings = User.find(current_user.id).bookings.where(status: true)
     # ce sont les challenges que t'as book et dont le statut est true
     @next_seniority = current_user.seniority.next
+    @my_tips = current_user.tips + Usertip.where(user: current_user)
   end
 end
