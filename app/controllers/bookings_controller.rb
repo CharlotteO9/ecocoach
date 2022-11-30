@@ -21,6 +21,8 @@ class BookingsController < ApplicationController
 
   def show
     @retry_challenge = Challenge.find(@booking.challenge_id)
+    @saved_tips = current_user.tips.where(challenge: @challenge)
+    @tips = Tip.where(challenge: @challenge).where.not(id: @saved_tips.pluck(:id))
   end
 
   def edit

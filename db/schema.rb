@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_162558) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_133409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +34,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_162558) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["seniority_id"], name: "index_challenges_on_seniority_id"
+  end
+
+  create_table "saved_tips", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "tip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tip_id"], name: "index_saved_tips_on_tip_id"
+    t.index ["user_id"], name: "index_saved_tips_on_user_id"
+  end
+
+  create_table "saved_user_tips", force: :cascade do |t|
+    t.bigint "usertip_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_saved_user_tips_on_user_id"
+    t.index ["usertip_id"], name: "index_saved_user_tips_on_usertip_id"
   end
 
   create_table "seniorities", force: :cascade do |t|
@@ -81,6 +99,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_162558) do
   add_foreign_key "bookings", "challenges"
   add_foreign_key "bookings", "users"
   add_foreign_key "challenges", "seniorities"
+  add_foreign_key "saved_tips", "tips"
+  add_foreign_key "saved_tips", "users"
+  add_foreign_key "saved_user_tips", "users"
+  add_foreign_key "saved_user_tips", "usertips"
   add_foreign_key "tips", "challenges"
   add_foreign_key "users", "seniorities"
   add_foreign_key "usertips", "bookings"

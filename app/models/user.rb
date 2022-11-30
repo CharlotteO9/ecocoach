@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :usertips, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :challenges, through: :bookings
+  has_many :saved_tips
+  has_many :tips, through: :saved_tips
 
   validates :email, :password, :username, presence: true
   validates :username, :email, uniqueness: true
