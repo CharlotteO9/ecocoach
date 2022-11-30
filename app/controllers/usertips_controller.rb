@@ -16,17 +16,17 @@ before_action :set_usertip, only: [:edit, :update]
     else
       render :new, status: :unprocessable_entity
     end
-    @usertip
+    authorize @usertip
   end
 
   def edit
-    @usertip
+    authorize @usertip
   end
 
   def update
     @usertip.update(usertip_params)
     redirect_to root_path
-    @usertip
+    authorize @usertip
   end
 
   private
