@@ -32,13 +32,14 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to profile_path
     authorize @booking
   end
 
   def destroy
     @booking.destroy
     authorize @booking
+    redirect_to profile_path
   end
 
   private
