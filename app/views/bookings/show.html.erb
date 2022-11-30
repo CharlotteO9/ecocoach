@@ -1,5 +1,6 @@
 <h1><%= Challenge.find(@booking.challenge_id).name %></h1>
 
+
 <% if @booking.status == false %>
   <%= render "bookings/form", bookings: @booking %>
   <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
@@ -16,3 +17,4 @@
     <li><p>My Goal: <%= @booking.goal %></p></li>
   </ul>
 <% end %>
+

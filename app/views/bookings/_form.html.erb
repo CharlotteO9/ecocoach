@@ -1,10 +1,15 @@
 <%= simple_form_for [@challenge, @booking] do |f| %>
   <% if @booking.persisted? %>
     <div class="form-check form-switch">
-      <%= f.input :status, as: :boolean, class: "form-check-input" %>
+      <%= f.input :status, as: :boolean, class: "form-check-input", label: "Succeed" %>
     </div>
   <% else %>
     <%= f.input :goal, as: :range %>
   <% end %>
-  <%= f.submit "Add this challenge" %>
+  <% Time.now.strftime('%U') %>
+  <% if @booking.persisted? %>
+    <%= f.submit "Confirm the evaluation" %>
+  <% else %>
+    <%= f.submit "Add this challenge" %>
+  <% end %>
 <% end %>
