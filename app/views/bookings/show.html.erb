@@ -13,11 +13,11 @@
   <h4>My saved Tips</h4>
 
   <ul>
-    <% @saved_tips.each do |tip| %>
+    <% @saved_tips.each do |save_tip| %>
       <li>
-        <%= tip.name %><br>
-        <%= tip.description %><br>
-        <%= link_to "Unsave this challenge", saved_tip_path(tip), data: {turbo_method: :delete} %></li>
+        <%= save_tip.tip.name %><br>
+        <%= save_tip.tip.description %><br>
+        <%= link_to "Unsave this tip", saved_tip_path(save_tip), data: {turbo_method: :delete} %></li>
     <% end %>
   </ul>
 
@@ -28,7 +28,7 @@
       <li>
         <%= tip.name %><br>
         <%= tip.description %><br>
-        <%= link_to "Save this challenge", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
     <% end %>
   </ul>
 
@@ -43,11 +43,11 @@
   <h4>My saved Tips</h4>
 
   <ul>
-    <% @saved_tips.each do |tip| %>
+    <% @saved_tips.each do |save_tip| %>
       <li>
-        <%= tip.name %><br>
-        <%= tip.description %><br>
-        <%= link_to "Unsave this challenge", saved_tip_path(tip), data: {turbo_method: :delete} %></li>
+        <%= save_tip.tip.name %><br>
+        <%= save_tip.tip.description %><br>
+        <%= link_to "Unsave this tip", saved_tip_path(save_tip), data: {turbo_method: :delete} %></li>
     <% end %>
   </ul>
 
@@ -58,7 +58,7 @@
       <li>
         <%= tip.name %><br>
         <%= tip.description %><br>
-        <%= link_to "Save this challenge", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
     <% end %>
   </ul>
 <% end %>

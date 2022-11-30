@@ -19,7 +19,7 @@
     <li>
       <%= saved_tip.tip.name %><br>
       <%= saved_tip.tip.description %><br>
-      <%= link_to "Unsave this challenge", saved_tip_path(saved_tip), data: {turbo_method: :delete} %></li>
+      <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %></li>
   <% end %>
 </ul>
 
@@ -30,7 +30,7 @@
     <li>
       <%= tip.name %><br>
       <%= tip.description %><br>
-      <%= link_to "Save this challenge", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+      <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
   <% end %>
 </ul>
 
