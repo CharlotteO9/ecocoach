@@ -1,4 +1,20 @@
-<h1>My challenges </h1>
+<h1><%= Challenge.find(@booking.challenge_id).name %></h1>
 
-<%= render 'form', booking: @booking %>
+
+<% if @booking.status == false %>
+  <%= render "bookings/form", bookings: @booking %>
+  <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  <ul>
+    <li><p>Category: <%= Challenge.find(@booking.challenge_id).category %></p></li>
+    <li><p>Description: <%= Challenge.find(@booking.challenge_id).description %></p></li>
+    <li><p>My Goal: <%= @booking.goal %></p></li>
+  </ul>
+<% else %>
+  <%= link_to "Redo this challenge", challenge_path(@retry_challenge) %>
+  <ul>
+    <li><p>Category: <%= Challenge.find(@booking.challenge_id).category %></p></li>
+    <li><p>Description: <%= Challenge.find(@booking.challenge_id).description %></p></li>
+    <li><p>My Goal: <%= @booking.goal %></p></li>
+  </ul>
+<% end %>
 

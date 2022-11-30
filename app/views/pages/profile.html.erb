@@ -27,6 +27,7 @@
       <p><%= Challenge.find(booking.challenge_id).name %></p>
       <p><%= Challenge.find(booking.challenge_id).category %></p>
       <p><%= Challenge.find(booking.challenge_id).description %></p>
+      <%= link_to "details", booking_path(booking) %><br>
     </li>
   <% end %>
 </ol>
@@ -40,6 +41,7 @@
       <p><%= Challenge.find(booking.challenge_id).name %></p>
       <p><%= Challenge.find(booking.challenge_id).category %></p>
       <p><%= Challenge.find(booking.challenge_id).description %></p>
+      <%= link_to "details", booking_path(booking) %><br>
     </li>
   <% end %>
 </ol>

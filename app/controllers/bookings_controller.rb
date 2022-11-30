@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @challenge = Challenge.find(params[:challenge_id])
     @booking.challenge = @challenge
+    @booking.status = false
     if @booking.save
       redirect_to profile_path
     else
@@ -19,6 +20,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @retry_challenge = Challenge.find(@booking.challenge_id)
   end
 
   def edit
