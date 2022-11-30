@@ -1,4 +1,3 @@
-
 <h1>New challenges</h1>
 
 <ol>
@@ -6,7 +5,8 @@
     <li>
       <p><%= challenge.name %> - <%= challenge.id %></p>
       <p>category: <%= challenge.category %></p>
-      <p>description: <%= challenge.description %></p><br>
+      <p>description: <%= challenge.description %></p>
+      <%= link_to "details", challenge_path(challenge) %><br>
     </li>
   <% end %>
 </ol>
