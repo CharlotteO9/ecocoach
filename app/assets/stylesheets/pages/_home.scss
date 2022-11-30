@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.avatar-home {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.text-banner {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.under-banner {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.card-home p {
+  margin-bottom: 0px;
+  font-size: 40px;
+}
+
+.carousel-caption p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F3EFE0;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
