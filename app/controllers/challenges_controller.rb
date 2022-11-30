@@ -5,8 +5,10 @@ class ChallengesController < ApplicationController
 
   def show
    @challenge = Challenge.find(params[:id])
-   @saved_tips = current_user.tips.where(challenge: @challenge)
-   @tips = Tip.where(challenge: @challenge).where.not(id: @saved_tips.pluck(:id))
+   @saved_tips = current_user.saved_tips.select { |st| st if st.tip.challenge == @challenge }
+   @tips = @challenge.tips - current_user.saved_tips.map(&:tip)
+
+  #  @tips = Tip.where(challenge: @challenge).where.not(id: @saved_tips.pluck(:id))
    @booking = Booking.new
   end
 

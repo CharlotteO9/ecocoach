@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :tips, only: [] do
     resources :saved_tips, only: [:create]
   end
-
+  resources :saved_tips, only: [:destroy]
+  resources :saved_user_tips, only: [:destroy]
   get 'profile', to: 'pages#profile'
 end
