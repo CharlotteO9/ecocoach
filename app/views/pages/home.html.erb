@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class='container'>
+  <div class='videoWrapper'>
+    <video id='background-image' width="509" height="286" frameborder="0" allowfullscreen="allowfullscreen" autoplay loop muted>
+      <%# <source src='https://player.vimeo.com/external/412137794.sd.mp4?s=96c9a5ba297546844da637bcffb67856031c86f2&profile_id=164&oauth2_token_id=57447761' type='video/mp4'> %>
+    </video>
+    <h1>EcoCoach</h1>
+
+    <p>Get a coach & stay motivated to act on climate change!</p>
+
+    <% if user_signed_in? %>
+      <%= link_to "Start the coaching", profile_path %>
+    <% else %>
+      <%= link_to "Start the coaching", new_user_session_path %>
+    <% end %>
+
+
+    <h4>Ecology</h4>
+    <h4>Challenges</h4>
+    <h4>Tips</h4>
+
+    <p>this is a carroussel</p>
+  </div>
+</div>
+

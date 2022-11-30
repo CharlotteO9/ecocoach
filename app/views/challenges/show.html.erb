@@ -1,5 +1,8 @@
 <h1><%= @challenge.name%></h1>
 
+<%= render "bookings/form", bookings: @booking %>
+<br>
+
 <ul>
     <li>
       <p>category: <%= @challenge.category %></p>
@@ -21,4 +24,4 @@
 </ul>
 
 <%# button à mettre pour ajouter ce challenge/create a booking %>
-<%= link_to "Add a booking", new_challenge_booking_path(@challenge) %>
+<%# <%= link_to "Add a booking", new_challenge_booking_path(@challenge) %>

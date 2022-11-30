@@ -5,9 +5,9 @@ class ChallengesController < ApplicationController
   end
 
   def show
-   @challenge = Challenge.find(params[:id])
-   @tips = Tip.where(challenge: @challenge)
-   authorize @challenge
+    @challenge = Challenge.find(params[:id])
+    @tips = Tip.where(challenge: @challenge)
+    authorize @challenge
+    @booking = Booking.new
   end
-
 end
