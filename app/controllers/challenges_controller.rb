@@ -5,9 +5,10 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    @challenge = Challenge.find(params[:id])
-    @tips = Tip.where(challenge: @challenge)
-    authorize @challenge
-    @booking = Booking.new
+   @challenge = Challenge.find(params[:id])
+   @saved_tips = current_user.saved_tips.select { |st| st if st.tip.challenge == @challenge }
+   @tips = @challenge.tips - current_user.saved_tips.map(&:tip)
+   @booking = Booking.new
+   authorize @challenge
   end
 end

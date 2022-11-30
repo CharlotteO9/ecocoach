@@ -13,6 +13,29 @@
     <li><p>Description: <%= Challenge.find(@booking.challenge_id).description %></p></li>
     <li><p>My Goal: <%= @booking.goal %></p></li>
   </ul>
+
+  <h4>My saved Tips</h4>
+
+  <ul>
+    <% @saved_tips.each do |save_tip| %>
+      <li>
+        <%= save_tip.tip.name %><br>
+        <%= save_tip.tip.description %><br>
+        <%= link_to "Unsave this tip", saved_tip_path(save_tip), data: {turbo_method: :delete} %></li>
+    <% end %>
+  </ul>
+
+  <h4>Challenge Tips</h4>
+
+  <ul>
+    <% @tips.each do |tip| %>
+      <li>
+        <%= tip.name %><br>
+        <%= tip.description %><br>
+        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+    <% end %>
+  </ul>
+
 <% else %>
   <%= link_to "Redo this challenge", challenge_path(@retry_challenge) %>
   <ul>
@@ -20,5 +43,26 @@
     <li><p>Description: <%= Challenge.find(@booking.challenge_id).description %></p></li>
     <li><p>My Goal: <%= @booking.goal %></p></li>
   </ul>
-<% end %>
 
+  <h4>My saved Tips</h4>
+
+  <ul>
+    <% @saved_tips.each do |save_tip| %>
+      <li>
+        <%= save_tip.tip.name %><br>
+        <%= save_tip.tip.description %><br>
+        <%= link_to "Unsave this tip", saved_tip_path(save_tip), data: {turbo_method: :delete} %></li>
+    <% end %>
+  </ul>
+
+  <h4>Challenge Tips</h4>
+
+  <ul>
+    <% @tips.each do |tip| %>
+      <li>
+        <%= tip.name %><br>
+        <%= tip.description %><br>
+        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+    <% end %>
+  </ul>
+<% end %>

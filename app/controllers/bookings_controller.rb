@@ -24,6 +24,8 @@ class BookingsController < ApplicationController
   def show
     authorize @booking
     @retry_challenge = Challenge.find(@booking.challenge_id)
+    @saved_tips = current_user.saved_tips.select { |st| st if st.tip.challenge == @retry_challenge }
+    @tips = @retry_challenge.tips - current_user.saved_tips.map(&:tip)
   end
 
   def edit
