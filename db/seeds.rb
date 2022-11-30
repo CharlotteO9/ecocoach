@@ -7,13 +7,16 @@ Seniority.destroy_all
 puts 'creating seniorities'
 
 seniority1 = Seniority.create(
-  name: "Little seed"
+  name: "Little seed",
+  ranking: 0
 )
 seniority2 = Seniority.create(
-  name: "Beautiful flower"
+  name: "Beautiful flower",
+  ranking: 1
 )
 seniority3 = Seniority.create(
-  name: "Giant sequoia"
+  name: "Giant sequoia",
+  ranking: 2
 )
 
 puts 'creating user'

@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @challenge = Challenge.find(params[:challenge_id])
+    authorize @booking
   end
 
   def create
@@ -17,24 +18,29 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @booking
   end
 
   def show
+    authorize @booking
     @retry_challenge = Challenge.find(@booking.challenge_id)
     @saved_tips = current_user.saved_tips.select { |st| st if st.tip.challenge == @retry_challenge }
     @tips = @retry_challenge.tips - current_user.saved_tips.map(&:tip)
   end
 
   def edit
+    authorize @booking
   end
 
   def update
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
+    authorize @booking
   end
 
   def destroy
     @booking.destroy
+    authorize @booking
   end
 
   private

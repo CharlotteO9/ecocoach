@@ -2,8 +2,12 @@
 
 
 <% if @booking.status == false %>
-  <%= render "bookings/form", bookings: @booking %>
-  <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  <% if policy(@booking).edit? %>
+    <%= render "bookings/form", bookings: @booking %>
+  <% end %>
+  <% if policy(@booking).destroy? %>
+    <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  <% end %>
   <ul>
     <li><p>Category: <%= Challenge.find(@booking.challenge_id).category %></p></li>
     <li><p>Description: <%= Challenge.find(@booking.challenge_id).description %></p></li>
