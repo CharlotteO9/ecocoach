@@ -48,4 +48,15 @@
 <br>
 
 <h2>My Tips</h2>
-<%= link_to "Add a new tip", new_usertip_path %>
+<%= link_to "Create a new tip", new_usertip_path %>
+<%# <%= link_to "Save a new tip", ???aller vers l'index avec tous les tips du monde %>
+
+
+<ol>
+  <% @my_tips.each do |tip| %>
+    <li>
+      <p><%= tip.name %></p>
+      <p><%= tip.description %></p>
+    </li>
+  <% end %>
+</ol>
