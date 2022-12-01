@@ -10,6 +10,9 @@ class PagesController < ApplicationController
     @past_bookings = User.find(current_user.id).bookings.where(status: true)
     # ce sont les challenges que t'as book et dont le statut est true
     @next_seniority = current_user.seniority.next
-    @my_tips = current_user.tips + Usertip.where(user: current_user)
+    @my_created_tips = Usertip.where(user: current_user)
+    # ce sont les tips que t'as fait
+    @all_my_saved_tips = current_user.tips + Usertip.where.not(user: current_user)
+    # ce sont les tips que t'as sauvergardé (de la db ou parmis les usertips)
   end
 end

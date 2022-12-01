@@ -1,5 +1,8 @@
+<h1>Edit a new tip</h1>
+
 <%= simple_form_for(@usertip) do |f| %>
   <%= f.input :name %>
-  <%= f.input :description%>
+  <%= f.input :description %>
+  <%= f.input :booking_id, prompt: "Choose among your challenge", collection: @bookings.map{ |booking| [booking.id, booking.challenge.name] }, label_method: :second, value_method: :first %>
   <%= f.submit %>
 <% end %>
