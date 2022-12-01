@@ -6,9 +6,10 @@ class User < ApplicationRecord
 
   belongs_to :seniority
   has_many :usertips, dependent: :destroy
-  has_many :bookings, dependent: :destroy
+  has_many :bookings
+  has_many :saved_tips, dependent: :destroy
+
   has_many :challenges, through: :bookings
-  has_many :saved_tips
   has_many :tips, through: :saved_tips
   has_many :usertips, through: :saved_user_tips
 
