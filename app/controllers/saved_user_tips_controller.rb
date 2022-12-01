@@ -9,6 +9,7 @@ class SavedUserTipsController < ApplicationController
     else
       redirect_to request.referer, status: :unprocessable_entity
     end
+    authorize @saved_user_tip
   end
 
   def destroy
@@ -16,4 +17,5 @@ class SavedUserTipsController < ApplicationController
     @saved_user_tip.destroy
     redirect_to request.referer, notice: "It's unsaved !"
   end
+    authorize @saved_user_tip
 end
