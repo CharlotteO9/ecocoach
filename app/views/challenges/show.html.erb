@@ -12,7 +12,16 @@
     </li>
 </ul>
 
-<h4>My saved Tips</h4>
+<h4>Need some tips</h4>
+
+<ul>
+  <% @tips.each do |tip| %>
+    <li>
+      <%= tip.name %><br>
+      <%= tip.description %><br>
+      <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+  <% end %>
+</ul>
 
 <ul>
   <% @saved_tips.each do |saved_tip| %>
@@ -23,16 +32,7 @@
   <% end %>
 </ul>
 
-<h4>Challenge Tips</h4>
 
-<ul>
-  <% @tips.each do |tip| %>
-    <li>
-      <%= tip.name %><br>
-      <%= tip.description %><br>
-      <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
-  <% end %>
-</ul>
 
 <%# button à mettre pour ajouter ce challenge/create a booking %>
 <%# <%= link_to "Add a booking", new_challenge_booking_path(@challenge) %>
