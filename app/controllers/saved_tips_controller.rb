@@ -9,13 +9,13 @@ class SavedTipsController < ApplicationController
     else
       redirect_to request.referer, status: :unprocessable_entity
     end
-    # authorize @saved_tip
+    authorize @saved_tip
   end
 
   def destroy
     @saved_tip = SavedTip.find(params[:id])
     @saved_tip.destroy
     redirect_to request.referer, notice: "It's unsaved !"
-    # authorize @saved_tip
+    authorize @saved_tip
   end
 end
