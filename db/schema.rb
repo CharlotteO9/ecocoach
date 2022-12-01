@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_133409) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "goal"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.integer "weeknumber"
     t.bigint "challenge_id", null: false
     t.bigint "user_id", null: false

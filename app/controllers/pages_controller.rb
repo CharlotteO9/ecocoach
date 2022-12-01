@@ -12,4 +12,13 @@ class PagesController < ApplicationController
     @next_seniority = current_user.seniority.next
     @my_tips = current_user.tips + Usertip.where(user: current_user)
   end
+
+  def tipsindex
+    @categories = Challenge.all.pluck(:category).uniq
+    if params[:query].present? || params[:category].present?
+      @tips = Tip.tips_search("#{params[:query]} #{params[:category]}")
+    else
+      @tips = Tip.all
+    end
+  end
 end
