@@ -1,0 +1,40 @@
+.head {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-logout {
+  text-decoration: none;
+  color: white;
+  background-color: #115549;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-logout:hover {
+  opacity: 1;
+}
+
+.icon-profile {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}

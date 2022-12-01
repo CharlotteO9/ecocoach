@@ -1,62 +1,79 @@
-<h1>My profile</h1>
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
-<br>
-<br>
+<div class="container">
+  <div class="head">
+    <h1>My profile</h1>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'btn-logout' %>
+  </div>
+  <div class="profile">
+  <img src="<%= current_user.avatar %>" alt="">
+    <h2><%= current_user.username %></h2>
+    <p>
+      Welcome again <%= current_user.seniority.name %>!
+      <% if @next_seniority.nil? %>
+        <p>You are an amazing eco citizen! </p>
+      <% else %>
+        <p>You are on you way to become <%= @next_seniority.name %></p>
+      <% end %>
+    </p>
+  </div>
+  <div class="icon-profile">
+    <div class="d-inline-flex flex-column card-home">
+      <p><i class="fa-regular fa-calendar"></i></p>
+      <h4><strong>Events</strong></h4>
+    </div>
+    <div class="d-inline-flex flex-column card-home">
+      <p><i class="fa-solid fa-person-running"></i></p>
+      <h4><strong>Challenges</strong></h4>
+    </div>
+    <div class="d-inline-flex flex-column card-home">
+      <p><i class="fa-regular fa-lightbulb"></i></p>
+      <h4><strong>Tips</strong></h4>
+    </div>
+  </div>
+  <div>
+    <h2>My challenges</h2>
+    <%= link_to "Add new challenges", challenges_path %>
+  </div>
+  <div>
+    <h4>On going challenges</h4>
+    <ol>
+      <% @on_going_bookings.each do |booking| %>
+        <li>
+          <p><%= Challenge.find(booking.challenge_id).name %></p>
+          <p><%= Challenge.find(booking.challenge_id).category %></p>
+          <p><%= Challenge.find(booking.challenge_id).description %></p>
+          <%= link_to "details", booking_path(booking) %><br>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+  <div>
+    <h4>Past challenges</h4>
+    <ol>
+      <% @past_bookings.each do |booking| %>
+        <li>
+          <p><%= Challenge.find(booking.challenge_id).name %></p>
+          <p><%= Challenge.find(booking.challenge_id).category %></p>
+          <p><%= Challenge.find(booking.challenge_id).description %></p>
+          <%= link_to "details", booking_path(booking) %><br>
+        </li>
+      <% end %>
+    </ol>
+    <br>
+  </div>
+  <div>
+    <h2>My Tips</h2>
+    <%= link_to "Create a new tip", new_usertip_path %>
+    <%# <%= link_to "Save a new tip", ???aller vers l'index avec tous les tips du monde %>
+  </div>
 
-<h2><%= current_user.username %></h2>
-<p>
-  Welcome againg <%= current_user.seniority.name %>!
-  <% if @next_seniority.nil? %>
-    <p>You are an amazing eco citizen! </p>
-  <% else %>
-    <p>You are on you way to become <%= @next_seniority.name %></p>
-  <% end %>
-</p>
-<br>
-<br>
-
-<h2>My challenges</h2>
-<%= link_to "Add new challenges", challenges_path %>
-<br>
-<br>
-
-<h4>On going challenges</h4>
-<ol>
-  <% @on_going_bookings.each do |booking| %>
-    <li>
-      <p><%= Challenge.find(booking.challenge_id).name %></p>
-      <p><%= Challenge.find(booking.challenge_id).category %></p>
-      <p><%= Challenge.find(booking.challenge_id).description %></p>
-      <%= link_to "details", booking_path(booking) %><br>
-    </li>
-  <% end %>
-</ol>
-<br>
-<br>
-
-<h4>Past challenges</h4>
-<ol>
-  <% @past_bookings.each do |booking| %>
-    <li>
-      <p><%= Challenge.find(booking.challenge_id).name %></p>
-      <p><%= Challenge.find(booking.challenge_id).category %></p>
-      <p><%= Challenge.find(booking.challenge_id).description %></p>
-      <%= link_to "details", booking_path(booking) %><br>
-    </li>
-  <% end %>
-</ol>
-<br>
-
-<h2>My Tips</h2>
-<%= link_to "Create a new tip", new_usertip_path %>
-<%# <%= link_to "Save a new tip", ???aller vers l'index avec tous les tips du monde %>
-
-
-<ol>
-  <% @my_tips.each do |tip| %>
-    <li>
-      <p><%= tip.name %></p>
-      <p><%= tip.description %></p>
-    </li>
-  <% end %>
-</ol>
+  <div>
+    <ol>
+      <% @my_tips.each do |tip| %>
+        <li>
+          <p><%= tip.name %></p>
+          <p><%= tip.description %></p>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+</div>
