@@ -5,11 +5,17 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @next_seniority = current_user.seniority.next
+  end
+
+  def profile_challenge
     @on_going_bookings = User.find(current_user.id).bookings.where(status: false)
     # ce sont les challenges que t'as book et dont le statut est false
     @past_bookings = User.find(current_user.id).bookings.where(status: true)
     # ce sont les challenges que t'as book et dont le statut est true
-    @next_seniority = current_user.seniority.next
+  end
+
+  def profile_tips
     @my_created_tips = Usertip.where(user: current_user)
     # ce sont les tips que t'as fait
     @my_saved_tips = current_user.tips

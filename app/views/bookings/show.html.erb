@@ -44,7 +44,7 @@
     <li><p>My Goal: <%= @booking.goal %></p></li>
   </ul>
 
-  <h4>My saved Tips</h4>
+  <h4>Need some tips</h4>
 
   <ul>
     <% @saved_tips.each do |save_tip| %>
@@ -54,8 +54,6 @@
         <%= link_to "Unsave this tip", saved_tip_path(save_tip), data: {turbo_method: :delete} %></li>
     <% end %>
   </ul>
-
-  <h4>Challenge Tips</h4>
 
   <ul>
     <% @tips.each do |tip| %>

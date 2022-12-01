@@ -1,0 +1,47 @@
+<h1>My Tips</h1>
+
+<h4>My saved tips</h4>
+
+<ol>
+  <% @my_saved_user_tips.each do |tip| %>
+    <li>
+      <p><%= tip.name %></p>
+      <p><%= tip.description %></p>
+      <% if tip.class == Tip %>
+        <%= link_to "Unsave this tip", saved_tip_path(tip), data: {turbo_method: :delete} %></li>
+      <% else tip.class == Usertip %>
+        <%= link_to "Unsave this tip", saved_user_tip_path(tip), data: {turbo_method: :delete} %></li>
+      <% end %>
+    </li>
+  <% end %>
+</ol>
+
+<ol>
+  <% @my_saved_tips.each do |tip| %>
+    <li>
+      <p><%= tip.name %></p>
+      <p><%= tip.description %></p>
+      <% if tip.class == Tip %>
+        <%= link_to "Unsave this tip", saved_tip_path(tip), data: {turbo_method: :delete} %></li>
+      <% else tip.class == Usertip %>
+        <%= link_to "Unsave this tip", saved_user_tip_path(tip), data: {turbo_method: :delete} %></li>
+      <% end %>
+    </li>
+  <% end %>
+</ol>
+
+<h4>My created tips</h4>
+
+<ol>
+  <% @my_created_tips.each do |tip| %>
+    <li>
+      <p><%= tip.name %></p>
+      <p><%= tip.description %></p>
+      <%= link_to "Edit", edit_usertip_path(tip) %>
+      <%= link_to "Delete", usertip_path(tip), data: {turbo_method: :delete} %>
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to "Create a new tip", new_usertip_path %>
+<%= link_to "Save a new tip", tipsindex_path %>
