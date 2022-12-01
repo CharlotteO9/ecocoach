@@ -12,7 +12,8 @@ class PagesController < ApplicationController
     @next_seniority = current_user.seniority.next
     @my_created_tips = Usertip.where(user: current_user)
     # ce sont les tips que t'as fait
-    @all_my_saved_tips = current_user.tips + Usertip.where.not(user: current_user)
+    @my_saved_tips = current_user.tips
+    @my_saved_user_tips = SavedUserTip.where(user: current_user)
     # ce sont les tips que t'as sauvergardé (de la db ou parmis les usertips)
   end
 
