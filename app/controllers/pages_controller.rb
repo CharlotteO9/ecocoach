@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     @my_created_tips = Usertip.where(user: current_user)
     # ce sont les tips que t'as fait
     @my_saved_tips = current_user.tips
-    @my_saved_user_tips = SavedUserTip.where(user: current_user)
+    @my_saved_user_tips = current_user.saved_user_tips
     # ce sont les tips que t'as sauvergardé (de la db ou parmis les usertips)
   end
 
