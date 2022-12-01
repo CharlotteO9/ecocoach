@@ -1,0 +1,21 @@
+<h1>All tips</h1>
+
+<br>
+
+<%= form_with url: tipsindex_path, method: :get, class: "d-flex" do |f|%>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a tip"
+  %>
+  <%= f.select :category, @categories, include_blank: "Choose a category"%>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+
+<% @tips.each do |tip|  %>
+<p><%= tip.name %></p>
+<p> <%= tip.description  %></p>
+<p> <%= tip.challenge.category  %></p>
+<% end %>

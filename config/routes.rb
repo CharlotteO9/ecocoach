@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :saved_tips, only: [:destroy]
   resources :saved_user_tips, only: [:destroy]
   get 'profile', to: 'pages#profile'
+  get 'tipsindex', to: 'pages#tipsindex'
 end
