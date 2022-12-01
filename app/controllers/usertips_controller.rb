@@ -19,6 +19,7 @@ class UsertipsController < ApplicationController
   end
 
   def edit
+    @bookings = current_user.bookings
     authorize @usertip
   end
 
