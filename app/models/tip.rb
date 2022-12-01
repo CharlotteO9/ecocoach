@@ -1,4 +1,5 @@
 class Tip < ApplicationRecord
+  has_many :saved_tips, dependent: :destroy
   belongs_to :challenge
   validates :name, :description, presence: true
   include PgSearch::Model

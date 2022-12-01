@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.challenge = @challenge
     @booking.status = false
     if @booking.save
-      redirect_to profile_path
+      redirect_to profile_path, notice: "Challenge added!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,14 +34,14 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to profile_path
+    redirect_to profile_path, notice: "Challenge completed!"
     authorize @booking
   end
 
   def destroy
     @booking.destroy
     authorize @booking
-    redirect_to profile_path
+    redirect_to profile_path, notice: "Challenge removed!"
   end
 
   private
