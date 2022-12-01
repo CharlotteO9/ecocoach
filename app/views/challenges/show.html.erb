@@ -25,14 +25,18 @@
 
 <h4>Challenge Tips</h4>
 
-<ul>
-  <% @tips.each do |tip| %>
-    <li>
-      <%= tip.name %><br>
-      <%= tip.description %><br>
-      <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
-  <% end %>
-</ul>
+<div class="cardtips">
+  <ul>
+    <% @tips.each do |tip| %>
+      <li>
+        <a class="tipsimage" href="#"><i class="fa-solid fa-lightbulb"></i></a>
+        <h5><strong><%= tip.name %></strong><br></h5>
+        <a class="tipsicon" href="#"><i class="fa-solid fa-circle-info"></i></a>
+        <%= tip.description %><br>
+        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+    <% end %>
+  </ul>
+</div>
 
 <%# button à mettre pour ajouter ce challenge/create a booking %>
 <%# <%= link_to "Add a booking", new_challenge_booking_path(@challenge) %>
