@@ -9,16 +9,16 @@ class PagesController < ApplicationController
   end
 
   def profile_challenge
-    @on_going_bookings = User.find(current_user.id).bookings.where(status: false)
+    @on_going_bookings = current_user.bookings.where(status: false)
     # ce sont les challenges que t'as book et dont le statut est false
-    @past_bookings = User.find(current_user.id).bookings.where(status: true)
+    @past_bookings = current_user.bookings.where(status: true)
     # ce sont les challenges que t'as book et dont le statut est true
   end
 
   def profile_tips
     @my_saved_tips = current_user.saved_tips + current_user.saved_user_tips
     # ce sont les tips que t'as sauvergardé (de la db ou parmis les usertips)
-    @my_created_tips = Usertip.where(user: current_user)
+    @my_created_tips = current_user.usertips
     # ce sont les tips que t'as fait
   end
 
@@ -26,7 +26,19 @@ class PagesController < ApplicationController
     @categories = Challenge.all.pluck(:category).uniq
     if params[:query].present? || params[:category].present?
       @tips = Tip.tips_search("#{params[:query]} #{params[:category]}")
-      @usertips = Usertip.where.not(user: current_user).tips_search("#{params[:query]} #{params[:category]}")
+      if params[:query].present?
+        if params[:category].present?
+          @usertips = Usertip.usertips_search("#{params[:query]}")
+          @usertips.select do |tip|
+            tip.booking.challenge.category == params[:category]
+          end
+        end
+      elsif params[:query] == "" && params[:category].present?
+        @usertips = Usertip.all.select { |tip| tip.booking.challenge.category == params[:category] }
+      else
+        @usertips = Usertip.usertips_search("#{params[:query]}")
+      end
+      # # @usertips = Usertip.where.not(user: current_user)
     else
       @tips = Tip.all
       @usertips = Usertip.where.not(user: current_user)

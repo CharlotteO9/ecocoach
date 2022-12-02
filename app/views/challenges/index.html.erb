@@ -6,12 +6,15 @@
 
   <ol>
     <% @challenges.each do |challenge| %>
-      <li>
-        <p><%= challenge.name %> - <%= challenge.id %></p>
-        <p>category: <%= challenge.category %></p>
-        <p>description: <%= challenge.description %></p>
-        <%= link_to "details", challenge_path(challenge) %><br>
-      </li>
+      <% if current_user.bookings.where(challenge_id: challenge.id).empty? %>
+    <ol>
+        <li>
+          <p><%= challenge.name %> - <%= challenge.id %></p>
+          <p>category: <%= challenge.category %></p>
+          <p>description: <%= challenge.description %></p>
+          <%= link_to "details", challenge_path(challenge) %><br>
+        </li>
+      <% end %>
     <% end %>
   </ol>
-</div>
+ </div>
