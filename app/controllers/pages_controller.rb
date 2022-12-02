@@ -26,7 +26,19 @@ class PagesController < ApplicationController
     @categories = Challenge.all.pluck(:category).uniq
     if params[:query].present? || params[:category].present?
       @tips = Tip.tips_search("#{params[:query]} #{params[:category]}")
-      @usertips = Usertip.where.not(user: current_user).tips_search("#{params[:query]} #{params[:category]}")
+      if params[:query].present?
+        if params[:category].present?
+          @usertips = Usertip.usertips_search("#{params[:query]}")
+          @usertips.select do |tip|
+            tip.booking.challenge.category == params[:category]
+          end
+        end
+      elsif params[:query] == "" && params[:category].present?
+        @usertips = Usertip.all.select { |tip| tip.booking.challenge.category == params[:category] }
+      else
+        @usertips = Usertip.usertips_search("#{params[:query]}")
+      end
+      # # @usertips = Usertip.where.not(user: current_user)
     else
       @tips = Tip.all
       @usertips = Usertip.where.not(user: current_user)
