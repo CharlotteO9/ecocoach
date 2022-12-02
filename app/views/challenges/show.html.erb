@@ -1,55 +1,5 @@
 <div class="container-nav">
-  <h1><%= @challenge.name%></h1>
-
-  <br>
-
-  <ul>
-      <li>
-        <p>category: <%= @challenge.category %></p>
-      </li>
-      <li>
-        <p>description: <%= @challenge.description %></p>
-      </li>
-  </ul>
-
-  <h4>Need some tips</h4>
-
-  <ul>
-    <% @tips.each do |tip| %>
-      <li>
-        <%= tip.name %><br>
-        <%= tip.description %><br>
-        <% if tip.class == Tip %>
-          <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>
-        <% else tip.class == Usertip %>
-          <%= link_to "Save this tip", usertip_saved_user_tips_path(tip), data: {turbo_method: :post} %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-
-  <ul>
-    <% @all_saved_tips.each do |saved_tip| %>
-      <li>
-        <% if saved_tip.class == SavedTip %>
-          <%= saved_tip.tip.name %><br>
-          <%= saved_tip.tip.description %><br>
-          <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %>
-        <% else saved_tip.class == SavedUserTip %>
-          <%= saved_tip.usertip.name %><br>
-          <%= saved_tip.usertip.description %><br>
-          <%= link_to "Unsave this tip", saved_user_tip_path(saved_tip), data: {turbo_method: :delete} %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-  <div class="up-nav"><%= render "bookings/form", bookings: @booking %></div>
-
-=======
-<div class="container">
   <h1 class="text-center pt-3"><%= @challenge.name%></h1>
-    <%= render "bookings/form", bookings: @booking %>
-  <br>
   <ul>
     <li>
       <p>category: <%= @challenge.category %></p>
@@ -111,4 +61,7 @@
     </div>
     <% end %>
   </ul>
+
+  <div class="up-nav"><%= render "bookings/form", bookings: @booking %></div>
+
 </div>
