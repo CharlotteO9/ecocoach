@@ -1,44 +1,69 @@
-<h1><%= @challenge.name%></h1>
+ <div class="container">
+ <h1 class="text-center pt-3"><%= @challenge.name%></h1>
 
-<%= render "bookings/form", bookings: @booking %>
-<br>
+  <%= render "bookings/form", bookings: @booking %>
+  <br>
 
-<ul>
-    <li>
-      <p>category: <%= @challenge.category %></p>
-    </li>
-    <li>
-      <p>description: <%= @challenge.description %></p>
-    </li>
-</ul>
-
-<h4>My saved Tips</h4>
-
-<ul>
-  <% @saved_tips.each do |saved_tip| %>
-    <li>
-      <%= saved_tip.tip.name %><br>
-      <%= saved_tip.tip.description %><br>
-      <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %></li>
-  <% end %>
-</ul>
-
-<h4>Challenge Tips</h4>
-
-<div class="cardtips">
-  <a class="tipsimage" href="#"><i class="fa-solid fa-lightbulb"></i></a>
   <ul>
-    <% @tips.each do |tip| %>
       <li>
-        <h5><strong><%= tip.name %></strong><br></h5>
-        <p><%= tip.description.truncate(40) %></p>
-        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
-    <% end %>
+        <p>category: <%= @challenge.category %></p>
+      </li>
+      <li>
+        <p>description: <%= @challenge.description %></p>
+      </li>
   </ul>
-</div>
-<div class="info">
-  <a class="tipsicon" href="#"><i class="fa-regular fa-bookmark"></i></a>
-</div>
 
-<%# button à mettre pour ajouter ce challenge/create a booking %>
-<%# <%= link_to "Add a booking", new_challenge_booking_path(@challenge) %>
+  <h4>Need some tips</h4>
+
+    <ul>
+      <% @tips.each do |tip| %>
+      <div class="cardtips">
+        <a class="tipsimage" href="#">
+          <i class="fa-solid fa-utensils"></i>
+        </a>
+        <li>
+          <div class="info d-flex justify-content-between">
+            <h5><strong><%= tip.name %></strong><br></h5>
+            <% if tip.class == Tip %>
+              <%= link_to tip_saved_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
+                <i class="fa fa-bookmark"></i>
+              <% end %>
+            <% else tip.class == Usertip %>
+              <%= link_to usertip_saved_user_tips_path(tip), data: {turbo_method: :post}, class:'tipsicon mt-2 me-2' do %>
+                <i class="fa-regular fa-bookmark"></i>
+              <% end %>
+            <% end %>
+          </div>
+          <p><%= tip.description.truncate(50) %></p>
+        </li>
+      </div>
+      <% end %>
+    </ul>
+
+    <ul>
+        <% @all_saved_tips.each do |saved_tip| %>
+      <div class="cardtips">
+        <a class="tipsimage" href="#">
+          <i class="fa-solid fa-utensils"></i>
+        </a>
+        <li>
+          <div class="info d-flex justify-content-between">
+            <h5><strong><%= saved_tip.tip.name %></strong><br></h5>
+            <% if saved_tip.class == Tip %>
+              <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                <i class="fa fa-bookmark"></i>
+              <% end %>
+            <% else saved_tip.class == Usertip %>
+              <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:'tipsicon mt-2 me-2' do %>
+                <i class="fa-regular fa-bookmark"></i>
+              <% end %>
+            <% end %>
+          </div>
+          <p><%= saved_tip.tip.description.truncate(50) %></p>
+        </li>
+      </div>
+
+      <% end %>
+    </ul>
+
+</div>

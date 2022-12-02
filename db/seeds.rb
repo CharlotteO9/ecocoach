@@ -1,8 +1,11 @@
+puts 'cleaning seniorities'
+Seniority.destroy_all
 
 puts "cleaning users"
 User.destroy_all
-puts 'cleaning seniorities'
-Seniority.destroy_all
+
+puts "cleaning users"
+Challenge.destroy_all
 
 puts 'creating seniorities'
 
@@ -55,7 +58,7 @@ user4 = User.create(
 
 puts 'creating little seed challenges'
 
-challenge_food1 = Challenge.create(
+challenge_food1 = Challenge.create!(
   name: 'Season Vegetables race',
   description: "Only purchase local vegetables that are in season.
   It simply means you choose food that's grown locally.
@@ -65,21 +68,21 @@ challenge_food1 = Challenge.create(
   category: 'Food',
   seniority: seniority1
 )
-challenge_transport1 = Challenge.create(
+challenge_transport1 = Challenge.create!(
   name: 'I want to ride my bicycle',
   description: "It's always the best way to stay fit and keep our carbon footprint at the lowest,
   it's 21g of CO2/km,that's 4,5 times less than the car",
   category: 'Transport',
   seniority: seniority1
 )
-challenge_energy1 = Challenge.create(
+challenge_energy1 = Challenge.create!(
   name: 'Shower fast and dry',
   description: "Low-down your shower to up to 4 minutes max will allow you saving liters of water.
   And that's not it: you could save €95 a year for your energy bills. ",
   category: 'Energy',
   seniority: seniority1
 )
-challenge_purchase1 = Challenge.create(
+challenge_purchase1 = Challenge.create!(
   name: 'We dress fair',
   description: "Fast fashion is destined for a short life – it’s created for temporary wear.
    The effect of fast fashion is huge not only for the psyche of the individual
@@ -90,7 +93,7 @@ challenge_purchase1 = Challenge.create(
   category: 'Purchase',
   seniority: seniority1
 )
-challenge_waste1 = Challenge.create(
+challenge_waste1 = Challenge.create!(
   name: 'Sort wastes',
   description: "Use the correct bin for each waste",
   category: 'Waste',
@@ -99,13 +102,13 @@ challenge_waste1 = Challenge.create(
 
 puts 'creating beautiful flower challenges'
 
-challenge_food2 = Challenge.create(
+challenge_food2 = Challenge.create!(
   name: 'Deliveries break',
   description: "Reduce food deliveries as much as possible to reduce transportation(CO2) and packaging",
   category: 'Food',
   seniority: seniority2
 )
-challenge_transport2 = Challenge.create(
+challenge_transport2 = Challenge.create!(
   name: 'Carpooling',
   description: " Carpooling helps to alleviate road traffic and reduce travel costs.
   In 2018, more than 270,000 tons of CO2 were avoided in France thanks to long-distance carpooling.
@@ -114,14 +117,14 @@ challenge_transport2 = Challenge.create(
   category: 'Transport',
   seniority: seniority2
 )
-challenge_energy2 = Challenge.create(
+challenge_energy2 = Challenge.create!(
   name: 'Reduce heat',
   description: "Reduce your home heating.
   Heating represent around 40% of the energy consumption.",
   category: 'Energy',
   seniority: seniority2
 )
-challenge_purchase2 = Challenge.create(
+challenge_purchase2 = Challenge.create!(
   name: 'Less is the new chic',
   description: "The process of making new clothes is a carbon and water intensive process.
   Making new fabric involves the extraction of precious natural resources for
@@ -130,7 +133,7 @@ challenge_purchase2 = Challenge.create(
   category: 'Purchase',
   seniority: seniority2
 )
-challenge_waste2 = Challenge.create(
+challenge_waste2 = Challenge.create!(
   name: 'Use compost',
   description: "Composting is nature's way of recycling.
   When we compost instead of throwing food waste away,
@@ -141,13 +144,13 @@ challenge_waste2 = Challenge.create(
 
 puts 'creating giant sequoia challenges'
 
-challenge_food3 = Challenge.create(
+challenge_food3 = Challenge.create!(
   name: 'No meat week',
   description: "Delete meat from your food for the week",
   category: 'Food',
   seniority: seniority3
 )
-challenge_transport3 = Challenge.create(
+challenge_transport3 = Challenge.create!(
   name: 'Use public transport for less than 5km trip',
   description: "Every vehicle on the road releases an average of one pound of CO2 per mile driven.
   Compared with driving alone, taking public transportation reduces CO2 emissions by 45%,
@@ -155,7 +158,7 @@ challenge_transport3 = Challenge.create(
   category: 'Transport',
   seniority: seniority3
 )
-challenge_energy3 = Challenge.create(
+challenge_energy3 = Challenge.create!(
   name: 'Switch off standby',
   description: "You can save electricity just by switching off standby of all devices that are currently unused.
   Not to mention that you can save around €65 a year just by remembering to turn your appliances off standby mode!
@@ -163,14 +166,14 @@ challenge_energy3 = Challenge.create(
   category: 'Energy',
   seniority: seniority3
 )
-challenge_purchase3 = Challenge.create(
+challenge_purchase3 = Challenge.create!(
   name: "Les fripes c'est chic",
   description: "By purchasing secondhand clothing instead of fast fashion,
   you are helping to close the loop on the fashion industry's damaging consequences.",
   category: 'Purchase',
   seniority: seniority3
 )
-challenge_waste3 = Challenge.create(
+challenge_waste3 = Challenge.create!(
   name: 'Avoid single usage',
   description: "Reuse your own bags or container for the content you are buying",
   category: 'Waste',
@@ -179,46 +182,38 @@ challenge_waste3 = Challenge.create(
 
 puts 'creating tips'
 
-Tip.create(
+Tip.create!(
   name: 'Seasonal menu',
   description: "Use season fruits & vegetables schedule : https://www.greenpeace.fr/guetteur/calendrier/",
   challenge: challenge_food1
 )
 
-Tip.create(
+Tip.create!(
   name: 'Bike is your friend',
-  description: "
-  In big cities, like Paris, it's faster to move with bike instead of car.
-  Take a bike subscription.
-  Try electrical bike",
+  description: "In big cities, like Paris, it's faster to move with bike instead of car",
   challenge: challenge_transport1
 )
 
-Tip.create(
+Tip.create!(
   name: 'Use a 5min playlist',
-  description: "
-  Set a 4 minutes playlist on Spotify of Deezer.
-  Turn off the flow of water in the middle portion of the shower while lathering",
+  description: "Set a 5 minutes playlist on Spotify of Deezer.",
   challenge: challenge_energy1
 )
 
-Tip.create(
+Tip.create!(
   name: 'Know your product',
-  description: "
-  Good On You: is an app that rate brands on issues such as their labour policies, resource use and waste management
-  Make a list of slow brand
-  Prefer sustainable materials
-  Beware of green whashing",
+  description: "Good On You: is an app that rate brands on issues such as their labour policies, resource use and waste management
+  - Prefer sustainable materials",
   challenge: challenge_purchase1
 )
 
-Tip.create(
+Tip.create!(
   name: 'Choose a good bin',
   description: "Have different bin for the different waste with a visual list of what can go in it",
   challenge: challenge_waste1
 )
 
-Tip.create(
+Tip.create!(
   name: 'Shop local',
   description: "
   Go to the market by yourself to discover seasonal product (and try it sometimes), meet people !",
@@ -230,10 +225,16 @@ Tip.create(
   description: "
   Use website for this and earn money
   First try this with your relatives",
+  challenge: challenge_food2
+)
+
+Tip.create!(
+  name: 'Money must be funny',
+  description: "Use dedicated app or website for carpooling and earn money",
   challenge: challenge_transport2
 )
 
-Tip.create(
+Tip.create!(
   name: "Let the sun come in",
   description: "Close Off Rooms that You Don't Use : By closing off bedrooms and other rooms that aren't being used,
   you can prevent heat from escaping through these unused areas.
@@ -242,15 +243,13 @@ Tip.create(
   challenge: challenge_energy2
 )
 
-Tip.create(
+Tip.create!(
   name: 'Less fun email',
-  description: "Unsubscribe and delete: removed yourself from all mailing lists
-  Make a wishlist.
-  Only go shopping when you need something",
+  description: "Unsubscribe and delete: removed yourself from all mailing lists",
   challenge: challenge_purchase2
 )
 
-Tip.create(
+Tip.create!(
   name: 'Your beautiful compost',
   description: "There are various ways to use your finished compost.
   You can sprinkle compost on top or mix it into your flower and vegetable beds,
@@ -259,45 +258,198 @@ Tip.create(
   challenge: challenge_waste2
 )
 
-Tip.create(
+Tip.create!(
   name: 'Eat differently',
-  description: "
-  Use meat substitude like Happyvore, Heura, Beyond Meat
-  Find new recipies to cook vegetable
-  Extend your possibilities with new ingredients ! ",
+  description: "Use meat substitude like Happyvore, Heura, Beyond Meat",
   challenge: challenge_food3
 )
 
-Tip.create(
+Tip.create!(
   name: 'Legs on fire',
-  description: "Use app that encourage you to walk like weward
-  Use app that tells you the carbon footprint of a trip
-  Travel local
-  Use public transport",
+  description: "Use apps that encourage you to walk and reward you like WeWard",
   challenge: challenge_transport3
 )
 
-Tip.create(
+Tip.create!(
   name: "Dark is cool",
-  description: "Almost all electrical appliances can be turned off at the plug
-  without upsetting their programming.
-  You may want to think about getting a standby saver or smart plug which
-   allows you to turn all your appliances off standby in one go.
-  Plug your devices on electical sockets with switches and set an alarm twice a day
-  so you can turn them off when your alarm rings.",
+  description: "- Almost all electrical appliances can be turned off at the plug
+  without upsetting their programming.You may want to think about getting a standby saver or smart plug which
+   allows you to turn all your appliances off standby in one go.",
   challenge: challenge_energy3
 )
 
-Tip.create(
+Tip.create!(
   name: 'Thrift shop',
   description: "Experiment with different thrift stores: not all secondhand stores are the same.",
   challenge: challenge_purchase3
 )
 
-Tip.create(
+Tip.create!(
   name: 'Use your covert',
   description: "Opt out from single use covert on the delivery apps ",
   challenge: challenge_waste3
+)
+
+puts 'creating bookings per user'
+
+will_booking1 = Booking.create!(
+  goal: 50,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_energy2,
+  user: user1
+)
+
+will_booking2 = Booking.create!(
+  goal: 25,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_purchase2,
+  user: user1
+)
+
+will_booking3 = Booking.create!(
+  goal: 75,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_transport2,
+  user: user1
+)
+
+pops_booking1 = Booking.create!(
+  goal: 100,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_energy1,
+  user: user2
+)
+
+pops_booking2 = Booking.create!(
+  goal: 50,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_transport1,
+  user: user2
+)
+
+anne_booking1 = Booking.create!(
+  goal: 25,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_food3,
+  user: user3
+)
+
+anne_booking2 = Booking.create!(
+  goal: 50,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_transport3,
+  user: user3
+)
+
+anne_booking3 = Booking.create!(
+  goal: 25,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_energy3,
+  user: user3
+)
+
+cha_booking1 = Booking.create!(
+  goal: 75,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_purchase1,
+  user: user4
+)
+
+cha_booking2 = Booking.create!(
+  goal: 100,
+  status: false,
+  weeknumber: 48,
+  challenge: challenge_transport1,
+  user: user4
+)
+
+puts 'creating usertips per user'
+
+will_tip1 = Usertip.create!(
+  name: "Sorry we are closed",
+  description: "Close Off Rooms that You Don't Use : By closing off bedrooms and other rooms that aren't being used,
+  you can prevent heat from escaping through these unused areas.",
+  user: user1,
+  booking: will_booking1
+)
+
+will_tip2 = Usertip.create!(
+  name: 'Make a wish',
+  description: "Make a wishlist and only go shopping when you need something",
+  user: user1,
+  booking: will_booking2
+)
+
+will_tip3 = Usertip.create!(
+  name: 'Meet people',
+  description: "Try fisrt carpooling with your relatives",
+  user: user1,
+  booking: will_booking3
+)
+
+pop_tip1 = Usertip.create!(
+  name: "Calm down your flow",
+  description: "Turn off the flow of water in the middle portion of the shower while lathering",
+  user: user2,
+  booking: pops_booking1
+)
+
+pops_tip2 = Usertip.create!(
+  name: "Velib my love",
+  description: "Take a bike subscription",
+  user: user2,
+  booking: pops_booking2
+)
+
+anne_tip1 = Usertip.create!(
+  name: "New horizons",
+  description: "Find new recipies to cook vegetable and extend your possibilities with new ingredients!",
+  user: user3,
+  booking: anne_booking1
+)
+
+anne_tip2 = Usertip.create!(
+  name: "Travel local",
+  description: "Use apps that tell you the carbon footprint of a trip",
+  user: user3,
+  booking: anne_booking2
+)
+
+anne_tip3 = Usertip.create!(
+  name: "Magic bus",
+  description: "Use public transport",
+  user: user3,
+  booking: anne_booking2
+)
+
+anne_tip4 = Usertip.create!(
+  name: "Plug smarter",
+  description: "Plug your devices on electical sockets with switches and set an alarm twice a day so you can turn them off when your alarm rings.",
+  user: user3,
+  booking: anne_booking3
+)
+
+cha_tip1 = Usertip.create!(
+  name: "Choose wisely",
+  description: "Make a list of slow brand & beware of green washing",
+  user: user4,
+  booking: cha_booking1
+)
+
+cha_tip2 = Usertip.create!(
+  name: "I'm lazy and I know it",
+  description: "Try electrical bike.",
+  user: user4,
+  booking: cha_booking2
 )
 
 puts 'finished!!'

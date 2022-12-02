@@ -15,3 +15,27 @@
   text-decoration: none;
   color: white;
 }
+
+.btn-grad {
+  background-image: linear-gradient(to right, #115540 0%, #237A57  51%, #115540  100%);
+  margin: 10px;
+  padding: 15px 25px;
+  text-align: center;
+  // transition: 0.5s;
+  // background-size: 100% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+// .btn-grad:hover {
+//   background-position: right center; /* change the direction of the change here */
+//   color: #fff;
+//   text-decoration: none;
+// }
+
+.form-check-input:checked {
+  background-color: #115540;
+  border-color: #115549;
+  }
