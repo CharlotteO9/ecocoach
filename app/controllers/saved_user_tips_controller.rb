@@ -1,8 +1,8 @@
 class SavedUserTipsController < ApplicationController
   def create
     @saved_user_tip = SavedUserTip.new
-    @tip = Tip.find(params[:tip_id])
-    @saved_user_tip.tip = @tip
+    @usertip = Usertip.find(params[:usertip_id])
+    @saved_user_tip.usertip = @usertip
     @saved_user_tip.user = current_user
     if @saved_user_tip.save
       redirect_to request.referer, notice: "Tip saved!"
@@ -13,7 +13,7 @@ class SavedUserTipsController < ApplicationController
   end
 
   def destroy
-    @saved_user_tip = SavedTip.find(params[:id])
+    @saved_user_tip = SavedUserTip.find(params[:id])
     authorize @saved_user_tip
     @saved_user_tip.destroy
     redirect_to request.referer, notice: "Tips unsaved!"
