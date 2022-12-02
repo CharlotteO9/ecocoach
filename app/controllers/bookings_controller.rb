@@ -24,8 +24,14 @@ class BookingsController < ApplicationController
   def show
     authorize @booking
     @retry_challenge = Challenge.find(@booking.challenge_id)
-    @saved_tips = current_user.saved_tips.select { |st| st if st.tip.challenge == @retry_challenge }
-    @tips = @retry_challenge.tips - current_user.saved_tips.map(&:tip)
+    # les tips de la db que j'ai sauvagardé et qui sont sur ce challenge
+    tips_saved = current_user.saved_tips.select { |st| st if st.tip.challenge == @retry_challenge }
+    # les tips des users que j'ai sauvagardé et qui sont sur ce challenge
+    user_tips_saved = current_user.saved_user_tips.select { |sut| sut if sut.usertip.booking.challenge == @retry_challenge }
+    # tous les saved tips (db et user) de ce challenge
+    @all_saved_tips = tips_saved + user_tips_saved
+    # les tips que j'ai pas sauvagardé et qui sont sur ce challenge
+    @tips = @retry_challenge.tips + @retry_challenge.usertips - @all_saved_tips.map(&:tip)
   end
 
   def edit
