@@ -4,17 +4,21 @@
 
 <ol>
   <% @my_saved_tips.each do |saved_tip| %>
-    <li>
-      <% if saved_tip.class == SavedTip %>
+    <% if saved_tip.class == SavedTip %>
+      <li>
         <%= saved_tip.tip.name %><br>
         <%= saved_tip.tip.description %><br>
         <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %>
+      </li>
       <% else saved_tip.class == SavedUserTip %>
-        <%= saved_tip.usertip.name %><br>
-        <%= saved_tip.usertip.description %><br>
-        <%= link_to "Unsave this tip", saved_user_tip_path(saved_tip), data: {turbo_method: :delete} %>
+        <% unless saved_tip.usertip.user == current_user %>
+          <li>
+            <%= saved_tip.usertip.name %><br>
+            <%= saved_tip.usertip.description %><br>
+            <%= link_to "Unsave this tip", saved_user_tip_path(saved_tip), data: {turbo_method: :delete} %>
+          </li>
+        <% end %>
       <% end %>
-    </li>
   <% end %>
 </ol>
 

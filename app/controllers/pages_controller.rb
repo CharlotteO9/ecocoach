@@ -9,16 +9,16 @@ class PagesController < ApplicationController
   end
 
   def profile_challenge
-    @on_going_bookings = User.find(current_user.id).bookings.where(status: false)
+    @on_going_bookings = current_user.bookings.where(status: false)
     # ce sont les challenges que t'as book et dont le statut est false
-    @past_bookings = User.find(current_user.id).bookings.where(status: true)
+    @past_bookings = current_user.bookings.where(status: true)
     # ce sont les challenges que t'as book et dont le statut est true
   end
 
   def profile_tips
     @my_saved_tips = current_user.saved_tips + current_user.saved_user_tips
     # ce sont les tips que t'as sauvergardé (de la db ou parmis les usertips)
-    @my_created_tips = Usertip.where(user: current_user)
+    @my_created_tips = current_user.usertips
     # ce sont les tips que t'as fait
   end
 
