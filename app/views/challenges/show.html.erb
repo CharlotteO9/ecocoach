@@ -1,6 +1,6 @@
 <div class="container-nav">
   <h1 class="text-center pt-3"><%= @challenge.name%></h1>
-  <ul>
+  <ul class="ultips">
     <li>
       <p>category: <%= @challenge.category %></p>
     </li>
@@ -9,7 +9,7 @@
     </li>
   </ul>
   <h4>Need some tips</h4>
-  <ul>
+  <ul class="ultips">
     <% @tips.each do |tip| %>
     <div class="cardtips">
       <a class="tipsimage" href="#">
@@ -33,7 +33,7 @@
     </div>
     <% end %>
   </ul>
-  <ul>
+  <ul class="ultips">
     <% @all_saved_tips.each do |saved_tip| %>
     <div class="cardtips">
       <a class="tipsimage" href="#">
