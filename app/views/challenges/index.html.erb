@@ -1,17 +1,25 @@
 <div class="container">
-  <div class="header-index">
-    <h1 class="challenges text-center">New challenges</h1>
+  <div class="header">
+    <h1>New challenges</h1>
     <img src="<%= current_user.avatar %>" alt="">
   </div>
-
-  <ol>
+  <div class="text-new-challenge">
+    <p><strong>Choose one or more challenge for this week</strong></p>
+  </div>
+  <section class="challenges">
     <% @challenges.each do |challenge| %>
-      <li>
-        <p><%= challenge.name %> - <%= challenge.id %></p>
-        <p>category: <%= challenge.category %></p>
-        <p>description: <%= challenge.description %></p>
-        <%= link_to "details", challenge_path(challenge) %><br>
-      </li>
+      <%= link_to challenge_path(challenge) do %>
+        <div class="card-challenge">
+          <div class="<%= challenge.category.downcase %>-icon icons">
+            <i class="fa-solid <%= find_icon(challenge.category) %>"></i>
+          </div>
+          <div class="card-challenge-infos">
+            <h4><strong><%= challenge.name %></strong></h4>
+            <p><%= challenge.description.truncate(45) %></p>
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      <% end %>
     <% end %>
-  </ol>
+  </section>
 </div>

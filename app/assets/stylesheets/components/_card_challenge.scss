@@ -5,15 +5,49 @@
   padding: 1em;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: flex-start;
+  padding: 10px;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.card-challenge-infos p{
+
+.card-challenge-infos {
   margin: 0px;
+  text-align: left;
+  padding: 0px 15px;
 }
 
 .card-challenge i {
   font-size: 35px;
+}
+
+.card-challenge .fa-chevron-right {
+  padding-right: 10px;
+}
+
+.card-challenge .icons {
+  border: light;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+}
+.card-challenge .icons i {
+  color: white;
+  font-size: 25px;
+}
+.card-challenge .food-icon {
+  background-color: #f6d029;
+}
+.card-challenge .transport-icon {
+  background-color: #0c69db;
+}
+.card-challenge .energy-icon {
+  background-color: #ee6700;
+}
+.card-challenge .waste-icon {
+  background-color: darkgreen;
+}
+.card-challenge .purchase-icon {
+  background-color: #f5aee1;
 }
