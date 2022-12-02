@@ -12,5 +12,4 @@ class Tip < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end

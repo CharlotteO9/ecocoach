@@ -1,0 +1,25 @@
+ <div class="fixed-bottom align-items-center">
+  <nav id= navbareco class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="w-100">
+      <ul class="navbar-nav d-flex flex-row justify-content-around">
+        <!-- Icons -->
+        <li class="nav-item me-3 me-lg-0">
+          <%= link_to profile_path, class: "nav-link #{'current-page' if action_name == 'profile'}" do %>
+            <%# <i class="fa-regular fa-calendar-days"></i> %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <%= link_to challenges_path, class: "nav-link #{'current-page' if controller_name == 'challenges'}" do %>
+            <i class="fa-solid fa-dumbbell"></i>
+          <% end %>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <%= link_to tipsindex_path, class: "nav-link #{'current-page' if action_name == 'tipsindex'}" do %>
+            <i class="fa-regular fa-lightbulb"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
