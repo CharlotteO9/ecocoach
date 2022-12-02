@@ -8,17 +8,19 @@
   </div>
   <section class="challenges">
     <% @challenges.each do |challenge| %>
-      <%= link_to challenge_path(challenge) do %>
-        <div class="card-challenge">
-          <div class="<%= challenge.category.downcase %>-icon icons">
-            <i class="fa-solid <%= find_icon(challenge.category) %>"></i>
+      <% if current_user.bookings.where(challenge_id: challenge.id).empty? %>
+        <%= link_to challenge_path(challenge) do %>
+          <div class="card-challenge">
+            <div class="<%= challenge.category.downcase %>-icon icons">
+              <i class="fa-solid <%= find_icon(challenge.category) %>"></i>
+            </div>
+            <div class="card-challenge-infos">
+              <h4><strong><%= challenge.name %></strong></h4>
+              <p><%= challenge.description.truncate(45) %></p>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
           </div>
-          <div class="card-challenge-infos">
-            <h4><strong><%= challenge.name %></strong></h4>
-            <p><%= challenge.description.truncate(45) %></p>
-          </div>
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   </section>

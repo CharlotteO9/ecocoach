@@ -215,7 +215,16 @@ Tip.create!(
 
 Tip.create!(
   name: 'Shop local',
-  description: "Go to the market by yourself to discover seasonal product (and try it sometimes), meet people!",
+  description: "
+  Go to the market by yourself to discover seasonal product (and try it sometimes), meet people !",
+  challenge: challenge_food2
+)
+
+Tip.create(
+  name: 'Meet people',
+  description: "
+  Use website for this and earn money
+  First try this with your relatives",
   challenge: challenge_food2
 )
 
@@ -227,8 +236,10 @@ Tip.create!(
 
 Tip.create!(
   name: "Let the sun come in",
-  description: "Open Your Curtains During the Day : When sunlight enters your house through curtains or windows,
-  it helps warm the room naturally.",
+  description: "Close Off Rooms that You Don't Use : By closing off bedrooms and other rooms that aren't being used,
+  you can prevent heat from escaping through these unused areas.
+  Open Your Curtains During the Day : When sunlight enters your house through curtains or windows,
+  it helps warm the room naturally. ",
   challenge: challenge_energy2
 )
 
