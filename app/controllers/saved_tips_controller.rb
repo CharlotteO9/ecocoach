@@ -14,8 +14,8 @@ class SavedTipsController < ApplicationController
 
   def destroy
     @saved_tip = SavedTip.find(params[:id])
+    authorize @saved_tip
     @saved_tip.destroy
     redirect_to request.referer, notice: "Tip unsaved!"
-    authorize @saved_tip
   end
 end
