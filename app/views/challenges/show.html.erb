@@ -12,27 +12,34 @@
     </li>
 </ul>
 
-<h4>My saved Tips</h4>
-
-<ul>
-  <% @saved_tips.each do |saved_tip| %>
-    <li>
-      <%= saved_tip.tip.name %><br>
-      <%= saved_tip.tip.description %><br>
-      <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %></li>
-  <% end %>
-</ul>
-
-<h4>Challenge Tips</h4>
+<h4>Need some tips</h4>
 
 <ul>
   <% @tips.each do |tip| %>
     <li>
       <%= tip.name %><br>
       <%= tip.description %><br>
-      <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>    </li>
+      <% if tip.class == Tip %>
+        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>
+      <% else tip.class == Usertip %>
+        <%= link_to "Save this tip", usertip_saved_user_tips_path(tip), data: {turbo_method: :post} %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
-<%# button à mettre pour ajouter ce challenge/create a booking %>
-<%# <%= link_to "Add a booking", new_challenge_booking_path(@challenge) %>
+<ul>
+  <% @all_saved_tips.each do |saved_tip| %>
+    <li>
+      <% if saved_tip.class == SavedTip %>
+        <%= saved_tip.tip.name %><br>
+        <%= saved_tip.tip.description %><br>
+        <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %>
+      <% else saved_tip.class == SavedUserTip %>
+        <%= saved_tip.usertip.name %><br>
+        <%= saved_tip.usertip.description %><br>
+        <%= link_to "Unsave this tip", saved_user_tip_path(saved_tip), data: {turbo_method: :delete} %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

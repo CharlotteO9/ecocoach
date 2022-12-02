@@ -1,5 +1,5 @@
 class UsertipsController < ApplicationController
-  before_action :set_usertip, only: [:edit, :update]
+  before_action :set_usertip, only: [:edit, :update, :destroy]
 
   def new
     @usertip = Usertip.new()
@@ -11,7 +11,7 @@ class UsertipsController < ApplicationController
     @usertip = Usertip.new(usertip_params)
     @usertip.user = current_user
     if @usertip.save
-      redirect_to profile_path, notice: "Tip created!"
+      redirect_to profile_tips_path, notice: "Tip created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,13 +25,13 @@ class UsertipsController < ApplicationController
 
   def update
     @usertip.update(usertip_params)
-    redirect_to profile_path, notice: "Tip modified!"
+    redirect_to profile_tips_path, notice: "Tip modified!"
     authorize @usertip
   end
 
   def destroy
     @usertip.destroy
-    redirect_to profile_path, notice: "Tip deleted!"
+    redirect_to profile_tips_path, notice: "Tip deleted!"
     authorize @usertip
   end
 

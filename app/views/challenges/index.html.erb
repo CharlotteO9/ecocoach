@@ -1,12 +1,17 @@
-<h1>New challenges</h1>
+<div class="container">
+  <div class="header-index">
+    <h1 class="challenges text-center">New challenges</h1>
+    <img src="<%= current_user.avatar %>" alt="">
+  </div>
 
-<ol>
-  <% @challenges.each do |challenge| %>
-    <li>
-      <p><%= challenge.name %> - <%= challenge.id %></p>
-      <p>category: <%= challenge.category %></p>
-      <p>description: <%= challenge.description %></p>
-      <%= link_to "details", challenge_path(challenge) %><br>
-    </li>
-  <% end %>
-</ol>
+  <ol>
+    <% @challenges.each do |challenge| %>
+      <li>
+        <p><%= challenge.name %> - <%= challenge.id %></p>
+        <p>category: <%= challenge.category %></p>
+        <p>description: <%= challenge.description %></p>
+        <%= link_to "details", challenge_path(challenge) %><br>
+      </li>
+    <% end %>
+  </ol>
+</div>
