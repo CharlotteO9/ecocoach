@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.challenge = @challenge
     @booking.status = false
     if @booking.save
-      redirect_to profile_path, notice: "Challenge added!"
+      redirect_to profile_challenge_path, notice: "Challenge added!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,6 @@ class BookingsController < ApplicationController
     @all_saved_tips = tips_saved + user_tips_saved
     # les tips que j'ai pas sauvagardé et qui sont sur ce challenge
     @tips = @retry_challenge.tips + @retry_challenge.usertips - tips_saved.map(&:tip) - user_tips_saved.map(&:usertip)
-
   end
 
   def edit
@@ -42,14 +41,14 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to profile_path, notice: "Challenge completed!"
+    redirect_to profile_challenge_path, notice: "Challenge completed!"
     authorize @booking
   end
 
   def destroy
     @booking.destroy
     authorize @booking
-    redirect_to profile_path, notice: "Challenge removed!"
+    redirect_to profile_challenge_path, notice: "Challenge removed!"
   end
 
   private
