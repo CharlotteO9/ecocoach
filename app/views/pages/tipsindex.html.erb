@@ -1,50 +1,55 @@
-<h1>All tips</h1>
+```
+<div class="container">
+  <h1 class="text-center pt-3">All tips</h1>
 
-<br>
+  <br>
 
-<%= form_with url: tipsindex_path, method: :get, class: "d-flex" do |f|%>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a tip"
-  %>
-  <%= f.select :category, @categories, include_blank: "Choose a category"%>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-<br>
-
-<ol>
-<% if @tips %>
-  <% @tips.each do |tip|  %>
-    <li>
-      <p>Name: <%= tip.name %></p>
-      <p>Content: <%= tip.description  %></p>
-      <p>Challenge category: <%= tip.challenge.category  %></p>
-      <% if current_user.saved_tips.where(tip: tip).empty? %>
-        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>
-      <% else %>
-        <% st = current_user.saved_tips.select{ |st| st if st.tip_id == tip.id } %>
-        <%= link_to "Unsave this tip", saved_tip_path(st), data: {turbo_method: :delete} %>
-      <% end %>
-    </li>
-  <% end %>
-  <% end %>
-  <% if @usertips %>
-  <% @usertips.each do |tip|  %>
-    <li>
-      <p>Name: <%= tip.name %></p>
-      <p>Content: <%= tip.description  %></p>
-      <p>Challenge category: <%= tip.booking.challenge.category  %></p>
-      <% if current_user.saved_user_tips.where(usertip: tip).empty? %>
-        <%= link_to "Save this tip", usertip_saved_user_tips_path(tip), data: {turbo_method: :post} %>
-      <% else %>
-        <% sut = current_user.saved_user_tips.select{ |sut| sut if sut.usertip_id == tip.id } %>
-        <%= link_to "Unsave this tip", saved_user_tip_path(sut), data: {turbo_method: :delete} %>
-      <% end %>
-    </li>
+  <%= form_with url: tipsindex_path, method: :get, class: "d-flex" do |f|%>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a tip"
+    %>
+    <%= f.select :category, @categories, include_blank: "Choose a category"%>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  <% end %>
+  <br>
 
-</ol>
+  <ul class="ultips">
+
+  <% if @tips %>
+    <% @tips.each do |tip|  %>
+      <li>
+        <p>Name: <%= tip.name %></p>
+        <p>Content: <%= tip.description  %></p>
+        <p>Challenge category: <%= tip.challenge.category  %></p>
+        <% if current_user.saved_tips.where(tip: tip).empty? %>
+          <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>
+        <% else %>
+          <% st = current_user.saved_tips.select{ |st| st if st.tip_id == tip.id } %>
+          <%= link_to "Unsave this tip", saved_tip_path(st), data: {turbo_method: :delete} %>
+        <% end %>
+      </li>
+    <% end %>
+    <% end %>
+
+    <% if @usertips %>
+    <% @usertips.each do |tip|  %>
+      <li>
+        <p>Name: <%= tip.name %></p>
+        <p>Content: <%= tip.description  %></p>
+        <p>Challenge category: <%= tip.booking.challenge.category  %></p>
+        <% if current_user.saved_user_tips.where(usertip: tip).empty? %>
+          <%= link_to "Save this tip", usertip_saved_user_tips_path(tip), data: {turbo_method: :post} %>
+        <% else %>
+          <% sut = current_user.saved_user_tips.select{ |sut| sut if sut.usertip_id == tip.id } %>
+          <%= link_to "Unsave this tip", saved_user_tip_path(sut), data: {turbo_method: :delete} %>
+        <% end %>
+      </li>
+    <% end %>
+    <% end %>
+
+  </ul>
+</div>
+```
