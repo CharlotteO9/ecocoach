@@ -188,65 +188,65 @@ Tip.create(
 Tip.create(
   name: 'Bike is your friend',
   description: "
-  - In big cities, like Paris, it's faster to move with bike instead of car
-  - take a bike subscription
-  - try electrical bike",
+  In big cities, like Paris, it's faster to move with bike instead of car.
+  Take a bike subscription.
+  Try electrical bike",
   challenge: challenge_transport1
 )
 
 Tip.create(
   name: 'Use a 5min playlist',
   description: "
-  - Set a 4 minutes playlist on Spotify of Deezer.
-  - Turn off the flow of water in the middle portion of the shower while lathering",
+  Set a 4 minutes playlist on Spotify of Deezer.
+  Turn off the flow of water in the middle portion of the shower while lathering",
   challenge: challenge_energy1
 )
 
 Tip.create(
   name: 'Know your product',
   description: "
-  - Good On You: is an app that rate brands on issues such as their labour policies, resource use and waste management
-  - Make a list of slow brand
-  - Prefer sustainable materials
-  - Beware of green whashing",
+  Good On You: is an app that rate brands on issues such as their labour policies, resource use and waste management
+  Make a list of slow brand
+  Prefer sustainable materials
+  Beware of green whashing",
   challenge: challenge_purchase1
 )
 
 Tip.create(
   name: 'Choose a good bin',
-  description: "- Have different bin for the different waste with a visual list of what can go in it",
+  description: "Have different bin for the different waste with a visual list of what can go in it",
   challenge: challenge_waste1
 )
 
 Tip.create(
   name: 'Shop local',
   description: "
-  - Go to the market by yourself to discover seasonal product (and try it sometimes), meet people !",
+  Go to the market by yourself to discover seasonal product (and try it sometimes), meet people !",
   challenge: challenge_food2
 )
 
 Tip.create(
   name: 'Meet people',
   description: "
-  - Use website for this and earn money
-  - First try this with your relatives",
+  Use website for this and earn money
+  First try this with your relatives",
   challenge: challenge_transport2
 )
 
 Tip.create(
   name: "Let the sun come in",
-  description: "- Close Off Rooms that You Don't Use : By closing off bedrooms and other rooms that aren't being used,
+  description: "Close Off Rooms that You Don't Use : By closing off bedrooms and other rooms that aren't being used,
   you can prevent heat from escaping through these unused areas.
-  - Open Your Curtains During the Day : When sunlight enters your house through curtains or windows,
+  Open Your Curtains During the Day : When sunlight enters your house through curtains or windows,
   it helps warm the room naturally. ",
   challenge: challenge_energy2
 )
 
 Tip.create(
   name: 'Less fun email',
-  description: "- Unsubscribe and delete: removed yourself from all mailing lists
-  - Make a wishlist.
-  - Only go shopping when you need something",
+  description: "Unsubscribe and delete: removed yourself from all mailing lists
+  Make a wishlist.
+  Only go shopping when you need something",
   challenge: challenge_purchase2
 )
 
@@ -262,35 +262,35 @@ Tip.create(
 Tip.create(
   name: 'Eat differently',
   description: "
-  - Use meat substitude like Happyvore, Heura, Beyond Meat
-  - Find new recipies to cook vegetable
-  - Extend your possibilities with new ingredients ! ",
+  Use meat substitude like Happyvore, Heura, Beyond Meat
+  Find new recipies to cook vegetable
+  Extend your possibilities with new ingredients ! ",
   challenge: challenge_food3
 )
 
 Tip.create(
   name: 'Legs on fire',
-  description: "- Use app that encourage you to walk like weward
-  - Use app that tells you the carbon footprint of a trip
-  - Travel local
-  - Use public transport",
+  description: "Use app that encourage you to walk like weward
+  Use app that tells you the carbon footprint of a trip
+  Travel local
+  Use public transport",
   challenge: challenge_transport3
 )
 
 Tip.create(
   name: "Dark is cool",
-  description: "- Almost all electrical appliances can be turned off at the plug
+  description: "Almost all electrical appliances can be turned off at the plug
   without upsetting their programming.
   You may want to think about getting a standby saver or smart plug which
    allows you to turn all your appliances off standby in one go.
-  - Plug your devices on electical sockets with switches and set an alarm twice a day
+  Plug your devices on electical sockets with switches and set an alarm twice a day
   so you can turn them off when your alarm rings.",
   challenge: challenge_energy3
 )
 
 Tip.create(
   name: 'Thrift shop',
-  description: "- Experiment with different thrift stores: not all secondhand stores are the same.",
+  description: "Experiment with different thrift stores: not all secondhand stores are the same.",
   challenge: challenge_purchase3
 )
 
