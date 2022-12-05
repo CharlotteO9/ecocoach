@@ -6,6 +6,24 @@ class PagesController < ApplicationController
 
   def profile
     @next_seniority = current_user.seniority.next
+    @past_bookings_seniority = current_user.bookings.where(status: true).select{ |booking| booking.challenge.seniority == current_user.seniority }
+    @past_bookings = current_user.bookings.where(status: true)
+    if @past_bookings_seniority.count == 0
+      @progress = 0
+    elsif @past_bookings_seniority.count == 1
+      @progress = 20
+    elsif @past_bookings_seniority.count == 2
+      @progress = 40
+    elsif @past_bookings_seniority.count == 3
+      @progress = 60
+    elsif @past_bookings_seniority.count == 4
+      @progress = 80
+    else
+      @progress = 100
+    end
+    @remaining = 100 - @progress
+    @tip = Tip.all.sample
+    @usertip = Usertip.where.not(user: current_user).sample
   end
 
   def profile_challenge

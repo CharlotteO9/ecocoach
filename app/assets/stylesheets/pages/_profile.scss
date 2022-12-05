@@ -1,0 +1,54 @@
+.profile-cards {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.green-card {
+  background-color: #115549;
+}
+
+.green-card p {
+  color: white;
+}
+
+.white-card {
+  background-color: white;
+}
+
+.progress {
+  background-color: #9ABDA4;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  background-color: white;
+}
+
+.cards {
+  display: flex;
+  padding: 25px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.card.card-scroll {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  transition: all 0.2s;
+  margin: 0 1rem;
+  background-color: #115549;
+  border: none;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card.card-scroll p {
+  color: white;
+}
