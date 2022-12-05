@@ -24,24 +24,28 @@ class PagesController < ApplicationController
 
   def tipsindex
     @categories = Challenge.all.pluck(:category).uniq
-    if params[:query].present? || params[:category].present?
-      @tips = Tip.tips_search("#{params[:query]} #{params[:category]}")
-      if params[:query].present?
-        if params[:category].present?
-          @usertips = Usertip.usertips_search("#{params[:query]}")
-          @usertips.select do |tip|
-            tip.booking.challenge.category == params[:category]
-          end
-        end
-      elsif params[:query] == "" && params[:category].present?
-        @usertips = Usertip.all.select { |tip| tip.booking.challenge.category == params[:category] }
-      else
-        @usertips = Usertip.usertips_search("#{params[:query]}")
-      end
-      # # @usertips = Usertip.where.not(user: current_user)
+
+    if params[:search]
+      category_param = (x = params.dig(:search, :category)).empty? ? @categories : x
+      @tips = Tip.left_outer_joins(:challenge)
+                 .where(challenge: { category: category_param })
+                 .where('tips.name ILIKE :query OR tips.description ILIKE :query', query: "%#{params.dig(:search, :query)}%")
+      @usertips = Usertip.includes(booking: :challenge)
+                         .where(challenge: { category: category_param })
+                         .where('usertips.name ILIKE :query OR usertips.description ILIKE :query', query: "%#{params.dig(:search, :query)}%")
+                         .where.not(user: current_user)
     else
       @tips = Tip.all
       @usertips = Usertip.where.not(user: current_user)
+    end
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: {
+          html: render_to_string(partial: 'pages/tips_list', locals: { tips: @tips, usertips: @usertips }, formats: :html)
+        }
+      }
     end
   end
 end

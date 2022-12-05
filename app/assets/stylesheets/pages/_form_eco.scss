@@ -2,3 +2,43 @@ a {
   text-decoration: none;
   color: gray;
 }
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #a3baa34a;
+  color: #0E0000;
+  border: 1px solid #f9f9f100;
+  margin: 0 0.2rem 0.4rem 0.2rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #125548;
+  color: white;
+}
+
+#search .form-control {
+  border-radius: 1.5rem 0 0 1.5rem;
+  background-color:#a3baa34a;
+  border: none;
+  height: 2.6rem;
+  margin-bottom: 0;
+}
+
+.search-btn {
+  border-radius: 0 1.5rem 1.5rem 0;
+  height: 2.6rem;
+  line-height: 0;
+}
