@@ -1,48 +1,69 @@
-<div class="container">
-   <div class="header">
+<div class="header">
+  <div class="title-avatar">
     <h1>My challenges</h1>
     <img src="<%= current_user.avatar %>" alt="">
   </div>
-  <div class="text-new-challenge">
-    <h4><strong>On going challenges</strong></h4>
+  <p>Yes you can! 💪 Stay motivated <%= current_user.username %> 🏋️‍♀️ </p>
+</div>
+
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        On going challenges
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <section class="challenges">
+          <% @on_going_bookings.each do |booking| %>
+              <%= link_to booking_path(booking) do %>
+                <div class="card-challenge">
+                  <div class="<%= Challenge.find(booking.challenge_id).category.downcase %>-icon icons">
+                    <i class="fa-solid <%= find_icon(Challenge.find(booking.challenge_id).category) %>"></i>
+                  </div>
+                  <div class="card-challenge-infos">
+                    <h4><strong><%= Challenge.find(booking.challenge_id).name %></strong></h4>
+                    <p><%= Challenge.find(booking.challenge_id).description.truncate(45) %></p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              <% end %>
+          <% end %>
+        </section>
+      </div>
+    </div>
   </div>
-  <section class="challenges">
-    <% @on_going_bookings.each do |booking| %>
-        <%= link_to booking_path(booking) do %>
-          <div class="card-challenge">
-            <div class="<%= Challenge.find(booking.challenge_id).category.downcase %>-icon icons">
-              <i class="fa-solid <%= find_icon(Challenge.find(booking.challenge_id).category) %>"></i>
-            </div>
-            <div class="card-challenge-infos">
-              <h4><strong><%= Challenge.find(booking.challenge_id).name %></strong></h4>
-              <p><%= Challenge.find(booking.challenge_id).description.truncate(45) %></p>
-            </div>
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        <% end %>
-    <% end %>
-  </section>
-
-  <div class="text-new-challenge">
-    <h4><strong>Completed challenges</strong></h4>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Past challenges
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <section class="challenges">
+          <% @past_bookings.each do |booking| %>
+              <%= link_to booking_path(booking) do %>
+                <div class="card-challenge">
+                  <div class="<%= Challenge.find(booking.challenge_id).category.downcase %>-icon icons">
+                    <i class="fa-solid <%= find_icon(Challenge.find(booking.challenge_id).category) %>"></i>
+                  </div>
+                  <div class="card-challenge-infos">
+                    <h4><strong><%= Challenge.find(booking.challenge_id).name %></strong></h4>
+                    <p><%= Challenge.find(booking.challenge_id).description.truncate(45) %></p>
+                  </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              <% end %>
+          <% end %>
+        </section>
+      </div>
+    </div>
   </div>
-  <section class="challenges">
-    <% @past_bookings.each do |booking| %>
-        <%= link_to booking_path(booking) do %>
-          <div class="card-challenge">
-            <div class="<%= Challenge.find(booking.challenge_id).category.downcase %>-icon icons">
-              <i class="fa-solid <%= find_icon(Challenge.find(booking.challenge_id).category) %>"></i>
-            </div>
-            <div class="card-challenge-infos">
-              <h4><strong><%= Challenge.find(booking.challenge_id).name %></strong></h4>
-              <p><%= Challenge.find(booking.challenge_id).description.truncate(45) %></p>
-            </div>
-            <i class="fa-solid fa-chevron-right"></i>
-          </div>
-        <% end %>
-    <% end %>
-  </section>
+</div>
 
-
-  <%= link_to "Add new challenges", challenges_path, class: "btn-grad" %>
+<div class="container">
+    <%= link_to "Add new challenges", challenges_path, class: "btn-grad" %>
 </div>

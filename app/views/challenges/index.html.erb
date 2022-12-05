@@ -1,11 +1,12 @@
-<div class="container">
-  <div class="header">
+<div class="header">
+  <div class="title-avatar">
     <h1>New challenges</h1>
     <img src="<%= current_user.avatar %>" alt="">
   </div>
-  <div class="text-new-challenge">
-    <p><strong>Choose one or more challenges for this week</strong></p>
-  </div>
+  <p>Choose some challenges for this week</p>
+</div>
+
+<div class="container">
   <section class="challenges">
     <% @challenges.each do |challenge| %>
       <% if current_user.bookings.where(challenge_id: challenge.id).empty? %>

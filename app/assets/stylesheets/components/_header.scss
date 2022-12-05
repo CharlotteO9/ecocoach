@@ -1,17 +1,32 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-  border-bottom: solid;
+  border-bottom: solid 2px;
   border-color: #115549;
+  padding: 0.5rem
 }
 
-.header img {
+.header p {
+  margin: 0.5rem;
+}
+
+.title-avatar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.title-avatar img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-.header h1 {
+.header-no-avatar {
+  background-color: #115549;
+  padding: 1rem;
+}
+
+.title-no-avatar h2 {
   padding: 5px;
+  color: white;
+  margin: 0px;
 }
