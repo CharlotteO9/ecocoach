@@ -1,0 +1,19 @@
+.custom-form {
+  padding: 10px 20px;
+  margin-top: 50px;
+  .btn-grad {
+      width: 100%;
+      margin-bottom: 20px
+  }
+}
+
+.email:focus {
+  color: #7D9E7F;
+  border-color: #7D9E7F;
+  box-shadow: 0 0 0 0.2rem rgba(130, 159, 137, 0.25);
+}
+.password:focus {
+  color: #7D9E7F;
+  border-color: #7D9E7F;
+  box-shadow: 0 0 0 0.2rem rgba(130, 159, 137, 0.25);
+}

@@ -13,4 +13,16 @@ module IconsHelper
       'fa-cart-shopping'
     end
   end
+
+  def seniority_icons(name)
+    case name
+    when 'little-seed'
+      'fa-seedling'
+    when 'beautiful-flower'
+      'fa-fan'
+    when 'giant-sequoia'
+      'fa-tree'
+    end
+  end
+
 end
