@@ -14,35 +14,30 @@
   margin-right: 15px;
 }
 
-.under-banner {
-  margin-left: 15px;
-  margin-right: 15px;
+.home-title h1 {
+  text-align: center;
+  margin-top: 35px;
 }
 
-.card-home {
-  width: 100px;
-  background-color: white;
+.carousel {
+  margin: 25px 15px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 
-.home-image {
-  height: 90px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+.carousel-inner {
+  background-color: white;
+  padding: 5px;
 }
 
-.card-home h5 {
-  margin: 10px 0px;
-  font-size: smaller;
+.carousel-item img {
+  height: 20vh;
 }
 
-.carousel-caption p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #F3EFE0;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.carousel-caption {
+  position: initial;
+}
+
+.carousel-caption h5{
+  margin-bottom: 16px;
 }
