@@ -1,18 +1,56 @@
+<div class="header">
+  <div class="title-avatar">
+    <h1>My profile</h1>
+    <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "avatarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      </div>
+  </div>
+  <p>Hello <%= current_user.username %>! 👋 </p>
+</div>
+
 <div class="container">
-  <br>
+  <h2>Activity report</h2>
+  <div class="profile-cards green-card" id="seniority">
+    <p> <strong>Level:</strong> You are a<%= current_user.seniority.name %></p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @progress %>%" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
 
-<h1>My profile</h1>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
-  <br>
-
-  <h2><%= current_user.username %></h2>
-  <p>
-    Welcome againg <%= current_user.seniority.name %>!
     <% if @next_seniority.nil? %>
       <p>You are an amazing eco citizen! </p>
     <% else %>
-      <p>You are on you way to become <%= @next_seniority.name %></p>
+      <p><%= @remaining %>% remaining to become the <%= @next_seniority.name %></p>
     <% end %>
-  </p>
+  </div>
+
+  <div class="profile-cards white-card">
+    <p><strong>On going challenges</strong></p>
+    <p>This week you have</p>
+    <ul>
+      <li><p>Food</p></li>
+      <li><p>Waste</p></li>
+      <li><p>Purchase</p></li>
+      <li><p>Transport</p></li>
+      <li><p>Energy</p></li>
+    </ul>
+  </div>
+
+  <div class="profile-cards white-card">
+    <p><strong>Past challenges</strong></p>
+    <p>You have completed <strong><%=@past_bookings.count%></strong> challenges sor far!</p>
+  </div>
+
+  <h2>Daily tips</h2>
+  <ul class="cards">
+    <li class="card card-scroll">
+      <p><%= @tip.name %></p>
+      <p><%= @tip.description.truncate(50) %></p>
+    </li>
+    <li class="card card-scroll">
+      <p><%= @usertip.name %></p>
+      <p><%= @usertip.description.truncate(50) %></p>
+    </li>
+  </ul>
 
 </div>
