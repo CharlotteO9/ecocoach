@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get 'profile_tips', to: 'pages#profile_tips'
   get 'profile_challenge', to: 'pages#profile_challenge'
   get 'tipsindex', to: 'pages#tipsindex'
+  get 'seniorities', to: 'seniorities#index'
 end

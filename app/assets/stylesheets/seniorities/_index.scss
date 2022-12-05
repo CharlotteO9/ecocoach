@@ -1,0 +1,64 @@
+.seniorities a {
+  text-decoration: none;
+  color: unset;
+}
+.text-new-seniority p {
+  text-align: center;
+  font-size: 1em;
+  margin: 17px 0px 0px;
+}
+.text-new-seniority h4 {
+  text-align: center;
+  margin: 1em 0em 1em;
+}
+.seniorities {
+  margin-bottom: 2em;
+  font-size: 32px;
+  text-align: center;
+}
+.card-seniority {
+  background-color: white;
+  border-radius: 4px;
+  padding: 1em;
+  box-shadow: 0px 23px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  padding: 3%;
+  align-items: center;
+  margin-bottom: 10%;
+  height: 140px;
+  justify-content: space-between;
+}
+.card-seniority-infos {
+  margin: 0px;
+  text-align: left;
+  padding: 10px 15px 0px 15px;
+}
+.card-seniority i {
+  font-size: 35px;
+}
+.card-seniority .fa-chevron-right {
+  padding-right: 10px;
+}
+.card-seniority .icons {
+  border: light;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+}
+.card-seniority .icons i {
+  color: white;
+  font-size: 25px;
+}
+.card-seniority .little-seed-icon {
+  background-color: #815B5B;
+}
+.card-seniority .beautiful-flower-icon {
+  background-color: #d25db1;
+}
+.card-seniority .giant-sequoia-icon {
+  background-color: #379237;
+}
+.card-disable {
+  opacity: 40%;
+}
