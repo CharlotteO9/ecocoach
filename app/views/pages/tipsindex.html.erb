@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container" data-controller="search-tips">
   <div class="header">
     <h1>All tips</h1>
-    <img src="<%= current_user.avatar %>" alt="">
+    <%= image_tag current_user.avatar %>
   </div>
 
-  <div id="search" data-controller="search-tips">
+  <div id="search">
     <%= simple_form_for :search, url: tipsindex_path, method: :get, html: {
       data: {
-        search_tips_target: "form"
+        search_tips_target: "form",
+        action: 'submit->search-tips#search'
       }
     } do |f| %>
     <div class="d-flex flex-row justify-content-center">
@@ -15,71 +16,23 @@
                   legend_tag: false,
                   as: :radio_buttons,
                   collection: @categories,
-                  input_html: { class: "tag-selector" },
+                  input_html: {
+                    class: "tag-selector",
+                    data: {
+                      action: 'click->search-tips#search'
+                    }
+                  },
                   item_wrapper_class: 'tag-item' %>
     </div>
     <div class="search-elmts d-flex flex-row justify-content-center">
-      <%= f.input :query, class: "form-control",placeholder: "Find a tip 🔍", label: false%>
+      <%= f.input :query, class: "form-control", placeholder: "Find a tip 🔍", label: false, input_html: { 'data-search-tips-target' => 'input', data: { action: 'keyup->search-tips#search' } } %>
       <%= submit_tag "Search", class: "btn btn-grad search-btn" %><% end %>
     </div>
   </div>
 
   <br>
 
-  <ul class="ultips">
-
-  <% if @tips %>
-    <% @tips.each do |tip|  %>
-    <div class="cardtips">
-      <a class="tipsimage" href="#">
-        <i class="fa-solid fa-utensils"></i>
-      </a>
-      <li>
-      <div class="info d-flex justify-content-between">
-        <h5><strong><%= tip.name %></strong><br></h5>
-        <% if current_user.saved_tips.where(tip: tip).empty? %>
-          <%= link_to tip_saved_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
-            <i class="fa-regular fa-bookmark"></i>
-          <% end %>
-        <% else %>
-          <% st = current_user.saved_tips.select{ |st| st if st.tip_id == tip.id } %>
-          <%= link_to saved_tip_path(st), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-            <i class="fa fa-bookmark"></i>
-          <% end %>
-        <% end %>
-      </div>
-      <p><%= tip.description.truncate(50)  %></p>
-      <%# <p>Challenge category: <%= tip.challenge.category  %>
-      </li>
-    </div>
-    <% end %>
-  <% end %>
-
-    <% if @usertips %>
-    <% @usertips.each do |tip|  %>
-      <div class="cardtips">
-        <a class="tipsimage" href="#">
-          <i class="fa-solid fa-utensils"></i>
-        </a>
-      <li>
-      <div class="info d-flex justify-content-between">
-        <h5><strong><%= tip.name %></strong><br></h5>
-        <% if current_user.saved_user_tips.where(usertip: tip).empty? %>
-          <%= link_to usertip_saved_user_tips_path(tip), data: {turbo_method: :post}, class:'tipsicon mt-2 me-2' do %>
-            <i class="fa-regular fa-bookmark"></i>
-          <% end %>
-        <% else %>
-          <% sut = current_user.saved_user_tips.select{ |sut| sut if sut.usertip_id == tip.id } %>
-          <%= link_to saved_user_tip_path(sut), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-            <i class="fa fa-bookmark"></i>
-          <% end %>
-        <% end %>
-      </div>
-        <p><%= tip.description.truncate(50)  %></p>
-        <%# <p>Challenge category: <%= tip.booking.challenge.category  %>
-      </li>
-    </div>
-    <% end %>
-    <% end %>
+  <ul class="ultips" data-search-tips-target="list">
+    <%= render 'pages/tips_list', tips: @tips, usertips: @usertips %>
   </ul>
 </div>
