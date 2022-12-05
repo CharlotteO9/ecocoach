@@ -13,10 +13,12 @@
 
   <body>
     <%# <%= render "shared/navbar" %>
-    <%= render "shared/flashes"%>
-    <% if action_name != "home" %>
-      <%= render "shared/navbar_eco" %>
-    <% end %>
-    <%= yield %>
+    <div class="view">
+      <%= render "shared/flashes"%>
+      <% if action_name != "home" %>
+        <%= render "shared/navbar_eco" %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
