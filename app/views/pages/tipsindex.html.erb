@@ -4,15 +4,25 @@
     <img src="<%= current_user.avatar %>" alt="">
   </div>
 
-  <%= form_with url: tipsindex_path, method: :get, class: "d-flex" do |f|%>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a tip"
-    %>
-    <%= f.select :category, @categories, include_blank: "Choose a category"%>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <div id="search" data-controller="search-tips">
+    <%= simple_form_for :search, url: tipsindex_path, method: :get, html: {
+      data: {
+        search_tips_target: "form"
+      }
+    } do |f| %>
+    <div class="d-flex flex-row justify-content-center">
+      <%= f.input :category,
+                  legend_tag: false,
+                  as: :radio_buttons,
+                  collection: @categories,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+    </div>
+    <div class="search-elmts d-flex flex-row justify-content-center">
+      <%= f.input :query, class: "form-control",placeholder: "Find a tip 🔍", label: false%>
+      <%= submit_tag "Search", class: "btn btn-grad search-btn" %><% end %>
+    </div>
+  </div>
 
   <br>
 
