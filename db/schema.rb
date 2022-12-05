@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_133409) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_135240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.integer "goal"
-    t.boolean "status", default: false
+    t.boolean "status"
     t.integer "weeknumber"
     t.bigint "challenge_id", null: false
     t.bigint "user_id", null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_133409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "ranking", default: 0
+    t.string "description"
   end
 
   create_table "tips", force: :cascade do |t|

@@ -1,8 +1,13 @@
 <div class="container" data-controller="search-tips">
   <div class="header">
+
     <h1>All tips</h1>
     <%= image_tag current_user.avatar %>
   </div>
+  <p>Find the perfect tips 💡 to complete your challenges</p>
+</div>
+
+<div class="container">
 
   <div id="search">
     <%= simple_form_for :search, url: tipsindex_path, method: :get, html: {
@@ -29,10 +34,11 @@
       <%= submit_tag "Search", class: "btn btn-grad search-btn" %><% end %>
     </div>
   </div>
-
+  
   <br>
 
   <ul class="ultips" data-search-tips-target="list">
     <%= render 'pages/tips_list', tips: @tips, usertips: @usertips %>
+
   </ul>
 </div>
