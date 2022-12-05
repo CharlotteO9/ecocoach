@@ -11,14 +11,17 @@ puts 'creating seniorities'
 
 seniority1 = Seniority.create(
   name: "Little seed",
+  description: "Hello little seed, I am happy to see you. You want to change your habits, you can be proud of you.",
   ranking: 0
 )
 seniority2 = Seniority.create(
   name: "Beautiful flower",
+  description: "Congratulations, you became a beautiful flower, you are on your way to becoming a real eco-citizen, don't give up !!",
   ranking: 1
 )
 seniority3 = Seniority.create(
   name: "Giant sequoia",
+  description: "Here we are, it's the last step, you did a long way, still some challenges and you will be a eco-citizen, EcoCoach is proud of you !!",
   ranking: 2
 )
 
