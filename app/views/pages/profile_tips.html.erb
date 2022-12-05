@@ -1,4 +1,3 @@
-
 <div class="header">
   <div class="title-avatar">
     <h1>My tips</h1>
@@ -7,82 +6,76 @@
   <p>Tips you need to remember! 📝 </p>
 </div>
 
-<div class="container">
+<%# <div class="container">
 
   <div class="text-new-challenge">
     <h4><strong>My saved tips</strong></h4>
-  </div>
-
-  <ol>
-    <% @my_saved_tips.each do |saved_tip| %>
-      <% if saved_tip.class == SavedTip %>
+  </div> %>
 
 
 <div class="container-nav">
   <h1 class="text-center pt-3">My Tips</h1>
-
   <h4>My saved tips</h4>
 
-    <ul class="ultips">
-      <% @my_saved_tips.each do |saved_tip| %>
+  <ul class="ultips">
+    <% @my_saved_tips.each do |saved_tip| %>
       <div class="cardtips">
         <a class="tipsimage" href="#">
           <i class="fa-solid fa-utensils"></i>
         </a>
         <% if saved_tip.class == SavedTip %>
-        <li>
-        <div class="info d-flex justify-content-between">
-          <h5><strong><%= saved_tip.tip.name %></strong><br></h5>
-          <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-            <i class="fa fa-bookmark"></i>
-          <% end %>
-        </div>
-          <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
-        </li>
-
-        <% else saved_tip.class == SavedUserTip %>
-        <div class="info d-flex justify-content-between">
-          <% unless saved_tip.usertip.user == current_user %>
           <li>
-          <h5><strong><%= saved_tip.usertip.name %></strong><br></h5>
-          <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-            <i class="fa fa-bookmark"></i>
-          <% end %>
-        </div>
-          <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %><br></p>
-        </li>
-          <% end %>
+            <div class="info d-flex justify-content-between">
+              <h5><strong><%= saved_tip.tip.name %></strong></h5>
+              <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                <i class="fa fa-bookmark"></i>
+              <% end %>
+            </div>
+            <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
+          </li>
+        <% elsif saved_tip.class == SavedUserTip %>
+          <div class="info d-flex justify-content-between">
+            <% unless saved_tip.usertip.user == current_user %>
+              <li>
+                <h5><strong><%= saved_tip.usertip.name %></strong></h5>
+                <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                  <i class="fa fa-bookmark"></i>
+                <% end %>
+                <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %></p>
+              </li>
+            <% end %>
+          </div>
         <% end %>
       </div>
-     <% end %>
-    </ul>
+    <% end %>
+  </ul>
 
+  <h4>My created tips</h4>
 
-    <h4>My created tips</h4>
-
-    <ul class="ultips">
-      <% @my_created_tips.each do |tip| %>
+  <ul class="ultips">
+    <% @my_created_tips.each do |tip| %>
       <div class="cardtips">
         <a class="tipsimage" href="#">
           <i class="fa-solid fa-utensils"></i>
         </a>
         <li>
-        <div class="info d-flex justify-content-between">
-          <h5><strong><%= tip.name %></strong><br></h5>
-          <% link_to edit_usertip_path(tip) %>
-            <i class="fa-solid fa-pen tipsicon mt-2 me-2"></i>
-        </div>
+          <div class="info d-flex justify-content-between">
+            <h5><strong><%= tip.name %></strong><br></h5>
+            <% link_to edit_usertip_path(tip) %>
+              <i class="fa-solid fa-pen tipsicon mt-2 me-2"></i>
+          </div>
           <div class="delete-icon">
-          <%= link_to usertip_path(tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
+            <%= link_to usertip_path(tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
           </div>
           <p class="padding-right"><%= tip.description.truncate(40) %></p>
         </li>
       </div>
-      <% end %>
-    </ul>
+    <% end %>
+  </ul>
 
 
   <%= link_to "Create a new tip", new_usertip_path %>
   <%= link_to "Save a new tip", tipsindex_path %>
+</div>
