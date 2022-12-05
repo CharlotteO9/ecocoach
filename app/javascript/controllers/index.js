@@ -9,6 +9,3 @@ application.register("hello", HelloController)
 
 import SearchTipsController from "./search_tips_controller"
 application.register("search-tips", SearchTipsController)
-
-import UncheckRadioController from "./uncheck_radio_controller"
-application.register("uncheck-radio", UncheckRadioController)
