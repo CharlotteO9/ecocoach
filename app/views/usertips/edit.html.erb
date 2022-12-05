@@ -1,8 +1,17 @@
-<h1>Edit a new tip</h1>
-
-<%= simple_form_for(@usertip) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :booking_id, prompt: "Choose among your challenge", collection: @bookings.map{ |booking| [booking.id, booking.challenge.name] }, label_method: :second, value_method: :first %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="header">
+    <h1>Edit a new tip</h1>
+  </div>
+  <div class="custom-form">
+    <div class="form-inputs">
+      <%= simple_form_for(@usertip) do |f| %>
+        <%= f.input :name, autofocus: true, placeholder: "Name of your tip" %>
+        <%= f.input :description, placeholder: "Describe your tip" %>
+        <%= f.input :booking_id, prompt: "Choose among your challenge", collection: @bookings.map{ |booking| [booking.id, booking.challenge.name] }, label_method: :second, value_method: :first %>
+    </div>
+    <div class="form-validate">
+        <%= f.submit class:'btn-grad mt-4' %>
+    </div>
+      <% end %>
+  </div>
+</div>

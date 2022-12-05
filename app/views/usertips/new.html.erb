@@ -5,11 +5,11 @@
   <div class="custom-form">
     <%= simple_form_for(@usertip) do |f| %>
       <div class="form-inputs">
-        <%= f.input :name, autofocus: true, placeholder: "Bob" %>
+        <%= f.input :name, autofocus: true, placeholder: "Name of your tip" %>
         <%= f.input :description, placeholder: "Describe your tip" %>
         <%= f.input :booking_id, prompt: "Choose among your challenge", collection: @bookings.map{ |booking| [booking.id, booking.challenge.name] }, label_method: :second, value_method: :first %>
       </div>
-      <div class="form-validate">
+      <div class="form-actions">
         <%= f.submit class:'btn-grad mt-4' %>
       </div>
     <% end %>
