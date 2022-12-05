@@ -35,7 +35,7 @@
           <% end %>
         <% end %>
       </div>
-      <p><%= tip.description.truncate(50) %></p>
+      <p class="padding-right"><%= tip.description.truncate(40) %></p>
       </li>
     </div>
     <% end %>
@@ -54,7 +54,7 @@
             <i class="fa fa-bookmark"></i>
           <% end %>
         </div>
-        <p><%= saved_tip.tip.description.truncate(50) %></p>
+        <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
       <% else saved_tip.class == SavedUserTip %>
         <div class="info d-flex justify-content-between">
           <h5><strong><%= saved_tip.usertip.name %></strong><br></h5>
@@ -62,7 +62,7 @@
             <i class="fa fa-bookmark"></i>
           <% end %>
         </div>
-        <p><%= saved_tip.usertip.description.truncate(50) %></p>
+        <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %></p>
       <% end %>
       </li>
     </div>

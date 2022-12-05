@@ -15,46 +15,89 @@
 
 <ul>
   <% @tips.each do |tip| %>
+
+<div>
+  <h1 class="text-center pt-3"><%= Challenge.find(@booking.challenge_id).name %></h1>
+  <ul class="ultips">
     <li>
-      <%= tip.name %><br>
-      <%= tip.description %><br>
-      <% if tip.class == Tip %>
-        <%= link_to "Save this tip", tip_saved_tips_path(tip), data: {turbo_method: :post} %>
-      <% else tip.class == Usertip %>
-        <%= link_to "Save this tip", usertip_saved_user_tips_path(tip), data: {turbo_method: :post} %>
-      <% end %>
+      <p>Category: <%= Challenge.find(@booking.challenge_id).category %></p>
     </li>
-  <% end %>
-</ul>
-
-<ul>
-  <% @all_saved_tips.each do |saved_tip| %>
     <li>
-      <% if saved_tip.class == SavedTip %>
-        <%= saved_tip.tip.name %><br>
-        <%= saved_tip.tip.description %><br>
-        <%= link_to "Unsave this tip", saved_tip_path(saved_tip), data: {turbo_method: :delete} %>
-      <% else saved_tip.class == SavedUserTip %>
-        <%= saved_tip.usertip.name %><br>
-        <%= saved_tip.usertip.description %><br>
-        <%= link_to "Unsave this tip", saved_user_tip_path(saved_tip), data: {turbo_method: :delete} %>
-      <% end %>
+      <p>Description: <%= Challenge.find(@booking.challenge_id).description %></p>
     </li>
-  <% end %>
-</ul>
+    <li>
+      <p>My Goal: <%= @booking.goal %>
+    </p></li>
+  </ul>
 
-<div class="up-nav2">
-  <% if @booking.status == false %>
-    <% if policy(@booking).edit? %>
-      <%= render "bookings/form", bookings: @booking %>
+  <h4>Need some tips</h4>
+
+  <ul class="ultips">
+    <% @tips.each do |tip| %>
+    <div class="cardtips">
+      <a class="tipsimage" href="#">
+        <i class="fa-solid fa-utensils"></i>
+      </a>
+      <li>
+      <div class="info d-flex justify-content-between">
+        <h5><strong><%= tip.name %></strong><br></h5>
+        <% if tip.class == Tip %>
+          <%= link_to tip_saved_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
+            <i class="fa-regular fa-bookmark"></i>
+          <% end %>
+        <% else tip.class == Usertip %>
+          <%= link_to usertip_saved_user_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
+            <i class="fa-regular fa-bookmark"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <p class="padding-right"><%= tip.description.truncate(40) %></p>
+      </li>
+    </div>
     <% end %>
-    <% if policy(@booking).destroy? %>
-     <i class="fa-regular fa-trash-can"></i>
-      <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+  </ul>
+
+  <ul class="ultips">
+    <% @all_saved_tips.each do |saved_tip| %>
+    <div class="cardtips">
+      <a class="tipsimage" href="#">
+        <i class="fa-solid fa-utensils"></i>
+      </a>
+      <li>
+        <% if saved_tip.class == SavedTip %>
+          <div class="info d-flex justify-content-between">
+            <h5><strong><%= saved_tip.tip.name %></strong><br></h5>
+            <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+              <i class="fa fa-bookmark"></i>
+            <% end %>
+          </div>
+          <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
+        <% else saved_tip.class == SavedUserTip %>
+          <div class="info d-flex justify-content-between">
+            <h5><strong><%= saved_tip.usertip.name %></strong><br></h5>
+            <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+              <i class="fa fa-bookmark"></i>
+            <% end %>
+          </div>
+          <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %><br></p>
+        <% end %>
+      </li>
+    </div>
     <% end %>
+  </ul>
 
-  <% else %>
-    <%= link_to "Redo this challenge", challenge_path(@retry_challenge) %>
+  <div class="up-nav2">
+    <% if @booking.status == false %>
+      <% if policy(@booking).edit? %>
+        <%= render "bookings/form", bookings: @booking %>
+      <% end %>
+      <% if policy(@booking).destroy? %>
+      <i class="fa-regular fa-trash-can"></i>
+        <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+      <% end %>
+    <% else %>
+      <%= link_to "Redo this challenge", challenge_path(@retry_challenge) %>
+    <% end %>
+  </div>
 
-  <% end %>
 </div>
