@@ -11,3 +11,13 @@
 @import "components/index";
 @import "pages/index";
 @import "challenges/index";
+
+.view {
+  height: 778px;
+}
+
+body {
+  background-image: url("assets/wallpaper.jpeg");
+  background-position-x: -134px;
+  background-size: 684px;
+}
