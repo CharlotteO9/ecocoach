@@ -1,4 +1,23 @@
 
+<div class="header">
+  <div class="title-avatar">
+    <h1>My tips</h1>
+    <img src="<%= current_user.avatar %>" alt="">
+  </div>
+  <p>Tips you need to remember! 📝 </p>
+</div>
+
+<div class="container">
+
+  <div class="text-new-challenge">
+    <h4><strong>My saved tips</strong></h4>
+  </div>
+
+  <ol>
+    <% @my_saved_tips.each do |saved_tip| %>
+      <% if saved_tip.class == SavedTip %>
+
+
 <div class="container-nav">
   <h1 class="text-center pt-3">My Tips</h1>
 

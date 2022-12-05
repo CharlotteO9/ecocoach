@@ -1,8 +1,12 @@
-<div class="container">
-  <div class="header">
+<div class="header">
+  <div class="title-avatar">
     <h1>All tips</h1>
     <img src="<%= current_user.avatar %>" alt="">
   </div>
+  <p>Find the perfect tips 💡 to complete your challenges</p>
+</div>
+
+<div class="container">
 
   <%= form_with url: tipsindex_path, method: :get, class: "d-flex" do |f|%>
     <%= text_field_tag :query,

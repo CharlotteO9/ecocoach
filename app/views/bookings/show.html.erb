@@ -1,3 +1,21 @@
+<div class="header-no-avatar">
+  <div class="title-no-avatar">
+    <h2><%= Challenge.find(@booking.challenge_id).name %></h2>
+  </div>
+</div>
+
+<ul>
+  <li><p>Category: <%= Challenge.find(@booking.challenge_id).category %></p></li>
+  <li><p>Description: <%= Challenge.find(@booking.challenge_id).description %></p></li>
+  <li><p>My Goal: <%= @booking.goal %></p></li>
+</ul>
+
+
+<h4>Need some tips</h4>
+
+<ul>
+  <% @tips.each do |tip| %>
+
 <div>
   <h1 class="text-center pt-3"><%= Challenge.find(@booking.challenge_id).name %></h1>
   <ul class="ultips">
