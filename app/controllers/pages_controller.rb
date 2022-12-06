@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def profile
     @next_seniority = current_user.seniority.next
+    @on_going_bookings = current_user.bookings.where(status: false)
     @past_bookings_seniority = current_user.bookings.where(status: true).select{ |booking| booking.challenge.seniority == current_user.seniority }
     @past_bookings = current_user.bookings.where(status: true)
     if @past_bookings_seniority.count == 0

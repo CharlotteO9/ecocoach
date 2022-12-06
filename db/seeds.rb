@@ -9,17 +9,17 @@ Challenge.destroy_all
 
 puts 'creating seniorities'
 
-seniority1 = Seniority.create(
+seniority1 = Seniority.create!(
   name: "Little seed",
   description: "Hello little seed, I am happy to see you. You want to change your habits, you can be proud of you.",
   ranking: 0
 )
-seniority2 = Seniority.create(
+seniority2 = Seniority.create!(
   name: "Beautiful flower",
   description: "Congratulations, you became a beautiful flower, you are on your way to becoming a real eco-citizen, don't give up !!",
   ranking: 1
 )
-seniority3 = Seniority.create(
+seniority3 = Seniority.create!(
   name: "Giant sequoia",
   description: "Here we are, it's the last step, you did a long way, still some challenges and you will be a eco-citizen, EcoCoach is proud of you !!",
   ranking: 2
@@ -27,7 +27,7 @@ seniority3 = Seniority.create(
 
 puts 'creating user'
 
-user1 = User.create(
+user1 = User.create!(
   username: "william-eco",
   email: "william@eco.com",
   password: "1234567",
@@ -35,7 +35,7 @@ user1 = User.create(
   seniority: seniority2
 )
 
-user2 = User.create(
+user2 = User.create!(
   username: "pauline-eco",
   email: "pauline@eco.com",
   password: "1234567",
@@ -43,7 +43,7 @@ user2 = User.create(
   seniority: seniority1
 )
 
-user3 = User.create(
+user3 = User.create!(
   username: "anne-eco",
   email: "anne@eco.com",
   password: "1234567",
@@ -51,7 +51,7 @@ user3 = User.create(
   seniority: seniority3
 )
 
-user4 = User.create(
+user4 = User.create!(
   username: "charlotte-eco",
   email: "charlotte@eco.com",
   password: "1234567",
