@@ -1,17 +1,18 @@
-<div class="container-nav">
-  <div class="header">
-    <div class="title-avatar">
-      <h1>My tips</h1>
-      <img src="<%= current_user.avatar %>" alt="">
+<div class="header header-green">
+  <div class="title-avatar">
+    <h1>My tips</h1>
+    <img src="<%= current_user.avatar %>" alt="">
     </div>
     <p>Tips you need to remember! 📝 </p>
   </div>
 
+<div class="container-nav" data-controller="tips-card">
+  
   <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-      <h4>My saved tips</h4>
+          My saved tips
         </button>
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
@@ -30,7 +31,7 @@
                             <i class="fa fa-bookmark"></i>
                           <% end %>
                       </div>
-                      <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
+                      <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.tip.description %></p>
                     </li>
                   <% elsif saved_tip.class == SavedUserTip %>
                     <div class="info d-flex justify-content-between">
@@ -40,7 +41,7 @@
                           <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
                             <i class="fa fa-bookmark"></i>
                           <% end %>
-                          <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %></p>
+                          <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.usertip.description %></p>
                         </li>
                       <% end %>
                     </div>
@@ -55,7 +56,7 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-      <h4>My created tips</h4>
+            My created tips
         </button>
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
@@ -68,19 +69,20 @@
                   </a>
                   <li>
                     <div class="info d-flex justify-content-between">
-                      <h5><strong><%= tip.name %></strong><br></h5>
-                      <% link_to edit_usertip_path(tip) %>
-                        <i class="fa-solid fa-pen tipsicon mt-2 me-2"></i>
+                      <h5><strong><%= saved_tip.tip.name %></strong></h5>
+                        <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                          <i class="fa fa-bookmark"></i>
+                        <% end %>
                     </div>
                     <div class="delete-icon">
                       <%= link_to usertip_path(tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
                         <i class="fa-solid fa-trash-can"></i>
                       <% end %>
                     </div>
-                    <p class="padding-right"><%= tip.description.truncate(40) %></p>
+                    <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
                   </li>
                 </div>
-              <% end %>
+              <%end%>
             </ul>
           </section>
         </div>
@@ -92,4 +94,4 @@
   <li class="list-inline-item btn-create-tips"><%= link_to "Create a new tip", new_usertip_path %></li>
   <li class="list-inline-item"><%= link_to "Save a new tip", tipsindex_path, class: "btn btn-grad" %></li>
 </ul>
-</div>
+</div>  

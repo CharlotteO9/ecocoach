@@ -1,17 +1,31 @@
 .header {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  padding-top: 0.75rem;
   border-bottom: solid 2px;
   border-color: #115549;
-  padding: 0.5rem
 }
 
 .header p {
   margin: 0.5rem;
 }
 
+.header-green {
+  background-color: #115549;
+}
+
+.header-green h1 {
+  color: white;
+}
+
+.header-green p {
+  color: white;
+}
+
 .title-avatar {
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .title-avatar img {
@@ -21,8 +35,9 @@
 }
 
 .header-no-avatar {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   background-color: #115549;
-  padding: 1rem;
 }
 
 .title-no-avatar h2 {

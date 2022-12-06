@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container-nav" data-controller="tips-card">
   <div class="mt-3 head">
     <div class="<%= @challenge.category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(@challenge.category) %> top-icon"></i>
@@ -35,7 +35,7 @@
             <% end %>
           <% end %>
         </div>
-        <p class="padding-right"><%= tip.description.truncate(40) %></p>
+        <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
       </li>
     </div>
     <% end %>
@@ -54,7 +54,7 @@
             <i class="fa fa-bookmark"></i>
           <% end %>
         </div>
-        <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
+        <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.tip.description %></p>
       <% else saved_tip.class == SavedUserTip %>
         <div class="info d-flex justify-content-between">
           <h5><strong><%= saved_tip.usertip.name %></strong><br></h5>
@@ -62,7 +62,7 @@
             <i class="fa fa-bookmark"></i>
           <% end %>
         </div>
-        <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %></p>
+        <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.usertip.description %></p>
       <% end %>
       </li>
     </div>

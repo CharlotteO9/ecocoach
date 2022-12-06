@@ -25,7 +25,6 @@
   padding: 3%;
   align-items: center;
   margin-bottom: 10%;
-  height: 140px;
   justify-content: space-between;
 }
 .card-seniority-infos {
@@ -35,6 +34,7 @@
 }
 .card-seniority i {
   font-size: 35px;
+  color: #608B6B;
 }
 .card-seniority .fa-chevron-right {
   padding-right: 10px;
@@ -51,13 +51,14 @@
   font-size: 25px;
 }
 .card-seniority .little-seed-icon {
-  background-color: #815B5B;
+  background-color: #77A67A;
 }
+
 .card-seniority .beautiful-flower-icon {
-  background-color: #d25db1;
+  background-color: #156657;
 }
 .card-seniority .giant-sequoia-icon {
-  background-color: #379237;
+  background-color: #2C262B;
 }
 .card-disable {
   opacity: 40%;
