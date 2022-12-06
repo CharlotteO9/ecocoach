@@ -9,46 +9,72 @@
   <p>Hello <%= current_user.username %>! 👋 </p>
 </div>
 
-<div class="container">
-  <h2>Activity report</h2>
-  <div class="profile-cards green-card" id="seniority">
-    <p> <strong>Level:</strong> You are a<%= current_user.seniority.name %></p>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: <%= @progress %>%" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"></div>
+<div class="container-nav">
+  <div class="activity-report">
+    <h2>Activity report</h2>
+    <%= link_to seniorities_path do %>
+      <div class="profile-cards green-card" id="seniority">
+        <p> <strong>Level:</strong> You are a <%= current_user.seniority.name %></p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: <%= @progress %>%" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <% if @next_seniority.nil? %>
+          <p>You are an amazing eco citizen! </p>
+        <% else %>
+          <p><%= @remaining %>% remaining to become the <%= @next_seniority.name %></p>
+        <% end %>
+        <i class="fa-solid fa-arrow-right white" id="arrow-seniority"></i>
+      </div>
+    <% end %>
+
+    <div class="profile-cards white-card" id="going-challenge">
+      <p><strong>On going challenges</strong></p>
+      <p>This week you have</p>
+      <ul class="cards">
+        <li class="card card-scroll-cat food">
+          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Food"}.count %> Food challenge(s)</p>
+        </li>
+        <li class="card card-scroll-cat waste">
+          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Waste"}.count %> Waste challenge(s)</p>
+        </li>
+        <li class="card card-scroll-cat purchase">
+          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Purchase"}.count %> Purchase challenge(s)</p>
+        </li>
+        <li class="card card-scroll-cat transport">
+          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Transport"}.count %> Transport challenge(s)</p>
+        </li>
+        <li class="card card-scroll-cat energy">
+          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Energy"}.count %> Energy challenge(s)</p>
+        </li>
+      </ul>
+    <%= link_to profile_challenge_path do %>
+      <i class="fa-solid fa-arrow-right green" id="arrow-going-challenge"></i>
+    <% end %>
     </div>
 
-    <% if @next_seniority.nil? %>
-      <p>You are an amazing eco citizen! </p>
-    <% else %>
-      <p><%= @remaining %>% remaining to become the <%= @next_seniority.name %></p>
+    <div class="profile-cards white-card" id="past-challenge">
+      <%= link_to profile_challenge_path do %>
+        <p><strong>Past challenges</strong></p>
+        <p>You have completed <strong><%=@past_bookings.count%></strong> challenge(s) so far!</p>
+        <i class="fa-solid fa-arrow-right green" id="arrow-past-challenge"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="daily-tips">
+    <h2>Daily tips</h2>
+    <%= link_to tipsindex_path do %>
+      <p>See more <i class="fa-solid fa-arrow-right green"></i></p>
     <% end %>
   </div>
 
-  <div class="profile-cards white-card">
-    <p><strong>On going challenges</strong></p>
-    <p>This week you have</p>
-    <ul>
-      <li><p>Food</p></li>
-      <li><p>Waste</p></li>
-      <li><p>Purchase</p></li>
-      <li><p>Transport</p></li>
-      <li><p>Energy</p></li>
-    </ul>
-  </div>
-
-  <div class="profile-cards white-card">
-    <p><strong>Past challenges</strong></p>
-    <p>You have completed <strong><%=@past_bookings.count%></strong> challenges sor far!</p>
-  </div>
-
-  <h2>Daily tips</h2>
   <ul class="cards">
     <li class="card card-scroll">
-      <p><%= @tip.name %></p>
+      <p><strong><%= @tip.name %></strong></p>
       <p><%= @tip.description.truncate(50) %></p>
     </li>
     <li class="card card-scroll">
-      <p><%= @usertip.name %></p>
+      <p><strong><%= @usertip.name %></strong></p>
       <p><%= @usertip.description.truncate(50) %></p>
     </li>
   </ul>

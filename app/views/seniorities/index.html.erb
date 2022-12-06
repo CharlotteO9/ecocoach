@@ -1,11 +1,12 @@
-<div class="container">
-  <div class="header">
-    <h1>All Seniorities</h1>
-    <img src="<%= current_user.avatar %>" alt="">
+<div class="header">
+  <div class="title-avatar">
+    <h1>Seniorities</h1>
+    <%= image_tag current_user.avatar %>
   </div>
-    <div class="text-new-seniority">
-    <h4><strong>See all seniorities</strong></h4>
-  </div>
+  <p>Discover the seniorities</p>
+</div>
+
+<div class="container-nav">
   <section class="seniorities">
     <% @seniorities.each do |seniority| %>
       <div class="card-seniority position-relative">

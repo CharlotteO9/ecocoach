@@ -1,7 +1,9 @@
 .header {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   border-bottom: solid 2px;
   border-color: #115549;
-  padding: 0.5rem
+  margin-bottom: 1rem;
 }
 
 .header p {
@@ -21,8 +23,10 @@
 }
 
 .header-no-avatar {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   background-color: #115549;
-  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .title-no-avatar h2 {
