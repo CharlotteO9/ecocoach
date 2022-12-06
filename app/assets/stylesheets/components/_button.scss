@@ -24,7 +24,7 @@
   // transition: 0.5s;
   // background-size: 100% auto;
   color: white;
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 20px rgba(238, 238, 238, 0);
   border-radius: 10px;
   display: block;
   border:none;
@@ -42,14 +42,23 @@
   }
 
 .btn-sticky-tips {
+  left: 0;
   position: fixed;
-  bottom: 3rem;
+  bottom: 1rem;
   background-color: white;
-  padding: 0.5rem;
   width: 100%;
+  padding: 0.5rem 0.5rem 3rem 0.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+#form-switch-status fieldset {
+  margin-bottom: 0 !important;
+}
+
+.form-switch {
+  padding-left: 1.5em !important;
 }
 
 .btn-create-tips {
@@ -63,7 +72,7 @@
 
 .btn-sticky-challenges {
   position: fixed;
-  bottom: 4.1rem;
+  bottom: 0.6rem;
   background-color: rgba(255, 255, 255, 0);
   padding: 1rem;
   width: 100%;

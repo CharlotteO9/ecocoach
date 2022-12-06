@@ -1,14 +1,17 @@
 <div class="container-form">
-  <ul class="list-inline">
+  <ul class="list-inline mb-2">
     <%= simple_form_for [@challenge, @booking], html:{class: "d-flex align-items-center"} do |f| %>
     <li class="list-inline-item">
       <% if @booking.persisted? %>
-        <div class="form-check form-switch">
+        <div class="form-check form-switch" id="form-switch-status">
           <%= f.input :status, as: :boolean, class: "form-check-input", label: "Succeed" %>
         </div></li>
     <li class="list-inline-item">
       <% else %>
-       <p><%= f.input :goal, as: :range %></p>
+        <div data-controller="booking-goal">
+          <p data-booking-goal-target="goal">Set your goal: 50%</p>
+          <p><%= f.input :goal, as: :range, label: false, input_html: { data: { action:'input->booking-goal#updateGoal' } } %></p>
+        </div>
       <% end %></li>
       <% Time.now.strftime('%U') %>
       <% if @booking.persisted? %>
@@ -18,4 +21,12 @@
       <% end %>
     <% end %>
   </ul>
+  <div class="remove-challenge">
+    <% if policy(@booking).destroy? %>
+      <%= link_to booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+        <i class="fa-regular fa-trash-can"></i>
+        <p>Remove this challenge</p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
