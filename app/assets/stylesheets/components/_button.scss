@@ -25,9 +25,11 @@
   // background-size: 100% auto;
   color: white;
   box-shadow: 0 0 20px rgba(238, 238, 238, 0);
-  border-radius: 10px;
   display: block;
   border:none;
+  border-radius: 37px;
+  font-size: 22px;
+  width: 100%;
 }
 
 // .btn-grad:hover {
@@ -41,17 +43,7 @@
   border-color: #115549;
   }
 
-.btn-sticky-tips {
-  left: 0;
-  position: fixed;
-  bottom: 1rem;
-  background-color: white;
-  width: 100%;
-  padding: 0.5rem 0.5rem 3rem 0.5rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 #form-switch-status fieldset {
   margin-bottom: 0 !important;
@@ -61,11 +53,33 @@
   padding-left: 1.5em !important;
 }
 
-.btn-create-tips {
-  font-size: 1rem;
+.btn-sticky-tips {
+  left: 0;
+  position: fixed;
+  bottom: 2rem;
+  width: 100%;
+  padding: 0.5rem 0.5rem 3rem 0.5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
-}
+  align-items: center;
 
+  a {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 37px;
+    font-size: 22px;
+    &.btn-create-tips {
+      background-color: white;
+      border: 2px solid #115540;
+      color: #115540;
+      margin-bottom: 1rem;
+    }
+  }
+}
 .cb {
   margin-top: 1rem;
 }
@@ -82,5 +96,12 @@
 }
 
 .remove-challenge {
-  bottom: 4.3rem;
+// padding: 3rem;
+  a {
+    color:#115540;
+    i {
+
+      font-size: 1.5rem;
+    }
+  }
 }
