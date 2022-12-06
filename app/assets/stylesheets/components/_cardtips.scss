@@ -1,8 +1,8 @@
 .cardtips {
-  height: 135px;
-  width:95%;
+  overflow: hidden; // truncate
+  width:100%;
   background-color: #f9f9f1;
-  margin-bottom: 20px;
+  margin-bottom:1.25rem; // 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   margin-left: auto;
@@ -14,25 +14,30 @@
 }
 
 .cardtips h5 {
-  padding-top: 10px;
+  padding-top: 0.625rem; //10px;
+  color: #115549;
+  font-size: 1.25rem;
+  text-align: left;
+  font-weight: 700;
 }
 
 .tipsicon {
   color: #115549;
+  font-size: 1rem; // 16px;
 }
 
 .tipsimage {
-  font-size: 40px;
+  font-size: 2.5rem; // 40px;
   color: #115549;
   align-items: center;
-  padding-right: 30px;
-  padding-left: 20px;
+  padding-right: 1.875rem;// 30px;
+  padding-left: 1.25rem; // 20px;
 }
 
 .ultips {
-  margin-top: 10px;
-  margin-right: 25px;
-  padding-right: 20px;
+  margin-top: 0.625rem; // 10px;
+  margin-right: 1.563rem; // 25px;
+  padding-right: 1.25rem; // 20px;
 }
 
 .cardtips li {
@@ -42,15 +47,25 @@
 
 .tipsname {
  font-weight: bold;
+ text-align: left;
 }
 
-.padding-right {
-  padding-right: 1em;
+.description {
+  padding-right: 1rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.desc-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .delete-icon {
   position: absolute;
-  top: 6em;
-  left: 17em;
+  top: 6rem;
+  left: 17rem;
   color: #115549;
 }

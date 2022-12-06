@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header header-green">
   <div class="title-avatar">
     <h1>My profile</h1>
     <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "avatarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -21,7 +21,7 @@
         <% if @next_seniority.nil? %>
           <p>You are an amazing eco citizen! </p>
         <% else %>
-          <p><%= @remaining %>% remaining to become the <%= @next_seniority.name %></p>
+          <p><%= @remaining %>% remaining to become the <%= @next_seniority.name %>.</p>
         <% end %>
         <i class="fa-solid fa-arrow-right white" id="arrow-seniority"></i>
       </div>
@@ -29,7 +29,7 @@
 
     <div class="profile-cards white-card" id="going-challenge">
       <p><strong>On going challenges</strong></p>
-      <p>This week you have</p>
+      <p>This week you have:</p>
       <ul class="cards">
         <li class="card card-scroll-cat food">
           <p><%= @on_going_bookings.select {|b| b.challenge.category == "Food"}.count %> Food challenge(s)</p>
@@ -71,12 +71,11 @@
   <ul class="cards">
     <li class="card card-scroll">
       <p><strong><%= @tip.name %></strong></p>
-      <p><%= @tip.description.truncate(50) %></p>
+      <p>"<%= @tip.description %>"</p>
     </li>
     <li class="card card-scroll">
       <p><strong><%= @usertip.name %></strong></p>
-      <p><%= @usertip.description.truncate(50) %></p>
+      <p>"<%= @usertip.description %>"</p>
     </li>
   </ul>
-
 </div>
