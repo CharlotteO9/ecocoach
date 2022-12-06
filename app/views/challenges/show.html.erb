@@ -8,18 +8,20 @@
   <div class="mt-3 head">
     <div class="<%= @challenge.category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(@challenge.category) %> top-icon"></i>
+    </div>
+    <div class="description">
       <p><%= @challenge.description %></p>
     </div>
   </div>
 
-  <h4>Need some tips</h4>
+  <h3>Need some tips</h3>
 
   <ul class="mt-3 ps-0">
     <% @tips.each do |tip| %>
     <div class="cardtips">
-      <a class="tipsimage" href="#">
-        <i class="fa-solid fa-utensils"></i>
-      </a>
+      <div class="<%= @challenge.category.downcase %>-icon icons tipsimage ">
+       <i class="fa-solid <%= find_icon(@challenge.category) %>"></i>
+      </div>
       <li>
         <div class="info d-flex justify-content-between">
           <h5><strong><%= tip.name %></strong><br></h5>
@@ -41,9 +43,9 @@
   <ul class="mt-3 ps-0">
     <% @all_saved_tips.each do |saved_tip| %>
     <div class="cardtips">
-      <a class="tipsimage" href="#">
-        <i class="fa-solid fa-utensils"></i>
-      </a>
+      <div class="<%= @challenge.category.downcase %>-icon icons tipsimage ">
+        <i class="fa-solid <%= find_icon(@challenge.category) %>"></i>
+      </div>
       <li>
       <% if saved_tip.class == SavedTip %>
         <div class="info d-flex justify-content-between">

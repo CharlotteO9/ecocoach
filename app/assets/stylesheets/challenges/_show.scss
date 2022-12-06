@@ -6,8 +6,44 @@
   font-size: 4em;
   margin: 0.5em;
 }
-
-.head .icons {
-  border: solid;
+.head .icons i {
   border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 30px;
+}
+
+.head .food-icon i {
+  background-color: #f6d029;
+}
+.head .transport-icon i {
+  background-color: #0c69db;
+}
+.head .energy-icon i {
+  background-color: #ee6700;
+}
+.head .waste-icon i {
+  background-color: darkgreen;
+}
+.head .purchase-icon i {
+  background-color: #f5aee1;
+}
+.cardtips .food-icon i {
+  color: #f6d029;
+}
+.cardtips .transport-icon i {
+  color: #0c69db;
+}
+.cardtips .energy-icon i {
+  color: #ee6700;
+}
+.cardtips .waste-icon i {
+  color: darkgreen;
+}
+.cardtips .purchase-icon i {
+  color: #f5aee1;
 }
