@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_135240) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_154942) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.integer "goal"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.integer "weeknumber"
     t.bigint "challenge_id", null: false
     t.bigint "user_id", null: false
@@ -34,6 +34,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_135240) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["seniority_id"], name: "index_challenges_on_seniority_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "address"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "saved_tips", force: :cascade do |t|
