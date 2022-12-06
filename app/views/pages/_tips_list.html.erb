@@ -2,7 +2,7 @@
 <% tips&.each do |tip|  %>
     <div class="cardtips">
       <a class="tipsimage" href="#">
-        <i class="fa-solid fa-utensils"></i>
+        <i class="fa-solid <%= find_icon(tip.challenge.category) %>"></i>
       </a>
       <li>
         <div class="info d-flex justify-content-between">
@@ -26,7 +26,7 @@
   <% usertips&.each do |tip|  %>
     <div class="cardtips">
       <a class="tipsimage" href="#">
-        <i class="fa-solid fa-utensils"></i>
+        <i class="fa-solid <%= find_icon(tip.booking.challenge.category) %>"></i>
       </a>
       <li>
         <div class="info d-flex justify-content-between">
