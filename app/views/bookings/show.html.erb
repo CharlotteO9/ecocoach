@@ -83,17 +83,12 @@
     <% end %>
   </ul>
 
-  <div class="up-nav2">
+  <div class="up-nav2 pb-4">
     <% if @booking.status == false %>
       <% if policy(@booking).edit? %>
         <%= render "bookings/form", bookings: @booking %>
       <% end %>
-      <div class="remove-challenge">
-      <% if policy(@booking).destroy? %>
-      <i class="fa-regular fa-trash-can"></i>
-        <%= link_to 'Remove this challenge', booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-      <% end %>
-      </div>
+
     <% else %>
       <%= link_to "Redo this challenge", challenge_path(@retry_challenge) %>
     <% end %>
