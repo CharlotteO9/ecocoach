@@ -1,3 +1,4 @@
+
 <% tips&.each do |tip|  %>
     <div class="cardtips">
       <a class="tipsimage" href="#">
@@ -5,7 +6,7 @@
       </a>
       <li>
         <div class="info d-flex justify-content-between">
-          <h5><strong><%= tip.name %></strong><br></h5>
+          <h5><strong><%= tip.name %></strong></h5>
           <% if current_user.saved_tips.where(tip: tip).empty? %>
             <%= link_to tip_saved_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
               <i class="fa-regular fa-bookmark"></i>
@@ -17,7 +18,7 @@
             <% end %>
           <% end %>
         </div>
-        <p><%= tip.description.truncate(50) %></p>
+        <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
         <%# <p>Challenge category: <%= tip.challenge.category  %>
       </li>
     </div>
@@ -29,7 +30,7 @@
       </a>
       <li>
         <div class="info d-flex justify-content-between">
-          <h5><strong><%= tip.name %></strong><br></h5>
+          <h5><strong><%= tip.name %></strong></h5>
           <% if current_user.saved_user_tips.where(usertip: tip).empty? %>
             <%= link_to usertip_saved_user_tips_path(tip), data: {turbo_method: :post}, class:'tipsicon mt-2 me-2' do %>
               <i class="fa-regular fa-bookmark"></i>
@@ -41,7 +42,7 @@
             <% end %>
           <% end %>
         </div>
-        <p><%= tip.description.truncate(50)  %></p>
+        <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
         <%# <p>Challenge category: <%= tip.booking.challenge.category  %>
       </li>
     </div>
