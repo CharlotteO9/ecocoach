@@ -27,6 +27,7 @@
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  border:none;
 }
 
 // .btn-grad:hover {
@@ -42,12 +43,35 @@
 
 .btn-sticky-tips {
   position: fixed;
-  bottom: 50px;
+  bottom: 3rem;
   background-color: white;
   padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .btn-create-tips {
   font-size: 1rem;
   justify-content: space-around;
+}
+
+.cb {
+  margin-top: 1rem;
+}
+
+.btn-sticky-challenges {
+  position: fixed;
+  bottom: 4.1rem;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.remove-challenge {
+  bottom: 4.3rem;
 }
