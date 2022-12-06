@@ -1,16 +1,16 @@
 .cardtips {
   overflow: hidden; // truncate
   width:100%;
-  background-color: #f9f9f1;
-  margin-bottom:1.25rem; // 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #F9F9F1;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.25);
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  margin-bottom: 1rem;
+  height: 6rem;
+  padding-top: 0.5rem;
 }
 
 .cardtips h5 {
@@ -35,14 +35,13 @@
 }
 
 .ultips {
-  margin-top: 0.625rem; // 10px;
-  margin-right: 1.563rem; // 25px;
-  padding-right: 1.25rem; // 20px;
+  padding: 0;
 }
 
 .cardtips li {
   list-style: none;
   align-items: center;
+  flex-grow: 1;
 }
 
 .tipsname {
@@ -63,9 +62,36 @@
   overflow: hidden;
 }
 
+.edit-icon {
+  position: absolute;
+  top: 0rem;
+  left: 20rem;
+  color: #115549;
+}
+
 .delete-icon {
   position: absolute;
-  top: 6rem;
-  left: 17rem;
+  top: 3rem;
+  left: 20rem;
   color: #115549;
+}
+
+.cardtips .food-icon i {
+  color: #f6d029;
+}
+.cardtips .transport-icon i {
+  color: #0c69db;
+}
+.cardtips .energy-icon i {
+  color: #ee6700;
+}
+.cardtips .waste-icon i {
+  color: darkgreen;
+}
+.cardtips .purchase-icon i {
+  color: #f5aee1;
+}
+
+.challenge-description p {
+  text-align: justify;
 }

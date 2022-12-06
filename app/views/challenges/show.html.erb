@@ -1,7 +1,5 @@
 <div class="header-no-avatar">
-  <div class="title-no-avatar">
-    <h2><%= @challenge.name%></h2>
-  </div>
+  <h2><%= @challenge.name%></h2>
 </div>
 
 <div class="container-nav" data-controller="tips-card">
@@ -9,7 +7,7 @@
     <div class="<%= @challenge.category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(@challenge.category) %> top-icon"></i>
     </div>
-    <div class="description">
+    <div class="challenge-description">
       <p><%= @challenge.description %></p>
     </div>
   </div>
