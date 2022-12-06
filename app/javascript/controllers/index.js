@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import SearchTipsController from "./search_tips_controller"
 application.register("search-tips", SearchTipsController)
+
+import TipsCardController from "./tips_card_controller"
+application.register("tips-card", TipsCardController)
