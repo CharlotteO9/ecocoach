@@ -187,7 +187,7 @@ puts 'creating tips'
 
 Tip.create!(
   name: 'Seasonal menu',
-  description: "Use season fruits & vegetables schedule: https://www.greenpeace.fr/guetteur/calendrier/.",
+  description: "Use season fruits & vegetables calendar.",
   challenge: challenge_food1
 )
 

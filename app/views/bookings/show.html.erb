@@ -1,14 +1,13 @@
 <div class="header-no-avatar">
-  <div class="title-no-avatar">
-    <h2><%= Challenge.find(@booking.challenge_id).name %></h2>
-  </div>
+  <h2><%= Challenge.find(@booking.challenge_id).name %></h2>
 </div>
-<div class="container">
+
+<div class="container-nav">
   <div class="mt-3 head">
     <div class="<%= Challenge.find(@booking.challenge_id).category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(Challenge.find(@booking.challenge_id).category) %> top-icon"></i>
     </div>
-    <div class="description">
+    <div class="challenge-description">
       <p><%= Challenge.find(@booking.challenge_id).description %></p>
     </div>
     <p>My Goal:</p>

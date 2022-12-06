@@ -6,24 +6,24 @@
     <p>Tips you need to remember! 📝 </p>
   </div>
 
-<div class="container-nav" data-controller="tips-card">
-  
-  <div class="accordion" id="accordionPanelsStayOpenExample">
+<div class="container-non" data-controller="tips-card">
+
+  <div class="accordion" id="accordionPanelsStayOpen-tip">
     <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne-tip">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-tip" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-tip">
           My saved tips
         </button>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div id="panelsStayOpen-collapseOne-tip" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne-tip">
         <div class="accordion-body">
           <section class="challenges">
             <ul class="ultips">
               <% @my_saved_tips.each do |saved_tip| %>
                 <div class="cardtips">
-                  <a class="tipsimage" href="#">
-                    <i class="fa-solid fa-utensils"></i>
-                  </a>
                   <% if saved_tip.class == SavedTip %>
+                    <a class="tipsimage" href="#">
+                      <i class="fa-solid <%= find_icon(saved_tip.tip.challenge.category) %>"></i>
+                    </a>
                     <li>
                       <div class="info d-flex justify-content-between">
                         <h5><strong><%= saved_tip.tip.name %></strong></h5>
@@ -34,6 +34,9 @@
                       <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.tip.description %></p>
                     </li>
                   <% elsif saved_tip.class == SavedUserTip %>
+                    <a class="tipsimage" href="#">
+                      <i class="fa-solid <%= find_icon(saved_tip.usertip.booking.challenge.category) %>"></i>
+                    </a>
                     <div class="info d-flex justify-content-between">
                       <% unless saved_tip.usertip.user == current_user %>
                         <li>
@@ -52,13 +55,13 @@
           </section>
         </div>
       </div>
-  <div class="accordion" id="accordionPanelsStayOpenExample">
+    </div>
     <div class="accordion-item">
-      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo-tip">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-tip" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo-tip">
             My created tips
         </button>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div id="panelsStayOpen-collapseTwo-tip" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo-tip">
         <div class="accordion-body">
           <section class="challenges">
             <ul class="ultips">
@@ -69,10 +72,12 @@
                   </a>
                   <li>
                     <div class="info d-flex justify-content-between">
-                      <h5><strong><%= saved_tip.tip.name %></strong></h5>
-                        <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-                          <i class="fa fa-bookmark"></i>
-                        <% end %>
+                      <h5><strong><%= tip.name %></strong></h5>
+                    </div>
+                    <div class="edit-icon">
+                      <%= link_to edit_usertip_path(tip), class:"tipsicon mt-2 me-2" do %>
+                        <i class="fa-solid fa-pen"></i>
+                      <% end %>
                     </div>
                     <div class="delete-icon">
                       <%= link_to usertip_path(tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
@@ -91,8 +96,10 @@
   </div>
 </div>
 
+</div>
+
 <ul class="btn-sticky-tips list-inline">
   <li class="list-inline-item btn-create-tips"><%= link_to "Create a new tip", new_usertip_path %></li>
   <li class="list-inline-item"><%= link_to "Save a new tip", tipsindex_path, class: "btn btn-grad" %></li>
 </ul>
-
+</div>
