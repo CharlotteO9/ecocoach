@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'events/index'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
   get 'profile_challenge', to: 'pages#profile_challenge'
   get 'tipsindex', to: 'pages#tipsindex'
   get 'seniorities', to: 'seniorities#index'
+  get 'events', to: 'events#index'
 end
