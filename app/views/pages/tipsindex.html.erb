@@ -6,7 +6,7 @@
   <p>Find the perfect tips 💡 to complete your challenges</p>
 </div>
 
-<div class="container" data-controller="search-tips tips-card">
+<div class="container-nav" data-controller="search-tips tips-card">
 
   <div id="search">
     <%= simple_form_for :search, url: tipsindex_path, method: :get, html: {
@@ -15,10 +15,10 @@
         action: 'submit->search-tips#search'
       }
     } do |f| %>
-    <div class="d-flex flex-row justify-content-center">
+    <div class="d-flex flex-row justify-content-center cb">
       <%= f.input :category,
                   legend_tag: false,
-                  as: :radio_buttons,
+                  as: :check_boxes,
                   collection: @categories,
                   input_html: {
                     class: "tag-selector",
@@ -30,7 +30,7 @@
     </div>
     <div class="search-elmts d-flex flex-row justify-content-center">
       <%= f.input :query, class: "form-control", placeholder: "Find a tip 🔍", label: false, input_html: { 'data-search-tips-target' => 'input', data: { action: 'keyup->search-tips#search' } } %>
-      <%= submit_tag "Search", class: "btn btn-grad search-btn" %><% end %>
+      <%= submit_tag "Search", class: "btn btn-grad search-btn d-none" %> <% end %>
     </div>
   </div>
 
