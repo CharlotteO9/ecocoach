@@ -1,21 +1,15 @@
 a {
   text-decoration: none;
-  color: gray;
 }
 
 .up-nav {
-  left: 0;
   position: fixed;
-  bottom: 1.9rem;
-  background-color: white;
-  padding-bottom: 1rem;
+  left: 0;
+  width: 100%;
+  bottom: 3rem;
 }
 
-.up-nav2 {
-  position: fixed;
-  bottom: 1.9rem;
-  background-color: white;
-}
+
 
 .tag-item {
   display: inline-block;

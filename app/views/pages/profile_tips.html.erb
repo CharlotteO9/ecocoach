@@ -7,7 +7,6 @@
   </div>
 
 <div class="container-non" data-controller="tips-card">
-
   <div class="accordion" id="accordionPanelsStayOpen-tip">
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingOne-tip">
@@ -96,10 +95,7 @@
   </div>
 </div>
 
-</div>
-
-<ul class="btn-sticky-tips list-inline">
-  <li class="list-inline-item btn-create-tips"><%= link_to "Create a new tip", new_usertip_path %></li>
-  <li class="list-inline-item"><%= link_to "Save a new tip", tipsindex_path, class: "btn btn-grad" %></li>
-</ul>
+<div class="btn-sticky-tips list-inline">
+  <%= link_to "Create a new tip", new_usertip_path, class: "btn-create-tips" %>
+  <%= link_to "Look for a new tip", tipsindex_path, class: "btn btn-grad" %>
 </div>

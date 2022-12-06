@@ -1,0 +1,18 @@
+.head {
+  .description {
+    padding: 0 1rem;
+    p {
+      text-align: center;
+    }
+  }
+}
+
+#new_booking {
+  li {
+    width: 100%;
+    text-align: center;
+    .booking-goal {
+      width: 100%;
+    }
+  }
+}
