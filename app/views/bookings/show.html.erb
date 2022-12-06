@@ -10,7 +10,10 @@
     </div>
     <div class="description">
       <p><%= Challenge.find(@booking.challenge_id).description %></p>
-      <p>My Goal: <%= @booking.goal %></p>
+    </div>
+    <p>My Goal:</p>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @booking.goal %>%;" aria-valuenow="<%= @booking.goal %>" aria-valuemin="0" aria-valuemax="100"><%= @booking.goal %>%</div>
     </div>
   </div>
     <h4>Need some tips</h4>
