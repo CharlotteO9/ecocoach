@@ -5,7 +5,7 @@ export default class extends Controller {
 
   search(event) {
     const csrfToken = document.querySelector('[name="csrf-token"]').content
-    const checkedCategoryInputs = Array.from(document.querySelectorAll('[name="search[category]"]')).filter(e => e.checked)
+    const checkedCategoryInputs = Array.from(document.querySelectorAll('[name="search[category][]"]')).filter(e => e.checked)
     if (checkedCategoryInputs.length > 0) {
       var categoryValue = checkedCategoryInputs[0].value
     } else {
