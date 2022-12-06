@@ -5,9 +5,17 @@
       width: 100%;
       margin-bottom: 20px
   }
+
+  input:not([type="submit"]):focus,
+  textarea:focus,
+  select:focus {
+    color: #7D9E7F;
+    border-color: #7D9E7F;
+    box-shadow: 0 0 0 0.2rem rgba(130, 159, 137, 0.25);
+  }
 }
 
-.email:focus {
+/* .email:focus {
   color: #7D9E7F;
   border-color: #7D9E7F;
   box-shadow: 0 0 0 0.2rem rgba(130, 159, 137, 0.25);
@@ -28,4 +36,4 @@
   color: #7D9E7F;
   border-color: #7D9E7F;
   box-shadow: 0 0 0 0.2rem rgba(130, 159, 137, 0.25);
-}
+} */
