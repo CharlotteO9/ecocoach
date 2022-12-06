@@ -1,4 +1,4 @@
-<div class="container-nav">
+<div class="container-nav" data-controller="tips-card">
   <div class="header">
     <div class="title-avatar">
       <h1>My tips</h1>
@@ -30,7 +30,7 @@
                             <i class="fa fa-bookmark"></i>
                           <% end %>
                       </div>
-                      <p class="padding-right"><%= saved_tip.tip.description.truncate(40) %></p>
+                      <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.tip.description %></p>
                     </li>
                   <% elsif saved_tip.class == SavedUserTip %>
                     <div class="info d-flex justify-content-between">
@@ -40,7 +40,7 @@
                           <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
                             <i class="fa fa-bookmark"></i>
                           <% end %>
-                          <p class="padding-right"><%= saved_tip.usertip.description.truncate(40) %></p>
+                          <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.usertip.description %></p>
                         </li>
                       <% end %>
                     </div>
@@ -77,7 +77,7 @@
                         <i class="fa-solid fa-trash-can"></i>
                       <% end %>
                     </div>
-                    <p class="padding-right"><%= tip.description.truncate(40) %></p>
+                    <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
                   </li>
                 </div>
               <% end %>
