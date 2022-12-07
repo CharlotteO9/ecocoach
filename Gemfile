@@ -21,6 +21,9 @@ gem "jsbundling-rails"
 # gem pundit
 gem "pundit"
 
+# gem simple calendar for events page
+gem "simple_calendar", "~> 2.4"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

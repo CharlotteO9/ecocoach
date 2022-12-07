@@ -1,6 +1,16 @@
-<div class="container">
-  <h1>Events around me</h1>
-  <% @events.each do |event| %>
-    <%= event.title %>
-  <% end %>
+<div class="header">
+  <div class="title-avatar">
+    <h1>Events around me</h1>
+  </div>
+  
+    <%= calendar number_of_days: 3 do |date| %>
+      <% @events.where(date:date).each do |event| %>
+        <%= event.title %>
+      <% end %>
+    <% end %>
+
+    <% @events.each do |event| %>
+      <%= event.title %>
+    <% end %>
+
 </div>
