@@ -26,6 +26,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 0.5rem 0.5rem 0.5rem;
+  align-items: baseline;
 }
 
 .title-avatar img {
@@ -43,4 +44,18 @@
   padding: 5px;
   color: white;
   margin: 0px;
+}
+
+.header .title-avatar i {
+  border: light;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  font-size: 2rem;
+  color: #115549;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

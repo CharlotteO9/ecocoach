@@ -1,12 +1,12 @@
 <div class="header header-green">
   <div class="title-avatar">
     <h1>My challenges</h1>
-    <img src="<%= current_user.avatar %>" alt="">
+    <i class="fa-solid fa-dumbbell"></i>
   </div>
   <p>Yes you can! 💪 Stay motivated <%= current_user.username %> 🏋️‍♀️ </p>
 </div>
 
-<div class="accordion" id="accordionPanelsStayOpen-challenge">
+<div class="accordion challenges-bottom" id="accordionPanelsStayOpen-challenge">
   <div class="accordion-item">
     <h2 class="accordion-header" id="panelsStayOpen-headingOne-challenge">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-challenge" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-challenge">
@@ -49,8 +49,9 @@
                   <div class="<%= Challenge.find(booking.challenge_id).category.downcase %>-icon icons">
                     <i class="fa-solid <%= find_icon(Challenge.find(booking.challenge_id).category) %>"></i>
                   </div>
-                  <div class="card-challenge-infos">
+                  <div class="card-challenge-infos past-challenges">
                     <h5><strong><%= Challenge.find(booking.challenge_id).name %></strong></h5>
+                    <i class="fa-solid fa-circle-check"></i>
                     <p><%= Challenge.find(booking.challenge_id).description.truncate(45) %></p>
                   </div>
                   <i class="fa-solid fa-chevron-right"></i>
