@@ -15,6 +15,7 @@
   margin-bottom: 2em;
   font-size: 32px;
   text-align: center;
+  margin-top: 1rem;
 }
 .card-seniority {
   background-color: white;
@@ -62,4 +63,29 @@
 }
 .card-disable {
   opacity: 40%;
+}
+
+.title-avatar i {
+  border: light;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #115549;
+  font-size: 1.85rem;
+  color: white;
+  padding: 6px;
+}
+
+.fa-solid.fa-arrow-left.green {
+  color: #115549;
+  font-size: larger;
+  padding-right: 1rem;
+}
+
+.profile-text {
+  font-size: 0.85rem;
+  color: #115549;
+  display: flex;
+  align-items: center;
+  margin-left: 0.685rem;
 }
