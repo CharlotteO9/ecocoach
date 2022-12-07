@@ -454,7 +454,7 @@ event = Event.create!(
   date: Date.new(2022, 12, 11),
   url: "https://www.un.org/en/observances/mountain-day",
   address: "Worlwide"
-  )
+)
 
 event0 = Event.create!(
   title: "Le traitement médiatique de l’urgence climatique",
@@ -462,16 +462,15 @@ event0 = Event.create!(
   date: Date.new(2022, 12, 13),
   url: "https://www.icp.fr/a-propos-de-licp/agenda/le-traitement-mediatique-de-lurgence-climatique-quels-enjeux-contemporains",
   address: "Paris"
-  )
-
+)
 
 event1 = Event.create!(
   title: "Atelier Mission Biodiversité",
   description: "3h pour comprendre les liens entre économie et biodiversité Au programme : apport de connaissances, cas pratique et intelligence collective.",
-  date: Date.new(2022, 16, 11),
+  date: Date.new(2022, 12, 16),
   url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite",
   address: "Lyon"
-  )
+)
 
 event2 = Event.create!(
   title: "International Conference on Climate Change and Global Warming",
@@ -479,8 +478,7 @@ event2 = Event.create!(
   date: Date.new(2023, 1, 23),
   url: "https://waset.org/climate-change-and-global-warming-conference-in-january-2023-in-london",
   address: "London"
-  )
-
+)
 
 event3 = Event.create!(
   title: "Bio360 Expo 2023",
@@ -488,7 +486,7 @@ event3 = Event.create!(
   date: Date.new(2023, 2, 8),
   url: "https://www.bio360expo.com/lang/en?gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D_k7Z8USIW5GMwDZ75glwYXDCswcsK9K9E6FjLO3Paoxs-0DYvy3EaArinEALw_wcB",
   address: "Nantes"
-  )
+)
 
 event4 = Event.create!(
   title: "Global recycling day",
@@ -496,7 +494,7 @@ event4 = Event.create!(
   date: Date.new(2023, 3, 18),
   url: "https://www.globalrecyclingday.com",
   address: "Worldwide"
-  )
+)
 
 event5 = Event.create!(
   title: "International Day of Forests",
@@ -504,7 +502,7 @@ event5 = Event.create!(
   date: Date.new(2023, 3, 21),
   url: "https://www.un.org/en/observances/forests-and-trees-day",
   address: "Worldwide"
-  )
+)
 
 event6 = Event.create!(
   title: "Earth hour",
@@ -512,8 +510,7 @@ event6 = Event.create!(
   date: Date.new(2023, 3, 25),
   url: "https://www.earthhour.org/",
   address: "Worldwide"
-  )
-
+)
 
 event7 = Event.create!(
   title: "Earth Day",
@@ -521,7 +518,7 @@ event7 = Event.create!(
   date: Date.new(2023, 4, 22),
   url: "https://climeworks.com/earth-day",
   address: "Worldwide"
-  )
+)
 
 event8 = Event.create!(
   title: "International Day for Biological Diversity",
@@ -529,8 +526,7 @@ event8 = Event.create!(
   date: Date.new(2023, 5, 22),
   url: "https://www.un.org/en/observances/biological-diversity-day",
   address: "Worldwide"
-  )
-
+)
 
 event9 = Event.create!(
   title: "World Environment Day",
@@ -538,8 +534,7 @@ event9 = Event.create!(
   date: Date.new(2023, 6, 5),
   url: "https://www.worldenvironmentday.global/overview",
   address: "Worldwide"
-  )
-
+)
 
 event10 = Event.create!(
   title: "World Oceans Day",
@@ -547,8 +542,7 @@ event10 = Event.create!(
   date: Date.new(2023, 6, 6),
   url: "https://www.un.org/en/observances/oceans-day",
   address: "Worldwide"
-  )
-
+)
 
 event11 = Event.create!(
   title: "World Cleanup Day",
@@ -556,8 +550,7 @@ event11 = Event.create!(
   date: Date.new(2023, 9, 16),
   url: "https://www.worldcleanupday.org/",
   address: "Worldwide"
-  )
-
+)
 
 event12 = Event.create!(
   title: "International Day for the Preservation of the Ozone Layer",
@@ -565,8 +558,7 @@ event12 = Event.create!(
   date: Date.new(2023, 9, 16),
   url: "https://www.un.org/en/observances/ozone-day",
   address: "Worldwide"
-  )
-
+)
 
 event13 = Event.create!(
   title: "Zero Emissions Day",
@@ -574,8 +566,7 @@ event13 = Event.create!(
   date: Date.new(2023, 9, 21),
   url: "https://climeworks.com/news/calculate-footprint-for-zero-emissions-day",
   address: "Worldwide"
-  )
-
+)
 
 event14 = Event.create!(
   title: "Climate Change & Sustainability conference",
@@ -583,7 +574,7 @@ event14 = Event.create!(
   date: Date.new(2023, 10, 16),
   url: "https://climateweek.thepeopleevents.com/",
   address: "New-York"
-  )
+)
 
 event15 = Event.create!(
   title: "International Mountain Day",
@@ -591,6 +582,6 @@ event15 = Event.create!(
   date: Date.new(2023, 12, 11),
   url: "https://www.un.org/en/observances/mountain-day",
   address: "Worldwide"
-  )
+)
 
 puts 'finished!!'
