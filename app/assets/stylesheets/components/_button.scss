@@ -43,8 +43,6 @@
   border-color: #115549;
   }
 
-
-
 #form-switch-status fieldset {
   margin-bottom: 0 !important;
 }
@@ -80,8 +78,18 @@
     }
   }
 }
-.cb {
-  margin-top: 1rem;
+
+.form-check-label.collection_check_boxes {
+  font-size: 20px;
+}
+
+#search .form-control {
+    border-radius: 1.5rem;
+    background-color: #a3baa34a;
+    border: none;
+    height: 2.6rem;
+    margin-bottom: 0;
+    font-size: 20px;
 }
 
 .btn-sticky-challenges {
