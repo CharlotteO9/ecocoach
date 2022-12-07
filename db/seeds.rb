@@ -74,6 +74,7 @@ challenge_food1 = Challenge.create!(
   category: 'Food',
   seniority: seniority1
 )
+
 challenge_transport1 = Challenge.create!(
   name: 'I want to ride my bicycle',
   description: "Choose the bike instead of car or public transport. Using a bike is always the best way to stay fit and keep our carbon footprint at the lowest,
@@ -99,9 +100,24 @@ challenge_purchase1 = Challenge.create!(
   category: 'Purchase',
   seniority: seniority1
 )
+challenge_purchase4 = Challenge.create!(
+  name: 'Say stop pub',
+  description: "While the quantities of these unsolicited printed materials have been declining since 2010.
+  But they nevertheless continue to be high: nearly 800,000 tons in France in 2015.
+  This corresponds to an average of 12 kg per inhabitant over a year or 30 kg per household.",
+  category: 'Purchase',
+  seniority: seniority1
+)
 challenge_waste1 = Challenge.create!(
   name: "Wastes are SORT of a big deal",
   description: "Sort your waste by using the correct bin for each waste.",
+  category: 'Waste',
+  seniority: seniority1
+)
+challenge_waste4 = Challenge.create!(
+  name: 'The good bag',
+  description: "Every year in France, 5 million tons of household packaging are put on the market.
+  It is up to you, the consumer, to be careful. ",
   category: 'Waste',
   seniority: seniority1
 )
@@ -111,6 +127,13 @@ puts 'creating beautiful flower challenges'
 challenge_food2 = Challenge.create!(
   name: 'Deliveries break',
   description: "Reduce food deliveries as much as possible to reduce transportation(CO2) and packaging",
+  category: 'Food',
+  seniority: seniority2
+)
+challenge_food4 = Challenge.create!(
+  name: 'Beautiful fish',
+  description: "Become an actor of the marine environment by favouring products from sustainable fishing.
+  Illegal fishing is far too present.",
   category: 'Food',
   seniority: seniority2
 )
@@ -217,6 +240,22 @@ Tip.create!(
   description: "Have different bin for the different waste with a visual list of what can go in it",
   challenge: challenge_waste1
 )
+Tip.create!(
+  name: 'Use a reusable bag',
+  description: "You can bring back and reuse your refillable packaging every time you go to the store.",
+  challenge: challenge_waste4
+)
+Tip.create!(
+  name: 'Choose the good fishmonger',
+  description: "Try to find out where the fish you buy comes from.",
+  challenge: challenge_food4
+)
+Tip.create!(
+  name: 'I say no',
+  description: "The best way, stick a stop pub on your mailbox.",
+  challenge: challenge_purchase4
+)
+
 
 Tip.create!(
   name: 'Shop local',
