@@ -20,22 +20,16 @@
               <% @my_saved_tips.each do |saved_tip| %>
                 <div class="cardtips">
                   <% if saved_tip.class == SavedTip %>
-                    <a class="tipsimage" href="#">
-                      <i class="fa-solid <%= find_icon(saved_tip.tip.challenge.category) %>"></i>
-                    </a>
+                    <i class="<%= saved_tip.tip.challenge.category.downcase %>-icon tipsimage fa-solid <%= find_icon(saved_tip.tip.challenge.category) %>"></i>
                     <li>
-                      <div class="info d-flex justify-content-between">
-                        <h5><strong><%= saved_tip.tip.name %></strong></h5>
-                          <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-                            <i class="fa fa-bookmark"></i>
-                          <% end %>
-                      </div>
+                      <h5><strong><%= saved_tip.tip.name %></strong></h5>
+                      <%= link_to saved_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                        <i class="fa fa-bookmark"></i>
+                      <% end %>
                       <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.tip.description %></p>
                     </li>
                   <% elsif saved_tip.class == SavedUserTip %>
-                    <a class="tipsimage" href="#">
-                      <i class="fa-solid <%= find_icon(saved_tip.usertip.booking.challenge.category) %>"></i>
-                    </a>
+                    <i class="<%= saved_tip.usertip.booking.challenge.category.downcase %>-icon tipsimage fa-solid <%= find_icon(saved_tip.usertip.booking.challenge.category) %>"></i>
                     <div class="info d-flex justify-content-between">
                       <% unless saved_tip.usertip.user == current_user %>
                         <li>
@@ -66,20 +60,16 @@
             <ul class="ultips">
               <% @my_created_tips.each do |tip| %>
                 <div class="cardtips">
-                  <a class="tipsimage" href="#">
-                    <i class="fa-solid fa-utensils"></i>
-                  </a>
+                  <i class="<%= tip.booking.challenge.category.downcase %>-icon tipsimage fa-solid <%= find_icon(tip.booking.challenge.category) %>"></i>
                   <li>
-                    <div class="info d-flex justify-content-between">
-                      <h5><strong><%= tip.name %></strong></h5>
-                    </div>
+                    <h5><strong><%= tip.name %></strong></h5>
                     <div class="edit-icon">
                       <%= link_to edit_usertip_path(tip), class:"tipsicon mt-2 me-2" do %>
                         <i class="fa-solid fa-pen"></i>
                       <% end %>
                     </div>
                     <div class="delete-icon">
-                      <%= link_to usertip_path(tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                      <%= link_to usertip_path(tip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"tipsicon mt-2 me-2" do %>
                         <i class="fa-solid fa-trash-can"></i>
                       <% end %>
                     </div>

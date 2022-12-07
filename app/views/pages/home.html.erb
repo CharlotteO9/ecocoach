@@ -1,16 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=776&q=80);">
-  <div class='container'>
-    <div class="text-banner">
-      <h1>EcoCoach</h1>
+  <div class="text-banner">
+    <h1>EcoCoach</h1>
 
-      <p>Get a coach & stay motivated to act on climate change!</p>
-      <div class="btn btn-flat">
-        <% if user_signed_in? %>
-          <%= link_to "Start the coaching", profile_path %>
-        <% else %>
-          <%= link_to "Start the coaching", new_user_session_path %>
-        <% end %>
-      </div>
+    <p>Get a coach & stay motivated to act on climate change!</p>
+    <div class="btn btn-flat">
+      <% if user_signed_in? %>
+        <%= link_to "Start the coaching", profile_path %>
+      <% else %>
+        <%= link_to "Start the coaching", new_user_session_path %>
+      <% end %>
     </div>
   </div>
 </div>

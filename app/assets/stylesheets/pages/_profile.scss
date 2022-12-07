@@ -26,10 +26,15 @@
   background-color: #9ABDA4;
   border-radius: 2px;
   margin-bottom: 1rem;
+  border-radius: 50px;
 }
 
 .progress-bar {
   background-color: white;
+}
+
+.progress-bar .goal {
+  background-color: #115549;
 }
 
 .cards {
