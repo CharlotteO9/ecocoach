@@ -1,16 +1,16 @@
 <div class="header">
   <div class="title-avatar">
-    <h1>Events around me</h1>
+    <h1>Events</h1>
   </div>
-  
-    <%= calendar number_of_days: 3 do |date| %>
-      <% @events.where(date:date).each do |event| %>
-        <%= event.title %>
-      <% end %>
-    <% end %>
+</div>
 
-    <% @events.each do |event| %>
-      <%= event.title %>
+<div class="container-nav">
+  <h1>Events around me</h1>
+  <%= calendar number_of_days: 4 do |date| %>
+    <% @events.where(date: date).each do |event| %>
+      <div class="title">
+      <%= link_to event.title.truncate(10), event.url %>
+      </div>
     <% end %>
-
+  <% end %>
 </div>
