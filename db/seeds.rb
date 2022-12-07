@@ -448,7 +448,79 @@ cha_tip2 = Usertip.create!(
 
 puts 'puts creating event'
 
-event = Event.create!(
+event_demo1 = Event.create!(
+  title: "Le traitement médiatique de l’urgence climatique",
+  description: "Les étudiants du Master Politiques environnementales et Management du Développement durable de l'ICP organisent le mardi 13 décembre 2022 leur conférence annuelle sur «Le traitement médiatique de l’urgence climatique : quels enjeux contemporains ?",
+  date: Date.new(2022, 12, 9),
+  url: "https://www.icp.fr/a-propos-de-licp/agenda/le-traitement-mediatique-de-lurgence-climatique-quels-enjeux-contemporains",
+  address: "Paris"
+)
+
+event_demo2 = Event.create!(
+  title: "Atelier Mission Biodiversité",
+  description: "3h pour comprendre les liens entre économie et biodiversité Au programme : apport de connaissances, cas pratique et intelligence collective.",
+  date: Date.new(2022, 12, 9),
+  url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite",
+  address: "Lyon"
+)
+
+event_demo3 = Event.create!(
+  title: "Time to Change 2023",
+  description: "Echanges entre les acteurs clés du financement et les porteurs de projets sur les grands enjeux de la transition énergétique.",
+  date: Date.new(2022, 12, 9),
+  url: "https://www.greenunivers.com/time-to-change-2023/",
+  address: "Grenoble"
+)
+
+event_demo4 = Event.create!(
+  title: 'Journée scientifique "Comprendre et s’approprier les messages-clés du 6e rapport du GIEC"',
+  description: "Un décryptage des messages-clés du rapport et à la façon dont les parties prenantes s’en emparent déjà.",
+  date: Date.new(2022, 12, 9),
+  url: "https://meteoetclimat.fr/nos-activites/journees-scientifiques/journee-scientifique-paris-2022/",
+  address: "Paris"
+)
+
+event_demo5 = Event.create!(
+  title: "BePOSITIVE",
+  description: "Rendez-vous sur BePOSITIVE, l’événement de ceux qui construisent le monde décarboné de demain !",
+  date: Date.new(2022, 12, 9),
+  url: "https://www.bepositive-events.com/fr",
+  address: "Bordeaux"
+)
+
+event_demo6 = Event.create!(
+  title: "World Cleanup Day",
+  description: "World Cleanup Day unites millions of volunteers, governments and organisations in 191 countries  to tackle the global waste problem and build up the new and sustainable world.",
+  date: Date.new(2022, 12, 10),
+  url: "https://www.worldcleanupday.org/",
+  address: "Worldwide"
+)
+
+event_demo7 = Event.create!(
+  title: "International Conference on Climate Change and Global Warming",
+  description: "International Conference on Climate Change and Global Warming aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Climate Change and Global Warming.",
+  date: Date.new(2022, 12, 10),
+  url: "https://waset.org/climate-change-and-global-warming-conference-in-january-2023-in-london",
+  address: "Paris"
+)
+
+event_demo8 = Event.create!(
+  title: "Bio360 Expo 2023",
+  description: "It is an international place of meeting for people and organisations who share a dedication to this mission and who have or wish to nail their colours to the biotransition mast.",
+  date: Date.new(2022, 12, 10),
+  url: "https://www.bio360expo.com/lang/en?gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D_k7Z8USIW5GMwDZ75glwYXDCswcsK9K9E6FjLO3Paoxs-0DYvy3EaArinEALw_wcB",
+  address: "Nantes"
+)
+
+event_demo9 = Event.create!(
+  title: "International Conference on Information and Communications Technology for Sustainability",
+  description: "Sustainability is of primary interest in the context of an in-person event, with a specific sustainability chair in the organizing committee.",
+  date: Date.new(2022, 12, 10),
+  url: "https://conf.researchr.org/home/ict4s-2023",
+  address: "Paris"
+)
+
+event_demo10  = Event.create!(
   title: "International Mountain Day",
   description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about.",
   date: Date.new(2022, 12, 11),
@@ -456,39 +528,43 @@ event = Event.create!(
   address: "Worlwide"
 )
 
-event0 = Event.create!(
-  title: "Le traitement médiatique de l’urgence climatique",
-  description: "Les étudiants du Master Politiques environnementales et Management du Développement durable de l'ICP organisent le mardi 13 décembre 2022 leur conférence annuelle sur «Le traitement médiatique de l’urgence climatique : quels enjeux contemporains ?",
-  date: Date.new(2022, 12, 13),
-  url: "https://www.icp.fr/a-propos-de-licp/agenda/le-traitement-mediatique-de-lurgence-climatique-quels-enjeux-contemporains",
-  address: "Paris"
+event_demo11 = Event.create!(
+  title: "Balade thermographique : par ou s’echappe la chaleur de nos maisons ?",
+  description: "Balade dans les rues de la ville afin d’observer les bâtiments à l’aide d’une caméra thermique. L’objectif ? Visualiser les défauts d’isolation et réfléchir à des solutions concrètes pour y pallier.",
+  date: Date.new(2022, 12, 11),
+  url: "https://www.alec-montpellier.org/",
+  address: "Marseille"
 )
 
-event1 = Event.create!(
-  title: "Atelier Mission Biodiversité",
-  description: "3h pour comprendre les liens entre économie et biodiversité Au programme : apport de connaissances, cas pratique et intelligence collective.",
-  date: Date.new(2022, 12, 16),
-  url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite",
-  address: "Lyon"
-)
-
-event2 = Event.create!(
-  title: "International Conference on Climate Change and Global Warming",
-  description: "International Conference on Climate Change and Global Warming aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Climate Change and Global Warming.",
-  date: Date.new(2023, 1, 23),
-  url: "https://waset.org/climate-change-and-global-warming-conference-in-january-2023-in-london",
-  address: "London"
-)
-
-event3 = Event.create!(
-  title: "Bio360 Expo 2023",
-  description: "It is an international place of meeting for people and organisations who share a dedication to this mission and who have or wish to nail their colours to the biotransition mast.",
-  date: Date.new(2023, 2, 8),
-  url: "https://www.bio360expo.com/lang/en?gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D_k7Z8USIW5GMwDZ75glwYXDCswcsK9K9E6FjLO3Paoxs-0DYvy3EaArinEALw_wcB",
+event_demo12 = Event.create!(
+  title: "Forêts, Biens Communs 4 - Faire renaître une forêt primaire en Europe de l'Ouest",
+  description: "Cette rencontre sera l’occasion de faire un état des lieux de ces forêts primaires* sur la planète et d’explorer leurs spécificités et caractéristiques.",
+  date: Date.new(2022, 12, 11),
+  url: "https://www.universitebiencommun.org/",
   address: "Nantes"
 )
 
-event4 = Event.create!(
+event_demo13 = Event.create!(
+  title: "Soirée politique sur l’avenir de l’industrie entre crise énergétique et décarbonation",
+  description: "Entre crise énergétique et décarbonation – quel avenir pour l’industrie en France et en Allemagne ?",
+  date: Date.new(2022, 12, 12),
+  url: "https://energie-fr-de.eu/fr/manifestations/lecteur/soiree-politique-sur-lavenir-de-lindustrie-entre-crise-energetique-et-decarbonation.html",
+  address: "Toulouse"
+)
+
+event_demo14 = Event.create!(
+  title: "Climate Change & Sustainability conference",
+  description: "The annual gathering of climate leaders from the academic, business, public and nonprofit sectors.",
+  date: Date.new(2022, 12, 13),
+  url: "https://climateweek.thepeopleevents.com/",
+  address: "New-York"
+)
+
+
+
+
+
+event1 = Event.create!(
   title: "Global recycling day",
   description: "Global Recycling Day was created to help recognise, and celebrate, the importance recycling plays in preserving our precious primary resources and securing the future of our planet.",
   date: Date.new(2023, 3, 18),
@@ -496,7 +572,7 @@ event4 = Event.create!(
   address: "Worldwide"
 )
 
-event5 = Event.create!(
+event2 = Event.create!(
   title: "International Day of Forests",
   description: "This day draws attention to forests as a key resource to combat climate change.",
   date: Date.new(2023, 3, 21),
@@ -504,7 +580,7 @@ event5 = Event.create!(
   address: "Worldwide"
 )
 
-event6 = Event.create!(
+event3 = Event.create!(
   title: "Earth hour",
   description: "Earth Hour is the world's largest environmental movement for the planet that involves 178 countries and territories worldwide.",
   date: Date.new(2023, 3, 25),
@@ -512,7 +588,7 @@ event6 = Event.create!(
   address: "Worldwide"
 )
 
-event7 = Event.create!(
+event4 = Event.create!(
   title: "Earth Day",
   description: "Earth Day is celebrated to encourage people to take climate action.",
   date: Date.new(2023, 4, 22),
@@ -520,7 +596,7 @@ event7 = Event.create!(
   address: "Worldwide"
 )
 
-event8 = Event.create!(
+event5 = Event.create!(
   title: "International Day for Biological Diversity",
   description: "The International Day for Biological Diversity was created to increase understanding and awareness of biodiversity loss.",
   date: Date.new(2023, 5, 22),
@@ -528,7 +604,7 @@ event8 = Event.create!(
   address: "Worldwide"
 )
 
-event9 = Event.create!(
+event6 = Event.create!(
   title: "World Environment Day",
   description: "World Environment Day on 5 June is the United Nation’s flagship day for promoting environmental awareness.",
   date: Date.new(2023, 6, 5),
@@ -536,7 +612,7 @@ event9 = Event.create!(
   address: "Worldwide"
 )
 
-event10 = Event.create!(
+event7 = Event.create!(
   title: "World Oceans Day",
   description: "World Oceans Day raises global awareness of the importance of our ocean and reminds us that we need to protect our marine ecosystem.",
   date: Date.new(2023, 6, 6),
@@ -544,15 +620,7 @@ event10 = Event.create!(
   address: "Worldwide"
 )
 
-event11 = Event.create!(
-  title: "World Cleanup Day",
-  description: "World Cleanup Day unites millions of volunteers, governments and organisations in 191 countries  to tackle the global waste problem and build up the new and sustainable world.",
-  date: Date.new(2023, 9, 16),
-  url: "https://www.worldcleanupday.org/",
-  address: "Worldwide"
-)
-
-event12 = Event.create!(
+event8 = Event.create!(
   title: "International Day for the Preservation of the Ozone Layer",
   description: "This event commemorates the date of the signing of the Montreal Protocol on Substances that Deplete the Ozone Layer in 1987.",
   date: Date.new(2023, 9, 16),
@@ -560,7 +628,7 @@ event12 = Event.create!(
   address: "Worldwide"
 )
 
-event13 = Event.create!(
+event9 = Event.create!(
   title: "Zero Emissions Day",
   description: "Zero Emissions Day, was created to highlight the harm that is caused by CO₂ emissions and to try and give the world a break from fossil fuels.",
   date: Date.new(2023, 9, 21),
@@ -568,15 +636,7 @@ event13 = Event.create!(
   address: "Worldwide"
 )
 
-event14 = Event.create!(
-  title: "Climate Change & Sustainability conference",
-  description: "The annual gathering of climate leaders from the academic, business, public and nonprofit sectors.",
-  date: Date.new(2023, 10, 16),
-  url: "https://climateweek.thepeopleevents.com/",
-  address: "New-York"
-)
-
-event15 = Event.create!(
+event10 = Event.create!(
   title: "International Mountain Day",
   description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about.",
   date: Date.new(2023, 12, 11),
