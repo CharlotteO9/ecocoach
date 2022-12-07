@@ -9,8 +9,6 @@ a {
   bottom: 3rem;
 }
 
-
-
 .tag-item {
   display: inline-block;
 }
@@ -33,7 +31,7 @@ a {
 }
 
 .tag-selector:checked + label {
-  background-color: #125548;
+  background-color: $ecogreen;
   color: white;
 }
 
@@ -49,4 +47,81 @@ a {
   border-radius: 0 1.5rem 1.5rem 0;
   height: 2.6rem;
   line-height: 0;
+}
+
+
+.form-switch .form-check-input {
+  width: 10em;
+  margin-bottom: 1em;
+  margin-left: -2.5em;
+  background-position: left center;
+  border-radius: 2em;
+  transition: background-position 0.15s ease-in-out;
+}
+.form-check-input[type="checkbox"] {
+    border-radius: 4.25em;
+}
+.form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em;
+}
+.form-check-input {
+    width: 1em;
+    height: 3em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #F4F4F4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    appearance: none;
+}
+
+.toggle-switch {
+  position: relative;
+  .toggle-switch-icon {
+    position: absolute;
+    top: 15.1px;
+  }
+  .toggle-switch-icon i {
+    font-size: 1.5em;
+    color: $ecogreen;
+  }
+  .button-icon-off {
+    left: 11.8px;
+  }
+  .button-icon-on {
+    visibility: hidden;
+    right: 11.8px;
+  }
+  .form-check-input:checked + span.button-icons {
+    .button-icon-on {
+       visibility: visible;
+    }
+    .button-icon-off {
+      visibility: hidden;
+    }
+  }
+
+  .form-check-input:focus {
+    border: none;
+    box-shadow: unset;
+    content: ''
+  }
+  .form-check-input:focus:not(:checked) {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+  }
+
+  .form-check-input:not(:checked):after {
+    content: 'Completed?';
+    color: $ecogreen;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 41%;
+    left: 58%;
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+  }
 }
