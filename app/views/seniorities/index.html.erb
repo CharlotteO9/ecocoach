@@ -14,7 +14,7 @@
           <i class="fa-solid <%= seniority_icons(seniority.name.gsub(' ','-').downcase) %>"></i>
         </div>
         <div class="card-seniority-infos <%if seniority.ranking > current_user.seniority.ranking%>card-disable<%end%>">
-          <h4><strong><%= seniority.name %></strong></h4>
+          <h4><%= seniority.name %></h4>
           <p><%= seniority.description %></p>
         </div>
         <%if seniority.ranking > current_user.seniority.ranking%>
