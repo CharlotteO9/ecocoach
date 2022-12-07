@@ -53,9 +53,11 @@
   } */
 
   body {
-    background-image: url('assets/error-img.png');
-    background-size: cover;
     margin: 0;
+  }
+
+  img {
+    width: 100%
   }
 
   .text {
@@ -98,6 +100,7 @@
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
+  <img src="images/error-img.png" alt="500">
   <div class="text">
     <h1>We're sorry, but something went wrong.</h1>
     <a href="http://www.eco-coach.me">Go back to EcoCoach</a>
