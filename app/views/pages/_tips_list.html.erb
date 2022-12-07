@@ -3,19 +3,17 @@
     <div class="cardtips">
       <i class="<%= tip.challenge.category.downcase %>-icon tipsimage fa-solid <%= find_icon(tip.challenge.category) %>"></i>
       <li>
-        <div class="info d-flex justify-content-between">
-          <h5><strong><%= tip.name %></strong></h5>
-          <% if current_user.saved_tips.where(tip: tip).empty? %>
-            <%= link_to tip_saved_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
-              <i class="fa-regular fa-bookmark"></i>
-            <% end %>
-          <% else %>
-            <% st = current_user.saved_tips.select{ |st| st if st.tip_id == tip.id } %>
-            <%= link_to saved_tip_path(st), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-              <i class="fa fa-bookmark"></i>
-            <% end %>
+        <h5><strong><%= tip.name %></strong></h5>
+        <% if current_user.saved_tips.where(tip: tip).empty? %>
+          <%= link_to tip_saved_tips_path(tip), data: {turbo_method: :post}, class:"tipsicon mt-2 me-2" do %>
+            <i class="fa-regular fa-bookmark"></i>
           <% end %>
-        </div>
+        <% else %>
+          <% st = current_user.saved_tips.select{ |st| st if st.tip_id == tip.id } %>
+          <%= link_to saved_tip_path(st), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+            <i class="fa fa-bookmark"></i>
+          <% end %>
+        <% end %>
         <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
         <%# <p>Challenge category: <%= tip.challenge.category  %>
       </li>

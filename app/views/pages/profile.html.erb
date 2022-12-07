@@ -6,22 +6,21 @@
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
       </div>
   </div>
-  <p>Hello <%= current_user.username %>! 👋 </p>
+  <p>Welcome <%= current_user.username %>! 👋 </p>
 </div>
 
 <div class="container-nav">
   <div class="activity-report">
-    <h2>Activity report</h2>
+    <h2>Hello <%= current_user.seniority.name %>! <i class="fa-solid <%= seniority_icons(current_user.seniority.name.gsub(' ','-').downcase) %>"></i></h2>
     <%= link_to seniorities_path do %>
       <div class="profile-cards green-card" id="seniority">
-        <p> <strong>Level:</strong> You are a <%= current_user.seniority.name %></p>
         <div class="progress">
           <div class="progress-bar" role="progressbar" style="width: <%= @progress %>%" aria-valuenow="<%= @progress %>" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <% if @next_seniority.nil? %>
           <p>You are an amazing eco citizen! </p>
         <% else %>
-          <p><%= @remaining %>% remaining to become the <%= @next_seniority.name %>.</p>
+          <p><strong>Level: </strong><%= @remaining %>% remaining to become the <%= @next_seniority.name %>.</p>
         <% end %>
         <i class="fa-solid fa-arrow-right white" id="arrow-seniority"></i>
       </div>
@@ -62,7 +61,24 @@
   </div>
 
   <div class="daily-tips">
-    <h2>Daily tips</h2>
+    <h2>Event this week</h2>
+    <%= link_to events_path do %>
+      <p>See more <i class="fa-solid fa-arrow-right green"></i></p>
+    <% end %>
+  </div>
+
+  <ul class="cards">
+    <% @events.each do |event| %>
+      <li class="card card-scroll">
+        <p><strong><%= event.title %></strong></p>
+        <p><%= event.date.strftime("%-d %b %Y") %></p>
+        <p><%= event.address %></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="daily-tips">
+    <h2>Weekly tips</h2>
     <%= link_to tipsindex_path do %>
       <p>See more <i class="fa-solid fa-arrow-right green"></i></p>
     <% end %>

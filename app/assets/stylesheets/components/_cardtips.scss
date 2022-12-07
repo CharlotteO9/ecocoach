@@ -1,7 +1,6 @@
 .cardtips {
   overflow: hidden; // truncate
-  width:100%;
-  background-color: #F9F9F1;
+  background-color: #EEE7D3;
   box-shadow: 0 10px 15px rgba(0,0,0,0.25);
   border-radius: 10px;
   display: flex;
@@ -18,14 +17,15 @@
   font-size: 1.25rem;
   text-align: left;
   font-weight: 700;
+  padding-right: 3rem;
 }
 
 .tipsicon {
   color: #115549;
-  font-size: 1rem;
+  font-size: 1.25rem;
   position: absolute;
   top: 0rem;
-  right: 0rem;
+  right: 0.5rem;
 }
 
 .tipsimage {
@@ -71,7 +71,7 @@
 
 .delete-icon {
   position: absolute;
-  top: 3rem;
+  bottom: 2.5rem;
   right: 0rem;
   color: #115549;
 }
