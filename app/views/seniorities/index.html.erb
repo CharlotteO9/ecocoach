@@ -1,12 +1,16 @@
 <div class="header">
   <div class="title-avatar">
     <h1>Levels</h1>
-    <%= image_tag current_user.avatar %>
+    <i class="fa-solid fa-ranking-star"></i>
+    <%# <%= image_tag current_user.avatar %>
   </div>
   <p>Complete 5 challenges to unlock the next level.</p>
 </div>
 
 <div class="container-nav">
+  <%= link_to profile_path do %>
+    <p class="profile-text"><i class="fa-solid fa-arrow-left green"></i>  Go back to profile</p>
+  <% end %>
   <section class="seniorities">
     <% @seniorities.each do |seniority| %>
       <div class="card-seniority position-relative">
