@@ -3,8 +3,24 @@
     <%= simple_form_for [@challenge, @booking], html:{class: "d-flex align-items-center w-100 flex-column "} do |f| %>
     <li class="d-flex justify-content-around">
       <% if @booking.persisted? %>
-        <div class="form-check form-switch" id="form-switch-status">
-          <%= f.input :status, as: :boolean, class: "form-check-input", label: false %>
+        <div class="form-check form-switch form-group" id="form-switch-status">
+        	<label class="toggle-switch">
+            <%#= f.input :status, as: :boolean, class: "form-check-input", label: false %>
+            <fieldset class="mb-3 boolean optional booking_status">
+              <div class="form-check">
+                <input name="booking[status]" type="hidden" value="0" autocomplete="off">
+                <input class="form-check-input boolean optional" type="checkbox" value="1" name="booking[status]" id="booking_status">
+                <span class="button-icons">
+                  <span class="button-icon button-icon-on toggle-switch-icon">
+                    <i class="fa-regular fa-circle-check"></i>
+                  </span>
+                  <span class="button-icon button-icon-off toggle-switch-icon">
+                    <i class="fa-solid fa-earth-africa"></i>
+                  </span>
+                </span>
+              </div>
+            </fieldset>
+          </label>
         </div></li>
     <li class="d-flex justify-content-around">
       <% else %>
@@ -15,7 +31,7 @@
       <% end %></li>
       <% Time.now.strftime('%U') %>
       <% if @booking.persisted? %>
-        <%= f.submit "Confirm success", class: "btn-grad btn-success"%>
+        <%= f.submit "Confirm evaluation", class: "btn-grad btn-success"%>
       <% else %>
         <%= f.submit "Add this challenge", class: "btn-grad" %>
       <% end %>

@@ -45,7 +45,7 @@ class PagesController < ApplicationController
     @categories = Challenge.all.pluck(:category).uniq
 
     if params[:search]
-      category_param = (x = params.dig(:search, :category)).empty? ? @categories : x
+      category_param = (x = params.dig(:search, :category)).nil? || x.empty? ? @categories : x
       @tips = Tip.left_outer_joins(:challenge)
                  .where(challenge: { category: category_param })
                  .where('tips.name ILIKE :query OR tips.description ILIKE :query', query: "%#{params.dig(:search, :query)}%")
