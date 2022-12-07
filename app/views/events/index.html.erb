@@ -5,15 +5,21 @@
 </div>
 
 <div class="container-nav">
-  <h3>Events around me</h1>
-  <ul>
-    <div class="events-cards">
+  <h3 class="title-avatar mt-2 mb-4">Events around me</h1>
+    <div class="event-list">
       <%= @events.each do |event| %>
-        <li><%= event.title %></li>
-        <li><%= event.description %></li>
-        <li><%= event.address %></li>
-        <li><%= link_to 'Know More', event.url %></li>
+      <div class="event-card">
+        <div class="date-card">
+          <p class="day"><%= event.date.strftime("%d") %></p>
+          <p class="month"><%= event.date.strftime("%b") %></p>
+        </div>
+        <div class="full-event">
+          <p class="title"><strong><%= event.title %></strong></p>
+          <p><%= event.description %></p>
+          <p><%= event.address %></p>
+          <p><%= link_to 'Know More', event.url %></p>
+        </div>
+      </div>
       <% end %>
     </div>
-  </ul>
 </div>
