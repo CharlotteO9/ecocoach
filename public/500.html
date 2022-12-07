@@ -52,15 +52,17 @@
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   } */
 
-  .img {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  body {
+    margin: 0;
+  }
+
+  img {
+    width: 100%
   }
 
   .text {
     position: absolute;
-    top: 82px;
+    top: 4rem;
     color: white;
     padding: 2rem;
     text-align: center;
@@ -72,37 +74,36 @@
   }
 
   .text p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.25rem;
-}
+    family: 'Open Sans', sans-serif;
+    font: 1em sans-serif;ont-size: 1.25rem;
+  }
 
   .text a {
-  background-image: linear-gradient(to right, #115540 0%, #237A57  51%, #115540  100%);
-  // margin-top: 10px;
-  padding: 10px 20px;
-  text-align: center;
-  // transition: 0.5s;
-  // background-size: 100% auto;
-  color: white;
-  box-shadow: 0 0 20px rgba(238, 238, 238, 0);
-  border-radius: 10px;
-  display: block;
-  border:none;
-  text-decoration: none;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
+    background-image: linear-gradient(to right, #115540 0%, #237A57  51%, #115540  100%);
+    // margin-top: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    // transition: 0.5s;
+    // background-size: 100% auto;
+    color: white;
+    box-shadow: 0 0 20px rgba(238, 238, 238, 0);
+    border-radius: 10px;
+    display: block;
+    border:none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
   }
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <img src="assets/error-img.png" alt="My image">
-    <div class="text">
-      <h1>We're sorry, but something went wrong.</h1>
-      <a href="http://www.eco-coach.me">Go back to EcoCoach</a>
-    </div>
+  <img src="images/error-img.png" alt="500">
+  <div class="text">
+    <h1>We're sorry, but something went wrong.</h1>
+    <a href="http://www.eco-coach.me">Go back to EcoCoach</a>
   </div>
 </body>
 </html>
