@@ -5,12 +5,15 @@
 </div>
 
 <div class="container-nav">
-  <h1>Events around me</h1>
-  <%= calendar number_of_days: 4 do |date| %>
-    <% @events.where(date: date).each do |event| %>
-      <div class="title">
-      <%= link_to event.title.truncate(10), event.url %>
-      </div>
-    <% end %>
-  <% end %>
+  <h3>Events around me</h1>
+  <ul>
+    <div class="events-cards">
+      <%= @events.each do |event| %>
+        <li><%= event.title %></li>
+        <li><%= event.description %></li>
+        <li><%= event.address %></li>
+        <li><%= link_to 'Know More', event.url %></li>
+      <% end %>
+    </div>
+  </ul>
 </div>
