@@ -37,7 +37,7 @@
   font-size: 25px;
 }
 .card-challenge .food-icon {
-  background-color: #f6d029;
+  background-color: #edc306;
 }
 .card-challenge .transport-icon {
   background-color: #0c69db;
@@ -49,5 +49,14 @@
   background-color: darkgreen;
 }
 .card-challenge .purchase-icon {
-  background-color: #f5aee1;
+  background-color: #5e1e4c;
+}
+.challenges .card-challenge {
+  position: relative;
+}
+.past-challenges i {
+  position: absolute;
+  right: -12px;
+  top: -16px;
+  color: green;
 }
