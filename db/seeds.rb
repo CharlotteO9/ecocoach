@@ -448,140 +448,140 @@ cha_tip2 = Usertip.create!(
 
 puts 'puts creating event'
 
-event = Event.create!{
-  title: "International Mountain Day"
-  description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about."
-  date: Date.new(2022, 12, 11)
-  url: "https://www.un.org/en/observances/mountain-day"
+event = Event.create!(
+  title: "International Mountain Day",
+  description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about.",
+  date: Date.new(2022, 12, 11),
+  url: "https://www.un.org/en/observances/mountain-day",
   address: "Worlwide"
-  }
+)
 
-event0 = Event.create!{
-  title: "Le traitement médiatique de l’urgence climatique"
-  description: "Les étudiants du Master Politiques environnementales et Management du Développement durable de l'ICP organisent le mardi 13 décembre 2022 leur conférence annuelle sur «Le traitement médiatique de l’urgence climatique : quels enjeux contemporains ? »"
-  date: Date.new(2022, 12, 13)
-  url: "https://www.icp.fr/a-propos-de-licp/agenda/le-traitement-mediatique-de-lurgence-climatique-quels-enjeux-contemporains"
+event0 = Event.create!(
+  title: "Le traitement médiatique de l’urgence climatique",
+  description: "Les étudiants du Master Politiques environnementales et Management du Développement durable de l'ICP organisent le mardi 13 décembre 2022 leur conférence annuelle sur «Le traitement médiatique de l’urgence climatique : quels enjeux contemporains ?",
+  date: Date.new(2022, 12, 13),
+  url: "https://www.icp.fr/a-propos-de-licp/agenda/le-traitement-mediatique-de-lurgence-climatique-quels-enjeux-contemporains",
   address: "Paris"
-  }
+)
 
-event1 = Event.create!{
-  title: "Atelier Mission Biodiversité"
-  description: "3h pour comprendre les liens entre économie et biodiversité Au programme : apport de connaissances, cas pratique et intelligence collective."
-  date: Date.new(2022, 16, 11)
-  url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite"
+event1 = Event.create!(
+  title: "Atelier Mission Biodiversité",
+  description: "3h pour comprendre les liens entre économie et biodiversité Au programme : apport de connaissances, cas pratique et intelligence collective.",
+  date: Date.new(2022, 12, 16),
+  url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite",
   address: "Lyon"
-  }
+)
 
-event2 = Event.create!{
-  title: "International Conference on Climate Change and Global Warming"
-  description: "International Conference on Climate Change and Global Warming aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Climate Change and Global Warming."
-  date: Date.new(2023, 01, 23)
-  url: "https://waset.org/climate-change-and-global-warming-conference-in-january-2023-in-london"
+event2 = Event.create!(
+  title: "International Conference on Climate Change and Global Warming",
+  description: "International Conference on Climate Change and Global Warming aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Climate Change and Global Warming.",
+  date: Date.new(2023, 1, 23),
+  url: "https://waset.org/climate-change-and-global-warming-conference-in-january-2023-in-london",
   address: "London"
-  }
+)
 
-event3 = Event.create!{
-  title: "Bio360 Expo 2023"
-  description: "It is an international place of meeting for people and organisations who share a dedication to this mission and who have or wish to nail their colours to the biotransition mast."
-  date: Date.new(2023, 02, 08)
-  url: "https://www.bio360expo.com/lang/en?gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D_k7Z8USIW5GMwDZ75glwYXDCswcsK9K9E6FjLO3Paoxs-0DYvy3EaArinEALw_wcB"
+event3 = Event.create!(
+  title: "Bio360 Expo 2023",
+  description: "It is an international place of meeting for people and organisations who share a dedication to this mission and who have or wish to nail their colours to the biotransition mast.",
+  date: Date.new(2023, 2, 8),
+  url: "https://www.bio360expo.com/lang/en?gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0D_k7Z8USIW5GMwDZ75glwYXDCswcsK9K9E6FjLO3Paoxs-0DYvy3EaArinEALw_wcB",
   address: "Nantes"
-  }
+)
 
-event4 = Event.create!{
-  title: "Global recycling day"
-  description: "Global Recycling Day was created to help recognise, and celebrate, the importance recycling plays in preserving our precious primary resources and securing the future of our planet."
-  date: Date.new(2023, 03, 18)
-  url: "https://www.globalrecyclingday.com"
+event4 = Event.create!(
+  title: "Global recycling day",
+  description: "Global Recycling Day was created to help recognise, and celebrate, the importance recycling plays in preserving our precious primary resources and securing the future of our planet.",
+  date: Date.new(2023, 3, 18),
+  url: "https://www.globalrecyclingday.com",
   address: "Worldwide"
-  }
+)
 
-event5 = Event.create!{
-  title: "International Day of Forests"
-  description: "This day draws attention to forests as a key resource to combat climate change."
-  date: Date.new(2023, 03, 21)
-  url: "https://www.un.org/en/observances/forests-and-trees-day"
+event5 = Event.create!(
+  title: "International Day of Forests",
+  description: "This day draws attention to forests as a key resource to combat climate change.",
+  date: Date.new(2023, 3, 21),
+  url: "https://www.un.org/en/observances/forests-and-trees-day",
   address: "Worldwide"
-  }
+)
 
-event6 = Event.create!{
-  title: "Earth hour"
-  description: "Earth Hour is the world's largest environmental movement for the planet that involves 178 countries and territories worldwide."
-  date: Date.new(2023, 03, 25)
-  url: "https://www.earthhour.org/"
+event6 = Event.create!(
+  title: "Earth hour",
+  description: "Earth Hour is the world's largest environmental movement for the planet that involves 178 countries and territories worldwide.",
+  date: Date.new(2023, 3, 25),
+  url: "https://www.earthhour.org/",
   address: "Worldwide"
-  }
+)
 
-event7 = Event.create!{
-  title: "Earth Day"
-  description: "Earth Day is celebrated to encourage people to take climate action."
-  date: Date.new(2023, 04, 22)
-  url: "https://climeworks.com/earth-day"
+event7 = Event.create!(
+  title: "Earth Day",
+  description: "Earth Day is celebrated to encourage people to take climate action.",
+  date: Date.new(2023, 4, 22),
+  url: "https://climeworks.com/earth-day",
   address: "Worldwide"
-  }
+)
 
-event8 = Event.create!{
-  title: "International Day for Biological Diversity"
-  description: "The International Day for Biological Diversity was created to increase understanding and awareness of biodiversity loss."
-  date: Date.new(2023, 05, 22)
-  url: "https://www.un.org/en/observances/biological-diversity-day"
+event8 = Event.create!(
+  title: "International Day for Biological Diversity",
+  description: "The International Day for Biological Diversity was created to increase understanding and awareness of biodiversity loss.",
+  date: Date.new(2023, 5, 22),
+  url: "https://www.un.org/en/observances/biological-diversity-day",
   address: "Worldwide"
-  }
+)
 
-event9 = Event.create!{
-  title: "World Environment Day"
-  description: "World Environment Day on 5 June is the United Nation’s flagship day for promoting environmental awareness."
-  date: Date.new(2023, 06, 05)
-  url: "https://www.worldenvironmentday.global/overview"
+event9 = Event.create!(
+  title: "World Environment Day",
+  description: "World Environment Day on 5 June is the United Nation’s flagship day for promoting environmental awareness.",
+  date: Date.new(2023, 6, 5),
+  url: "https://www.worldenvironmentday.global/overview",
   address: "Worldwide"
-  }
+)
 
-event10 = Event.create!{
-  title: "World Oceans Day"
-  description: "World Oceans Day raises global awareness of the importance of our ocean and reminds us that we need to protect our marine ecosystem."
-  date: Date.new(2023, 06, 06)
-  url: "https://www.un.org/en/observances/oceans-day"
+event10 = Event.create!(
+  title: "World Oceans Day",
+  description: "World Oceans Day raises global awareness of the importance of our ocean and reminds us that we need to protect our marine ecosystem.",
+  date: Date.new(2023, 6, 6),
+  url: "https://www.un.org/en/observances/oceans-day",
   address: "Worldwide"
-  }
+)
 
-event11 = Event.create!{
-  title: "World Cleanup Day"
-  description: "World Cleanup Day unites millions of volunteers, governments and organisations in 191 countries  to tackle the global waste problem and build up the new and sustainable world."
-  date: Date.new(2023, 09, 16)
-  url: "https://www.worldcleanupday.org/"
+event11 = Event.create!(
+  title: "World Cleanup Day",
+  description: "World Cleanup Day unites millions of volunteers, governments and organisations in 191 countries  to tackle the global waste problem and build up the new and sustainable world.",
+  date: Date.new(2023, 9, 16),
+  url: "https://www.worldcleanupday.org/",
   address: "Worldwide"
-  }
+)
 
-event12 = Event.create!{
-  title: "International Day for the Preservation of the Ozone Layer"
-  description: "This event commemorates the date of the signing of the Montreal Protocol on Substances that Deplete the Ozone Layer in 1987."
-  date: Date.new(2023, 09, 16)
-  url: "https://www.un.org/en/observances/ozone-day"
+event12 = Event.create!(
+  title: "International Day for the Preservation of the Ozone Layer",
+  description: "This event commemorates the date of the signing of the Montreal Protocol on Substances that Deplete the Ozone Layer in 1987.",
+  date: Date.new(2023, 9, 16),
+  url: "https://www.un.org/en/observances/ozone-day",
   address: "Worldwide"
-  }
+)
 
-event13 = Event.create!{
-  title: "Zero Emissions Day"
-  description: "Zero Emissions Day, was created to highlight the harm that is caused by CO₂ emissions and to try and give the world a break from fossil fuels."
-  date: Date.new(2023, 09, 21)
-  url: "https://climeworks.com/news/calculate-footprint-for-zero-emissions-day"
+event13 = Event.create!(
+  title: "Zero Emissions Day",
+  description: "Zero Emissions Day, was created to highlight the harm that is caused by CO₂ emissions and to try and give the world a break from fossil fuels.",
+  date: Date.new(2023, 9, 21),
+  url: "https://climeworks.com/news/calculate-footprint-for-zero-emissions-day",
   address: "Worldwide"
-  }
+)
 
-event14 = Event.create!{
-  title: "Climate Change & Sustainability conference"
-  description: "The annual gathering of climate leaders from the academic, business, public and nonprofit sectors."
-  date: Date.new(2023, 10, 16)
-  url: "https://climateweek.thepeopleevents.com/"
+event14 = Event.create!(
+  title: "Climate Change & Sustainability conference",
+  description: "The annual gathering of climate leaders from the academic, business, public and nonprofit sectors.",
+  date: Date.new(2023, 10, 16),
+  url: "https://climateweek.thepeopleevents.com/",
   address: "New-York"
-  }
+)
 
-event15 = Event.create!{
-  title: "International Mountain Day"
-  description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about."
-  date: Date.new(2023, 12, 11)
-  url: "https://www.un.org/en/observances/mountain-day"
+event15 = Event.create!(
+  title: "International Mountain Day",
+  description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about.",
+  date: Date.new(2023, 12, 11),
+  url: "https://www.un.org/en/observances/mountain-day",
   address: "Worldwide"
-  }
+)
 
 puts 'finished!!'
