@@ -30,17 +30,15 @@
                     </li>
                   <% elsif saved_tip.class == SavedUserTip %>
                     <i class="<%= saved_tip.usertip.booking.challenge.category.downcase %>-icon tipsimage fa-solid <%= find_icon(saved_tip.usertip.booking.challenge.category) %>"></i>
-                    <div class="info d-flex justify-content-between">
-                      <% unless saved_tip.usertip.user == current_user %>
-                        <li>
-                          <h5><strong><%= saved_tip.usertip.name %></strong></h5>
-                          <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
-                            <i class="fa fa-bookmark"></i>
-                          <% end %>
-                          <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.usertip.description %></p>
-                        </li>
-                      <% end %>
-                    </div>
+                    <% unless saved_tip.usertip.user == current_user %>
+                      <li>
+                        <h5><strong><%= saved_tip.usertip.name %></strong></h5>
+                        <%= link_to saved_user_tip_path(saved_tip), data: {turbo_method: :delete}, class:"tipsicon mt-2 me-2" do %>
+                          <i class="fa fa-bookmark"></i>
+                        <% end %>
+                        <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= saved_tip.usertip.description %></p>
+                      </li>
+                    <% end %>
                   <% end %>
                 </div>
               <% end %>

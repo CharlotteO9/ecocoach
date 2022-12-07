@@ -25,6 +25,7 @@ class PagesController < ApplicationController
     @remaining = 100 - @progress
     @tip = Tip.all.sample
     @usertip = Usertip.where.not(user: current_user).sample
+    @events = Event.all.select {|event| event.date.after?(Date.today - 1.days)}.select { |event| event.date.before?(Date.today + 7.days)}.sample(3)
   end
 
   def profile_challenge
