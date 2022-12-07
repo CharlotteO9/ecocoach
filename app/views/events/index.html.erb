@@ -1,16 +1,19 @@
 <div class="header">
   <div class="title-avatar">
-    <h1>Events around me</h1>
+    <h1>Events</h1>
   </div>
-  
-    <%= calendar number_of_days: 3 do |date| %>
-      <% @events.where(date:date).each do |event| %>
-        <%= event.title %>
+</div>
+
+<div class="container-nav">
+  <h3>Events around me</h1>
+  <ul>
+    <div class="events-cards">
+      <%= @events.each do |event| %>
+        <li><%= event.title %></li>
+        <li><%= event.description %></li>
+        <li><%= event.address %></li>
+        <li><%= link_to 'Know More', event.url %></li>
       <% end %>
-    <% end %>
-
-    <% @events.each do |event| %>
-      <%= event.title %>
-    <% end %>
-
+    </div>
+  </ul>
 </div>
