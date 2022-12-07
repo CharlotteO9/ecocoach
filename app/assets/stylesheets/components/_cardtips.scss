@@ -9,7 +9,6 @@
   align-items: center;
   position: relative;
   margin-bottom: 1rem;
-  height: 6rem;
   padding-top: 0.5rem;
 }
 
@@ -23,15 +22,16 @@
 
 .tipsicon {
   color: #115549;
-  font-size: 1rem; // 16px;
+  font-size: 1rem;
+  position: absolute;
+  top: 0rem;
+  right: 1rem;
 }
 
 .tipsimage {
-  font-size: 2.5rem; // 40px;
-  color: #115549;
-  align-items: center;
-  padding-right: 1.875rem;// 30px;
-  padding-left: 1.25rem; // 20px;
+  font-size: 2.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .ultips {
@@ -50,7 +50,7 @@
 }
 
 .description {
-  padding-right: 1rem;
+  padding-right: 3rem;
   text-align: left;
   font-weight: 500;
 }
@@ -65,14 +65,14 @@
 .edit-icon {
   position: absolute;
   top: 0rem;
-  left: 20rem;
+  right: 1rem;
   color: #115549;
 }
 
 .delete-icon {
   position: absolute;
   top: 3rem;
-  left: 20rem;
+  right: 1rem;
   color: #115549;
 }
 
@@ -89,6 +89,23 @@
   color: darkgreen;
 }
 .cardtips .purchase-icon i {
+  color: #f5aee1;
+}
+
+i.food-icon.tipsimage.fa-solid {
+  color: #f6d029;
+}
+
+i.transport-icon.tipsimage.fa-solid {
+  color: #0c69db;
+}
+i.energy-icon.tipsimage.fa-solid {
+  color: #ee6700;
+}
+i.waste-icon.tipsimage.fa-solid {
+  color: darkgreen;
+}
+i.purchase-icon.tipsimage.fa-solid {
   color: #f5aee1;
 }
 
