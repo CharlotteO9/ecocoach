@@ -3,18 +3,18 @@
     <div class="w-100">
       <ul class="navbar-nav d-flex flex-row justify-content-around">
         <!-- Icons -->
-        <li class="nav-item me-3 me-lg-0">
+        <li class="nav-item">
           <%= link_to profile_path, class: "nav-link #{'current-page' if action_name == 'profile'}" do %>
             <%# <i class="fa-regular fa-calendar-days"></i> %>
             <i class="fa-solid fa-user"></i>
           <% end %>
         </li>
-        <li class="nav-item me-3 me-lg-0">
+        <li class="nav-item">
           <%= link_to profile_challenge_path, class: "nav-link #{'current-page' if action_name == 'profile_challenge'}" do %>
             <i class="fa-solid fa-dumbbell"></i>
           <% end %>
         </li>
-        <li class="nav-item me-3 me-lg-0">
+        <li class="nav-item">
           <%= link_to profile_tips_path, class: "nav-link #{'current-page' if action_name == 'profile_tips'}" do %>
             <i class="fa-regular fa-lightbulb"></i>
           <% end %>
