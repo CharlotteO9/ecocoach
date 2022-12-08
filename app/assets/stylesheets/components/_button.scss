@@ -18,11 +18,8 @@
 
 .btn-grad {
   background-image: linear-gradient(to right, #115540 0%, #237A57  51%, #115540  100%);
-  // margin-top: 10px;
   padding: 10px 20px;
   text-align: center;
-  // transition: 0.5s;
-  // background-size: 100% auto;
   color: white;
   box-shadow: 0 0 20px rgba(238, 238, 238, 0);
   display: block;
@@ -51,6 +48,10 @@
   padding-left: 1.5em !important;
 }
 
+.btn-specific-width {
+  width: 10rem;
+}
+
 .btn-sticky-tips {
   left: 0;
   position: fixed;
@@ -58,7 +59,7 @@
   width: 100%;
   padding: 0.5rem 0.5rem 3rem 0.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   justify-content: space-around;
   align-items: center;
 
@@ -74,9 +75,13 @@
       background-color: white;
       border: 2px solid #115540;
       color: #115540;
-      margin-bottom: 1rem;
+      padding-right: 2.5rem;
     }
   }
+}
+
+.btn-prof-tips {
+  padding: 26px 49px;
 }
 
 .form-check-label.collection_check_boxes {
@@ -112,4 +117,12 @@
       font-size: 1.5rem;
     }
   }
+}
+
+i.fa-solid.fa-plus {
+  padding-left: 15px;
+  color: #115540;
+  /* background-color: #115540; */
+  margin-right: 10px;
+  width: 52px;
 }

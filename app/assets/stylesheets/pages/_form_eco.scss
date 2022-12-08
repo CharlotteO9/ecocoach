@@ -49,15 +49,14 @@ a {
   line-height: 0;
 }
 
-
 .form-switch .form-check-input {
   width: 10em;
-  margin-bottom: 1em;
   margin-left: -2.5em;
   background-position: left center;
   border-radius: 2em;
   transition: background-position 0.15s ease-in-out;
 }
+
 .form-check-input[type="checkbox"] {
     border-radius: 4.25em;
 }
@@ -67,7 +66,7 @@ a {
 }
 .form-check-input {
     width: 1em;
-    height: 3em;
+    height: 53px;
     margin-top: 0.25em;
     vertical-align: top;
     background-color: #F4F4F4;
@@ -82,18 +81,18 @@ a {
   position: relative;
   .toggle-switch-icon {
     position: absolute;
-    top: 15.1px;
+    top: 18.1px;
   }
   .toggle-switch-icon i {
     font-size: 1.5em;
     color: $ecogreen;
   }
   .button-icon-off {
-    left: 11.8px;
+    left: 14.8px;
   }
   .button-icon-on {
     visibility: hidden;
-    right: 11.8px;
+    right: 14.8px;
   }
   .form-check-input:checked + span.button-icons {
     .button-icon-on {
@@ -119,8 +118,8 @@ a {
     display: block;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 41%;
-    left: 58%;
+    top: 53%;
+    left: 63%;
     font-size: 16px;
     font-family: Verdana, sans-serif;
   }

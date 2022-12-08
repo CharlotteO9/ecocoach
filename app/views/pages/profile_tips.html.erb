@@ -84,6 +84,11 @@
 </div>
 
 <div class="btn-sticky-tips list-inline">
-  <%= link_to "Create a new tip", new_usertip_path, class: "btn-create-tips" %>
-  <%= link_to "Look for a new tip", tipsindex_path, class: "btn btn-grad" %>
+  <li class="list-inline-item">
+    <%= link_to  new_usertip_path, class: "btn-create-tips" do %>
+      <i class="fa-solid fa-plus"></i> My tip
+    <% end %>
+
+  </li>
+  <li class="list-inline-item"><%= link_to "All tips", tipsindex_path, class: "btn btn-grad btn-prof-tips" %></li>
 </div>
