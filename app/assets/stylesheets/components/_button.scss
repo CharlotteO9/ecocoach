@@ -27,6 +27,9 @@
   border-radius: 37px;
   font-size: 22px;
   width: 100%;
+    a {
+      color:white;
+    }
 }
 
 // .btn-grad:hover {
@@ -169,4 +172,9 @@ i.fa-solid.fa-plus {
   a {
     color:white;
   }
+}
+
+#create-tip {
+  
+  content: "Post your tip"
 }
