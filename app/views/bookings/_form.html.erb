@@ -1,6 +1,6 @@
 <div class="container-form">
   <ul class="d-flex mb-2 buttons-booking p-0 w-100">
-    <%= simple_form_for [@challenge, @booking], html:{class: "d-flex align-items-center w-100 justify-content-around"} do |f| %>
+    <%= simple_form_for [@challenge, @booking], html:{class: "d-flex #{'flex-column' if !@booking.persisted?} align-items-center w-100 justify-content-around"} do |f| %>
       <%# <li class="d-flex justify-content-around"> %>
       <% if @booking.persisted? %>
         <div class="form-check form-switch form-group" id="form-switch-status" style="padding-left: 0 !important;">
