@@ -19,10 +19,10 @@ module IconsHelper
     when 'little-seed'
       'fa-seedling'
     when 'beautiful-flower'
-      'fa-fan'
+      'fa-spa'
     when 'giant-sequoia'
       'fa-tree'
     end
   end
-
+  
 end
