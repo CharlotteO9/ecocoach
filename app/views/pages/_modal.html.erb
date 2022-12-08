@@ -1,0 +1,26 @@
+
+<div class="modal fade" id="exampleModal-new" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-sm-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create a new tip</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <%= simple_form_for(@usertip) do |f| %>
+          <div class="custom-form">
+            <div class="form-inputs">
+              <%= f.input :name, autofocus: true, placeholder: "Name of your tip" %>
+              <%= f.input :description, placeholder: "Describe your tip" %>
+              <%= f.input :booking_id, prompt: "Choose among your challenge", collection: @bookings.map{ |booking| [booking.id, booking.challenge.name] }, label_method: :second, value_method: :first %>
+            </div>
+            <div class="form-actions">
+              <%= f.submit class:'btn-grad mt-4', id:'create-tip' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
