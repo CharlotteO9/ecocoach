@@ -64,6 +64,7 @@
 
 .card.card-scroll.card-scroll-events {
   background-color: #115549;
+  border: solid 1px #115549;
   position: relative;
 }
 
@@ -168,7 +169,7 @@ section.challenges {
   padding-top: 1rem;
 }
 
-.fa-plus {
+.plus-event {
   font-size: 2rem;
   color: white;
   position: absolute;

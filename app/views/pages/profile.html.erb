@@ -3,6 +3,7 @@
     <h1>My profile</h1>
     <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "avatarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
+        <%= link_to "Home", root_path, class: "dropdown-item" %>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
       </div>
   </div>
@@ -74,7 +75,7 @@
         <p><%= event.date.strftime("%-d %b %Y") %></p>
         <p><%= event.address %></p>
         <%= link_to event.url do %>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus plus-event"></i>
         <% end %>
       </li>
     <% end %>
