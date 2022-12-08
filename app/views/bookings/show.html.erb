@@ -3,6 +3,9 @@
 </div>
 
 <div class="container-nav">
+  <%= link_to profile_challenge_path do %>
+    <p><i class="fa-solid fa-arrow-left green"></i> Back to My Challenges</p>
+  <% end %>
   <div class="mt-3 head">
     <div class="<%= Challenge.find(@booking.challenge_id).category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(Challenge.find(@booking.challenge_id).category) %> top-icon"></i>
