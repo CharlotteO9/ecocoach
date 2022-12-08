@@ -34,6 +34,18 @@
 //   color: #fff;
 //   text-decoration: none;
 // }
+.btn-remember {
+  width: 1em;
+  height: 18px;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #F4F4F4;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  appearance: none;
+}
 
 .form-check-input:checked {
   background-color: #115540;
@@ -71,11 +83,13 @@
     justify-content: center;
     border-radius: 37px;
     font-size: 22px;
+
     &.btn-create-tips {
       background-color: white;
-      border: 2px solid #115540;
-      color: #115540;
-      padding-right: 2.5rem;
+      border: 2px solid #115549;
+      color: #115549;
+      padding: 1.5rem;
+      width: 172px;
     }
   }
 }
@@ -137,5 +151,22 @@
 
 i.fa-solid.fa-plus {
   color: #115540;
-  width: 52px;
+  margin-right: 10px;
+  width: 35px;
+  position: initial;
+  padding: unset;
+  margin: unset;
+  font-size: 20px;
+}
+
+#new_user {
+  .form-check-input { height: 1em }
+}
+
+.btn-redo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  a {
+    color:white;
+  }
 }
