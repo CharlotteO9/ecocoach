@@ -12,7 +12,12 @@
 }
 
 .btn-primary {
-  background-color: #EEE7D3;
-  border: #EEE7D3;
+  background-color: #E3EAE3;
+  border: #E3EAE3;
   color: #115549;
+}
+
+.btn-create-tips {
+  --bs-btn-active-bg: #7d9e7f;
+  --bs-btn-active-border-color: #115540;
 }

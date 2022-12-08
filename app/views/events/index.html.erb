@@ -11,7 +11,7 @@
     <p><i class="fa-solid fa-arrow-left green"></i> Back to My Profile</p>
   <% end %>
   <div class="event-list">
-    <%= @events.each do |event| %>
+    <% @events.each do |event| %>
       <div class="event-card">
         <div class="date-card">
           <p class="day"><%= event.date.strftime("%-d %b %Y") %></p>
