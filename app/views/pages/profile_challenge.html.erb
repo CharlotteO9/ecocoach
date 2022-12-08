@@ -3,17 +3,17 @@
     <h1>My challenges</h1>
     <i class="fa-solid fa-dumbbell"></i>
   </div>
-  <p>Yes you can! 💪 Stay motivated <%= current_user.username %> 🏋️‍♀️ </p>
+  <p>Yes you can! 💪 Stay motivated 🏋️‍♀️ </p>
 </div>
 
-<div class="accordion" id="accordionPanelsStayOpen-challenge" style="padding-bottom: 135px">
+<div class="accordion" id="accordionPanelsStayOpen-challenge" style="padding-bottom: 180px">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne-challenge">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-challenge" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-challenge">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         On going challenges
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne-challenge" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne-challenge">
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div class="accordion-body">
         <section class="challenges">
           <% @on_going_bookings.each do |booking| %>
@@ -35,12 +35,12 @@
     </div>
   </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingTwo-challenge">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-challenge" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo-challenge">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Past challenges
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseTwo-challenge" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo-challenge">
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div class="accordion-body">
         <section class="challenges">
           <% @past_bookings.each do |booking| %>

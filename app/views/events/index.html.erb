@@ -1,25 +1,28 @@
 <div class="header">
   <div class="title-avatar">
     <h1>Events</h1>
+    <i class="fa-solid fa-calendar-days" id="calendar"></i>
   </div>
+  <p>What's are the event around me?</p>
 </div>
 
 <div class="container-nav">
-  <h3 class="title-avatar mt-2 mb-4">Events around me</h1>
-    <div class="event-list">
-      <%= @events.each do |event| %>
+  <%= link_to profile_path do %>
+    <p><i class="fa-solid fa-arrow-left green"></i> Back to My Profile</p>
+  <% end %>
+  <div class="event-list">
+    <%= @events.each do |event| %>
       <div class="event-card">
         <div class="date-card">
-          <p class="day"><%= event.date.strftime("%d") %></p>
-          <p class="month"><%= event.date.strftime("%b") %></p>
+          <p class="day"><%= event.date.strftime("%-d %b %Y") %></p>
         </div>
         <div class="full-event">
           <p class="title"><strong><%= event.title %></strong></p>
-          <p><%= event.description %></p>
-          <p><%= event.address %></p>
-          <p><%= link_to 'Know More', event.url %></p>
+          <p class="pa"><%= event.description %></p>
+          <p class="pa"><%= event.address %></p>
+          <p><%= link_to 'More info', event.url %></p>
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>

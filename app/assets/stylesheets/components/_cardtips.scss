@@ -1,6 +1,7 @@
 .cardtips {
   overflow: hidden; // truncate
-  background-color: #EEE7D3;
+  background-color: #E3EAE3;
+  border: solid 1px #115549;
   box-shadow: 0 10px 15px rgba(0,0,0,0.25);
   border-radius: 10px;
   display: flex;
@@ -100,7 +101,7 @@ i.transport-icon.tipsimage.fa-solid {
   color: #0c69db;
 }
 i.energy-icon.tipsimage.fa-solid {
-  color: #CD104D;
+  color: #ca0a0f
 }
 i.waste-icon.tipsimage.fa-solid {
   color: darkgreen;

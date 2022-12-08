@@ -26,13 +26,24 @@
   display: flex;
   justify-content: space-between;
   margin: 0 0.5rem 0.5rem 0.5rem;
-  align-items: baseline;
+  align-items: center;
 }
 
 .title-avatar img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+
+#ranking {
+  border: light;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #115549;
+  font-size: 1.85rem;
+  color: white;
+  padding: 6px;
 }
 
 .header-no-avatar {
@@ -61,6 +72,28 @@
 }
 
 #lightclub {
+  border: light;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #115549;
+  font-size: 2rem;
+  color: white;
+  padding: 7px;
+}
+
+#dumbbell {
+  border: light;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #115549;
+  font-size: 2rem;
+  color: white;
+  padding: 7px;
+}
+
+#calendar {
   border: light;
   border-radius: 50%;
   width: 50px;

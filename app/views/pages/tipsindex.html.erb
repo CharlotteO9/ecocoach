@@ -1,13 +1,15 @@
 <div class="header">
   <div class="title-avatar">
-    <h1>All tips</h1>
+    <h1>Find a tip</h1>
     <i class="fa-regular fa-lightbulb" id="lightclub"></i>
   </div>
-  <p>Find the perfect tips 💡 to complete your challenges</p>
+  <p>Perfect tips 💡 for your challenges</p>
 </div>
 
 <div class="container-nav" data-controller="search-tips tips-card">
-
+  <%= link_to profile_tips_path do %>
+    <p><i class="fa-solid fa-arrow-left green"></i> Back to My Tips</p>
+  <% end %>
   <div id="search">
     <%= simple_form_for :search, url: tipsindex_path, method: :get, html: {
       data: {
@@ -20,6 +22,9 @@
                   legend_tag: false,
                   as: :check_boxes,
                   collection: @categories,
+                  wrapper_html: {
+                    class: 'd-flex flex-wrap justify-content-center'
+                  },
                   input_html: {
                     class: "tag-selector",
                     data: {

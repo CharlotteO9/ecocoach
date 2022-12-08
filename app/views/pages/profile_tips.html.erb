@@ -87,11 +87,13 @@
 </div>
 
 <div class="btn-sticky-tips list-inline">
-  <%#= link_to "Create a new tip", new_usertip_path, class: "btn-create-tips" %>
-  <button type="button" class="btn btn-primary btn-create-tips" data-bs-toggle="modal" data-bs-target="#exampleModal-new">
+  <li class="list-inline-item">
+    <%#= link_to "Create a new tip", new_usertip_path, class: "btn-create-tips" %>
+    <button type="button" class="btn btn-primary btn-create-tips" data-bs-toggle="modal" data-bs-target="#exampleModal-new">
     create a new tip
-  </button>
-  <%= link_to "Look for a new tip", tipsindex_path, class: "btn btn-grad" %>
+    </button>
+  </li>
+  <li class="list-inline-item"><%= link_to "All tips", tipsindex_path, class: "btn btn-grad btn-prof-tips" %></li>
 </div>
 <%= render "modal" %>
 

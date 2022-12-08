@@ -24,7 +24,7 @@ seniority2 = Seniority.create!(
 )
 seniority3 = Seniority.create!(
   name: "Giant sequoia",
-  description: "Here we are, it's the last step, you come a long way! EcoCoach is so proud of you! Keep your efforts on in the long-run",
+  description: "Here we are, it's the last step, you come a long way! EcoCoach is so proud of you! Keep on going!",
   ranking: 2
 )
 
