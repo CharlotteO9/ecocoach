@@ -64,12 +64,12 @@
 
 .card.card-scroll.card-scroll-events {
   background-color: #115549;
-  border: solid 1px #115549;
   position: relative;
 }
 
 .card.card-scroll.card-scroll-tips {
   background-color: #E3EAE3;
+  border: solid 1px #115549;
 }
 
 .card.card-scroll-cat {
@@ -169,10 +169,10 @@ section.challenges {
   padding-top: 1rem;
 }
 
-.plus-event {
+#plus-event {
   font-size: 2rem;
   color: white;
   position: absolute;
   bottom: 0.5rem;
-  right: 1rem;
+  right: 0rem;
 }
