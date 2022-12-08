@@ -1,0 +1,18 @@
+.modal-body .custom-form {
+  margin: unset;
+}
+.modal .modal-dialog {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.modal-dialog .modal-content {
+  height: max-content;
+}
+
+.btn-primary {
+  background-color: #EEE7D3;
+  border: #EEE7D3;
+  color: #115549;
+}

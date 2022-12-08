@@ -69,6 +69,7 @@
 
 .card.card-scroll.card-scroll-tips {
   background-color: #E3EAE3;
+  border: solid 1px #115549;
 }
 
 .card.card-scroll-cat {
@@ -168,10 +169,10 @@ section.challenges {
   padding-top: 1rem;
 }
 
-.fa-plus {
+#plus-event {
   font-size: 2rem;
   color: white;
   position: absolute;
   bottom: 0.5rem;
-  right: 1rem;
+  right: 0rem;
 }

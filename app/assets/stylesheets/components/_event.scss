@@ -1,11 +1,6 @@
 .event-card {
-  display: flex;
   align-items: center;
   text-decoration: none;
-  .date-card {
-    border: solid 0.25rem  rgba(0,0,0,0.2);
-    border-radius: 28%;
-  }
 }
 
 .date-card {
@@ -19,10 +14,6 @@
   margin-bottom: 0;
 }
 
-.month {
-  font-size: 2rem;
-}
-
 .full-event {
   text-align: initial;
   margin: 1rem;
@@ -32,6 +23,14 @@
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25);
 }
 
+.pa {
+  text-align: justify;
+}
+
 .title {
   text-align: initial
+}
+
+.full-event a {
+  color: #608B6B;
 }

@@ -40,6 +40,9 @@ class PagesController < ApplicationController
     # ce sont les tips que t'as sauvergardé (de la db ou parmis les usertips)
     @my_created_tips = Usertip.where(user: current_user)
     # ce sont les tips que t'as fait
+    # creating 2 instances variables from where we will displaying the create and edit a tip
+    @usertip = Usertip.new()
+    @bookings = current_user.bookings
   end
 
   def tipsindex
