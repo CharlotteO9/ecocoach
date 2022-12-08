@@ -3,6 +3,9 @@
 </div>
 
 <div class="container-nav" data-controller="tips-card">
+  <%= link_to challenges_path do %>
+    <p><i class="fa-solid fa-arrow-left green"></i> Back to New Challenges</p>
+  <% end %>
   <div class="mt-3 head">
     <div class="<%= @challenge.category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(@challenge.category) %> top-icon"></i>

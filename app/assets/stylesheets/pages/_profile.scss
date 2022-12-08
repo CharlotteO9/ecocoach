@@ -54,13 +54,20 @@
   scroll-snap-align: start;
   transition: all 0.2s;
   margin: 0 0.3rem;
-  background-color: #115549;
   border: none;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.card.card-scroll p {
+.card.card-scroll.card-scroll-events p {
   color: white;
+}
+
+.card.card-scroll.card-scroll-events {
+  background-color: #115549;
+}
+
+.card.card-scroll.card-scroll-tips {
+  background-color: #EEE7D3;
 }
 
 .card.card-scroll-cat {

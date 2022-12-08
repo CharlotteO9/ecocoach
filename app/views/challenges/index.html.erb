@@ -7,6 +7,9 @@
 </div>
 
 <div class="container-nav">
+  <%= link_to profile_challenge_path do %>
+    <p><i class="fa-solid fa-arrow-left green"></i> Back to My Challenges</p>
+  <% end %>
   <section class="challenges">
     <% @challenges.each do |challenge| %>
       <% if current_user.bookings.where(challenge_id: challenge.id).empty? %>
@@ -25,4 +28,21 @@
       <% end %>
     <% end %>
   </section>
+  <%unless @challenges_next.empty? %>
+    <section class="challenges">
+      <% @challenges_next.each do |challenge| %>
+        <div class="card-challenge">
+          <div class="<%= challenge.category.downcase %>-icon icons card-disable">
+            <i class="fa-solid <%= find_icon(challenge.category) %>"></i>
+          </div>
+          <div class="card-challenge-infos card-disable">
+            <h5><strong><%= challenge.name %></strong></h5>
+            <p><%= challenge.description.truncate(45) %></p>
+          </div>
+          <%# <i class="fa-solid fa-chevron-right card-disable"></i> %>
+          <i class="fa-solid fa-lock position-absolute" style="left: 46%;"></i>
+        </div>
+      <% end %>
+    </section>
+  <% end %>
 </div>

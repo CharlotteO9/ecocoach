@@ -2,6 +2,7 @@ class ChallengesController < ApplicationController
   def index
     @challenges_scoped = policy_scope(Challenge)
     @challenges = Challenge.where(seniority_id: current_user.seniority_id)
+    @challenges_next = Challenge.where(seniority_id: current_user.seniority_id + 1)
   end
 
   def show
