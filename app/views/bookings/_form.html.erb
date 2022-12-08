@@ -1,10 +1,10 @@
 <div class="container-form">
   <ul class="d-flex mb-2 buttons-booking p-0 w-100">
-    <%= simple_form_for [@challenge, @booking], html:{class: "d-flex align-items-center w-100 flex-column "} do |f| %>
-    <li class="d-flex justify-content-around">
+    <%= simple_form_for [@challenge, @booking], html:{class: "d-flex align-items-center w-100 justify-content-around"} do |f| %>
+      <%# <li class="d-flex justify-content-around"> %>
       <% if @booking.persisted? %>
-        <div class="form-check form-switch form-group" id="form-switch-status">
-        	<label class="toggle-switch">
+        <div class="form-check form-switch form-group" id="form-switch-status" style="padding-left: 0 !important;">
+          <label class="toggle-switch">
             <%#= f.input :status, as: :boolean, class: "form-check-input", label: false %>
             <fieldset class="mb-3 boolean optional booking_status">
               <div class="form-check">
@@ -21,17 +21,19 @@
               </div>
             </fieldset>
           </label>
-        </div></li>
-    <li class="d-flex justify-content-around">
+        </div>
       <% else %>
+      <%# </li> %>
+    <%# <li class="d-flex justify-content-around"> %>
         <div class="booking-goal" data-controller="booking-goal">
           <h4 data-booking-goal-target="goal">Set your weekly goal : 50%</h4>
           <p><%= f.input :goal, as: :range, label: false, input_html: { data: { action:'input->booking-goal#updateGoal' } } %></p>
         </div>
-      <% end %></li>
+      <% end %>
+    <%# </li> %>
       <% Time.now.strftime('%U') %>
       <% if @booking.persisted? %>
-        <%= f.submit "Confirm evaluation", class: "btn-grad btn-success"%>
+        <%= f.submit "Confirm", class: "btn-grad btn-success btn-specific-width"%>
       <% else %>
         <%= f.submit "Add this challenge", class: "btn-grad" %>
       <% end %>
