@@ -2,7 +2,7 @@
   <h2><%= Challenge.find(@booking.challenge_id).name %></h2>
 </div>
 
-<div class="container-nav">
+<div class="container-nav" data-controller="tips-card">
   <div class="mt-3 head">
     <div class="<%= Challenge.find(@booking.challenge_id).category.downcase %>-icon icons details">
       <i class="fa-solid <%= find_icon(Challenge.find(@booking.challenge_id).category) %> top-icon"></i>
@@ -12,7 +12,7 @@
     </div>
     <h4 class="text-center">My Goal:</h4>
     <div class="progress progress-goal">
-      <div class="progress-bar progress-bar-goal" role="progressbar" style="width: <%= @booking.goal %>%;" aria-valuenow="<%= @booking.goal %>" aria-valuemin="0" aria-valuemax="100"><%= @booking.goal %>%</div>
+      <div class="progress-bar progress-bar-goal" id="text-progress" role="progressbar" style="width: <%= @booking.goal %>%;" aria-valuenow="<%= @booking.goal %>" aria-valuemin="0" aria-valuemax="100"><%= @booking.goal %>%</div>
     </div>
   </div>
   <% if policy(@booking).destroy? %>
