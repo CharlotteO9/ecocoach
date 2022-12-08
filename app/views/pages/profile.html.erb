@@ -32,19 +32,19 @@
       <p>This week you have:</p>
       <ul class="cards">
         <li class="card card-scroll-cat food">
-          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Food"}.count %> Food challenge(s)</p>
+          <p><%= count = @on_going_bookings.select {|b| b.challenge.category == "Food"}.count %> Food <%= "challenge".pluralize(count) %></p>
         </li>
         <li class="card card-scroll-cat waste">
-          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Waste"}.count %> Waste challenge(s)</p>
+          <p><%= count = @on_going_bookings.select {|b| b.challenge.category == "Waste"}.count %> Waste <%= "challenge".pluralize(count) %></p>
         </li>
         <li class="card card-scroll-cat purchase">
-          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Purchase"}.count %> Purchase challenge(s)</p>
+          <p><%= count = @on_going_bookings.select {|b| b.challenge.category == "Purchase"}.count %> Purchase <%= "challenge".pluralize(count) %></p>
         </li>
         <li class="card card-scroll-cat transport">
-          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Transport"}.count %> Transport challenge(s)</p>
+          <p><%= count = @on_going_bookings.select {|b| b.challenge.category == "Transport"}.count %> Transport <%= "challenge".pluralize(count) %></p>
         </li>
         <li class="card card-scroll-cat energy">
-          <p><%= @on_going_bookings.select {|b| b.challenge.category == "Energy"}.count %> Energy challenge(s)</p>
+          <p><%= count = @on_going_bookings.select {|b| b.challenge.category == "Energy"}.count %> Energy <%= "challenge".pluralize(count) %></p>
         </li>
       </ul>
     <%= link_to profile_challenge_path do %>
@@ -55,7 +55,7 @@
     <div class="profile-cards white-card" id="past-challenge">
       <%= link_to profile_challenge_path do %>
         <p><strong>Past challenges</strong></p>
-        <p>You have completed <strong><%=@past_bookings.count%></strong> challenge(s) so far!</p>
+        <p>You have completed <strong><%=@past_bookings.count%></strong> <%= "challenge".pluralize(@past_bookings.count) %> so far!</p>
         <i class="fa-solid fa-arrow-right green" id="arrow-past-challenge"></i>
       <% end %>
     </div>
