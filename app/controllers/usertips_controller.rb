@@ -10,6 +10,7 @@ class UsertipsController < ApplicationController
   def create
     @usertip = Usertip.new(usertip_params)
     @usertip.user = current_user
+    @bookings = current_user.bookings
     if @usertip.save
       redirect_to profile_tips_path, notice: "Tip created!"
     else

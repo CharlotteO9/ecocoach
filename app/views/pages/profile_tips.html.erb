@@ -62,9 +62,12 @@
                   <li>
                     <h5><strong><%= tip.name %></strong></h5>
                     <div class="edit-icon">
-                      <%= link_to edit_usertip_path(tip), class:"tipsicon mt-2 me-2" do %>
-                        <i class="fa-solid fa-pen"></i>
-                      <% end %>
+                    <button type="button" class="btn btn-primary btn-create-tips" data-bs-toggle="modal" data-bs-target="#exampleModal-<%=tip.id%>">
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                      <%#= link_to edit_usertip_path(tip), class:"tipsicon mt-2 me-2" do %>
+                        <%#  <i class="fa-solid fa-pen"></i> %>
+                      <%# end %>
                     </div>
                     <div class="delete-icon">
                       <%= link_to usertip_path(tip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"tipsicon mt-2 me-2" do %>
@@ -84,6 +87,14 @@
 </div>
 
 <div class="btn-sticky-tips list-inline">
-  <%= link_to "Create a new tip", new_usertip_path, class: "btn-create-tips" %>
+  <%#= link_to "Create a new tip", new_usertip_path, class: "btn-create-tips" %>
+  <button type="button" class="btn btn-primary btn-create-tips" data-bs-toggle="modal" data-bs-target="#exampleModal-new">
+    create a new tip
+  </button>
   <%= link_to "Look for a new tip", tipsindex_path, class: "btn btn-grad" %>
 </div>
+<%= render "modal" %>
+
+<% @my_created_tips.each do |tip| %>
+  <%= render "modal_edit", usertip: tip %>
+<% end %>
