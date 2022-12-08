@@ -73,6 +73,9 @@
         <p><strong><%= event.title %></strong></p>
         <p><%= event.date.strftime("%-d %b %Y") %></p>
         <p><%= event.address %></p>
+        <%= link_to event.url do %>
+          <i class="fa-solid fa-plus"></i>
+        <% end %>
       </li>
     <% end %>
   </ul>

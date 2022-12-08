@@ -64,6 +64,7 @@
 
 .card.card-scroll.card-scroll-events {
   background-color: #115549;
+  position: relative;
 }
 
 .card.card-scroll.card-scroll-tips {
@@ -95,7 +96,7 @@
   background-color: #0c69db;
 }
 .card.card-scroll-cat.energy {
-  background-color: #CD104D;
+  background-color: #ca0a0f
 }
 .card.card-scroll-cat.waste {
   background-color: darkgreen;
@@ -165,4 +166,12 @@
 section.challenges {
   margin: 0px;
   padding-top: 1rem;
+}
+
+.fa-plus {
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
 }
