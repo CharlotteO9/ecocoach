@@ -14,7 +14,7 @@ puts 'creating seniorities'
 
 seniority1 = Seniority.create!(
   name: "Little seed",
-  description: "Hello little seed, I am happy to see you. You want to change your habits ? you can be proud of you. EcoCoach will help you!",
+  description: "Hello little seed, I am happy to see you. You want to change your habits? You can be proud of you. EcoCoach will help you!",
   ranking: 0
 )
 seniority2 = Seniority.create!(
@@ -65,7 +65,7 @@ user4 = User.create!(
 puts 'creating little seed challenges'
 
 challenge_food1 = Challenge.create!(
-  name: 'Season Vegetables race',
+  name: 'Season vegetables race',
   description: "Only purchase local fruits and vegetables that are of the season.
   It simply means you choose food that's grown locally.
   Locally grown, seasonal food has the biggest benefit for the planet,
@@ -91,12 +91,12 @@ challenge_energy1 = Challenge.create!(
 )
 challenge_purchase1 = Challenge.create!(
   name: 'Taking it slow (fashion)',
-  description: "Only buy from slow fashion brand. Fast fashion is destined for a short life – it’s created for temporary wear.
-   The effect of fast fashion is huge not only for the psyche of the individual
+  description: "Only buy from slow fashion brand. Fast fashion is destined for a short life, it is created for temporary wear.
+  The effect of fast fashion is huge not only for the psyche of the individual
   but for the environment and its workers as well.
   Fast fashion is known for its bad working conditions for its employees.
   Fast fashion companies are frequently accused of exploiting their workers
-   and paying very cheap wages in order to earn a profit. ",
+  and paying very cheap wages in order to earn a profit. ",
   category: 'Purchase',
   seniority: seniority1
 )
@@ -104,7 +104,7 @@ challenge_purchase4 = Challenge.create!(
   name: 'Say stop pub',
   description: "While the quantities of these unsolicited printed materials have been declining since 2010.
   But they nevertheless continue to be high: nearly 800,000 tons in France in 2015.
-  This corresponds to an average of 12 kg per inhabitant over a year or 30 kg per household.",
+  This corresponds to an average of 12kg per inhabitant over a year or 30kg per household.",
   category: 'Purchase',
   seniority: seniority1
 )
@@ -141,7 +141,7 @@ challenge_transport2 = Challenge.create!(
   name: 'Carpooling',
   description: "Never travel alone in a car: share rides. Carpooling helps to alleviate road traffic and reduce travel costs.
   In 2018, more than 270,000 tons of CO2 were avoided in France thanks to long-distance carpooling.
-  Unfortunately, this practice still represents only 3% of daily trips. For a distance of 15 km,
+  Unfortunately, this practice still represents only 3% of daily trips. For a distance of 15km,
   carpooling amounts to 1095 gCO2e, it's 67% less than a solo trip by car.",
   category: 'Transport',
   seniority: seniority2
@@ -175,7 +175,7 @@ puts 'creating giant sequoia challenges'
 challenge_food3 = Challenge.create!(
   name: 'No meat week',
   description: "Remove meat from your meal during a week! Reducing meat consumption saves water, reduces deforestation
-    and lowers greenhouse gas emissions.",
+  and lowers greenhouse gas emissions.",
   category: 'Food',
   seniority: seniority3
 )
@@ -271,7 +271,7 @@ Tip.create!(
 
 Tip.create!(
   name: "Let the sun come in",
-  description: "Open Your Curtains During the Day: When sunlight enters your house through curtains or windows,
+  description: "Open your curtains during the day: when sunlight enters your house through curtains or windows,
   it helps warm the room naturally.",
   challenge: challenge_energy2
 )
@@ -307,7 +307,7 @@ Tip.create!(
   name: "Dark is cool",
   description: "Almost all electrical appliances can be turned off at the plug
   without upsetting their programming.You may want to think about getting a standby saver or smart plug which
-   allows you to turn all your appliances off standby in one go.",
+  allows you to turn all your appliances off standby in one go.",
   challenge: challenge_energy3
 )
 
@@ -409,7 +409,7 @@ puts 'creating usertips per user'
 
 will_tip1 = Usertip.create!(
   name: "Sorry we are closed",
-  description: "Close off rooms that you don't use: By closing off bedrooms and other rooms that aren't being used,
+  description: "Close off rooms that you don't use: by closing off bedrooms and other rooms that aren't being used,
   you can prevent heat from escaping through these unused areas.",
   user: user1,
   booking: will_booking1
@@ -424,7 +424,7 @@ will_tip2 = Usertip.create!(
 
 will_tip3 = Usertip.create!(
   name: 'Meet people',
-  description: "Try fisrt carpooling with your relatives.",
+  description: "Try first carpooling with your relatives.",
   user: user1,
   booking: will_booking3
 )
@@ -488,8 +488,8 @@ cha_tip2 = Usertip.create!(
 puts 'puts creating event'
 
 event_demo1 = Event.create!(
-  title: "Le traitement médiatique de l’urgence climatique",
-  description: "Les étudiants du Master Politiques environnementales et Management du Développement durable de l'ICP organisent le mardi 13 décembre 2022 leur conférence annuelle sur «Le traitement médiatique de l’urgence climatique : quels enjeux contemporains ?",
+  title: "Le traitement médiatique de l'urgence climatique",
+  description: "Les étudiants du Master Politiques environnementales et Management du Développement durable de l'ICP organisent le mardi 13 décembre 2022 leur conférence annuelle sur «Le traitement médiatique de l'urgence climatique : quels enjeux contemporains ?",
   date: Date.new(2022, 12, 9),
   url: "https://www.icp.fr/a-propos-de-licp/agenda/le-traitement-mediatique-de-lurgence-climatique-quels-enjeux-contemporains",
   address: "Paris"
@@ -497,7 +497,7 @@ event_demo1 = Event.create!(
 
 event_demo2 = Event.create!(
   title: "Atelier Mission Biodiversité",
-  description: "3h pour comprendre les liens entre économie et biodiversité Au programme : apport de connaissances, cas pratique et intelligence collective.",
+  description: "3h pour comprendre les liens entre économie et biodiversité. Au programme : apport de connaissances, cas pratique et intelligence collective.",
   date: Date.new(2022, 12, 9),
   url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite",
   address: "Lyon"
@@ -512,8 +512,8 @@ event_demo3 = Event.create!(
 )
 
 event_demo4 = Event.create!(
-  title: 'Journée scientifique "Comprendre et s’approprier les messages-clés du 6e rapport du GIEC"',
-  description: "Un décryptage des messages-clés du rapport et à la façon dont les parties prenantes s’en emparent déjà.",
+  title: "Journée scientifique : comprendre et s'approprier les messages-clés du 6e rapport du GIEC",
+  description: "Un décryptage des messages-clés du rapport et à la façon dont les parties prenantes s'en emparent déjà.",
   date: Date.new(2022, 12, 9),
   url: "https://meteoetclimat.fr/nos-activites/journees-scientifiques/journee-scientifique-paris-2022/",
   address: "Paris"
@@ -521,7 +521,7 @@ event_demo4 = Event.create!(
 
 event_demo5 = Event.create!(
   title: "BePOSITIVE",
-  description: "Rendez-vous sur BePOSITIVE, l’événement de ceux qui construisent le monde décarboné de demain !",
+  description: "Rendez-vous sur BePOSITIVE, l'événement de ceux qui construisent le monde décarboné de demain !",
   date: Date.new(2022, 12, 9),
   url: "https://www.bepositive-events.com/fr",
   address: "Bordeaux"
@@ -529,15 +529,15 @@ event_demo5 = Event.create!(
 
 event_demo6 = Event.create!(
   title: "World Cleanup Day",
-  description: "World Cleanup Day unites millions of volunteers, governments and organisations in 191 countries  to tackle the global waste problem and build up the new and sustainable world.",
+  description: "World Cleanup Day unites millions of volunteers, governments and organisations in 191 countries to tackle the global waste problem and build up the new and sustainable world.",
   date: Date.new(2022, 12, 10),
   url: "https://www.worldcleanupday.org/",
   address: "Worldwide"
 )
 
 event_demo7 = Event.create!(
-  title: "International Conference on Climate Change and Global Warming",
-  description: "International Conference on Climate Change and Global Warming aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Climate Change and Global Warming.",
+  title: "International conference on climate change and global Warming",
+  description: "International conference on climate change and global warming aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of climate change and global warming.",
   date: Date.new(2022, 12, 10),
   url: "https://waset.org/climate-change-and-global-warming-conference-in-january-2023-in-london",
   address: "Paris"
@@ -552,7 +552,7 @@ event_demo8 = Event.create!(
 )
 
 event_demo9 = Event.create!(
-  title: "International Conference on Information and Communications Technology for Sustainability",
+  title: "International conference on information and communications technology for sustainability",
   description: "Sustainability is of primary interest in the context of an in-person event, with a specific sustainability chair in the organizing committee.",
   date: Date.new(2022, 12, 10),
   url: "https://conf.researchr.org/home/ict4s-2023",
@@ -568,8 +568,8 @@ event_demo10  = Event.create!(
 )
 
 event_demo11 = Event.create!(
-  title: "Balade thermographique : par ou s’echappe la chaleur de nos maisons ?",
-  description: "Balade dans les rues de la ville afin d’observer les bâtiments à l’aide d’une caméra thermique. L’objectif ? Visualiser les défauts d’isolation et réfléchir à des solutions concrètes pour y pallier.",
+  title: "Balade thermographique : par ou s'echappe la chaleur de nos maisons ?",
+  description: "Balade dans les rues de la ville afin d'observer les bâtiments à l'aide d'une caméra thermique. L'objectif ? Visualiser les défauts d'isolation et réfléchir à des solutions concrètes pour y pallier.",
   date: Date.new(2022, 12, 11),
   url: "https://www.alec-montpellier.org/",
   address: "Marseille"
@@ -577,15 +577,15 @@ event_demo11 = Event.create!(
 
 event_demo12 = Event.create!(
   title: "Forêts, Biens Communs 4 - Faire renaître une forêt primaire en Europe de l'Ouest",
-  description: "Cette rencontre sera l’occasion de faire un état des lieux de ces forêts primaires* sur la planète et d’explorer leurs spécificités et caractéristiques.",
+  description: "Cette rencontre sera l'occasion de faire un état des lieux de ces forêts primaires sur la planète et d'explorer leurs spécificités et caractéristiques.",
   date: Date.new(2022, 12, 11),
   url: "https://www.universitebiencommun.org/",
   address: "Nantes"
 )
 
 event_demo13 = Event.create!(
-  title: "Soirée politique sur l’avenir de l’industrie entre crise énergétique et décarbonation",
-  description: "Entre crise énergétique et décarbonation – quel avenir pour l’industrie en France et en Allemagne ?",
+  title: "Soirée politique sur l'avenir de l'industrie entre crise énergétique et décarbonation",
+  description: "Entre crise énergétique et décarbonation, quel avenir pour l'industrie en France et en Allemagne ?",
   date: Date.new(2022, 12, 12),
   url: "https://energie-fr-de.eu/fr/manifestations/lecteur/soiree-politique-sur-lavenir-de-lindustrie-entre-crise-energetique-et-decarbonation.html",
   address: "Toulouse"
@@ -593,7 +593,7 @@ event_demo13 = Event.create!(
 
 event_demo14 = Event.create!(
   title: "Climate Change & Sustainability conference",
-  description: "The annual gathering of climate leaders from the academic, business, public and nonprofit sectors.",
+  description: "The annual gathering of climate leaders from the academic, business, public and non profit sectors.",
   date: Date.new(2022, 12, 13),
   url: "https://climateweek.thepeopleevents.com/",
   address: "New-York"
@@ -605,7 +605,7 @@ event_demo14 = Event.create!(
 
 event1 = Event.create!(
   title: "Global recycling day",
-  description: "Global Recycling Day was created to help recognise, and celebrate, the importance recycling plays in preserving our precious primary resources and securing the future of our planet.",
+  description: "Global recycling day was created to help recognise, and celebrate, the importance recycling plays in preserving our precious primary resources and securing the future of our planet.",
   date: Date.new(2023, 3, 18),
   url: "https://www.globalrecyclingday.com",
   address: "Worldwide"
@@ -645,7 +645,7 @@ event5 = Event.create!(
 
 event6 = Event.create!(
   title: "World Environment Day",
-  description: "World Environment Day on 5 June is the United Nation’s flagship day for promoting environmental awareness.",
+  description: "World Environment Day on 5 June is the United Nation's flagship day for promoting environmental awareness.",
   date: Date.new(2023, 6, 5),
   url: "https://www.worldenvironmentday.global/overview",
   address: "Worldwide"
@@ -677,7 +677,7 @@ event9 = Event.create!(
 
 event10 = Event.create!(
   title: "International Mountain Day",
-  description: "Raising awareness  for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about.",
+  description: "Raising awareness for the importance of mountains and the need for sustainable mountain tourism is what International Mountain Day is all about.",
   date: Date.new(2023, 12, 11),
   url: "https://www.un.org/en/observances/mountain-day",
   address: "Worldwide"
