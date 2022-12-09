@@ -14,7 +14,7 @@ puts 'creating seniorities'
 
 seniority1 = Seniority.create!(
   name: "Little seed",
-  description: "Hello little seed, I am happy to see you. You want to change your habits, you can be proud of you. EcoCoach will help you!",
+  description: "Hello little seed, I am happy to see you. You want to change your habits ? you can be proud of you. EcoCoach will help you!",
   ranking: 0
 )
 seniority2 = Seniority.create!(
@@ -51,7 +51,7 @@ user3 = User.create!(
   email: "anne@eco.com",
   password: "1234567",
   avatar: "https://avatars.githubusercontent.com/u/109987907?v=4",
-  seniority: seniority3
+  seniority: seniority2
 )
 
 user4 = User.create!(
