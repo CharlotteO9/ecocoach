@@ -1,8 +1,6 @@
-
 <% tips&.each do |tip|  %>
-    <%= render 'tips/card', tip: tip %>
-  <% end %>
-  <% usertips&.each do |tip|  %>
-
-    <%= render 'usertips/card', tip: tip %>
-  <% end %>
+  <%= render 'tips/card', tip: tip %>
+<% end %>
+<% usertips&.each do |tip|  %>
+  <%= render 'usertips/card', tip: tip %>
+<% end %>
