@@ -10,6 +10,12 @@ application.register("booking-goal", BookingGoalController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
+import SaveTipController from "./save_tip_controller"
+application.register("save-tip", SaveTipController)
+
 import SearchTipsController from "./search_tips_controller"
 application.register("search-tips", SearchTipsController)
 

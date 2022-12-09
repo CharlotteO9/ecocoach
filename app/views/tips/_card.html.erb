@@ -1,0 +1,21 @@
+<div class="cardtips"
+      data-controller="save-tip">
+  <div class="<%= tip.challenge.category.downcase %>-icon tipsimage">
+    <i class="fa-solid <%= find_icon(tip.challenge.category) %>"></i>
+  </div>
+  <li>
+    <h5><strong><%= tip.name %></strong></h5>
+    <% if current_user.saved_tips.where(tip: tip).empty? %>
+      <span data-action="click->save-tip#save" data-save-tip-url-param="<%= tip_saved_tips_path(tip) %>" class="tipsicon mt-2 me-2">
+        <i class="fa-regular fa-bookmark"></i>
+      </span>
+    <% else %>
+      <% st = current_user.saved_tips.select{ |st| st if st.tip_id == tip.id } %>
+      <span data-action="click->save-tip#unsave" data-save-tip-url-param="<%= saved_tip_path(st) %>" class="tipsicon mt-2 me-2">
+        <i class="fa fa-bookmark"></i>
+      </span>
+    <% end %>
+    <p class="description desc-truncate" data-action="click->tips-card#revealDescription"><%= tip.description %></p>
+    <%# <p>Challenge category: <%= tip.challenge.category  %>
+  </li>
+</div>
