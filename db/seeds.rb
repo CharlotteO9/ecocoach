@@ -493,7 +493,7 @@ event_demo2 = Event.create!(
   description: "3h pour comprendre les liens entre économie et biodiversité. Au programme : apport de connaissances, cas pratique et intelligence collective.",
   date: Date.new(2022, 12, 9),
   url: "https://www.engage-biodiversite.com/atelier-mission-biodiversite",
-  address: "Lyon"
+  address: "Paris"
 )
 
 event_demo3 = Event.create!(
