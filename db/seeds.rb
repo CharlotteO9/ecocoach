@@ -466,7 +466,7 @@ anne_tip3 = Usertip.create!(
 
 anne_tip4 = Usertip.create!(
   name: "Plug smarter",
-  description: "Plug your devices on electical sockets with switches and set an alarm twice a day so you can turn them off when your alarm rings.",
+  description: "Plug your devices on electrical sockets with switches and set an alarm twice a day so you can turn them off when your alarm rings.",
   user: user3,
   booking: anne_booking3
 )
