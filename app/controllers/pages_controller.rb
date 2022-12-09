@@ -25,7 +25,8 @@ class PagesController < ApplicationController
     @remaining = 100 - @progress
     @tip = Tip.all.sample
     @usertip = Usertip.where.not(user: current_user).sample
-    @events = Event.all.select {|event| event.date.after?(Date.today - 1.days)}.select { |event| event.date.before?(Date.today + 7.days)}.sample(3)
+    # @events = Event.all.select {|event| event.date.after?(Date.today - 1.days)}.select { |event| event.date.before?(Date.today + 7.days)}.sample(3)
+    @events = Event.where(title: "Atelier Mission Biodiversité") + Event.where(title: "Le traitement médiatique de l’urgence climatique") + Event.where(title: "Bio360 Expo 2023") + Event.where(title: "Bio360 Expo 2023")
   end
 
   def profile_challenge
