@@ -38,9 +38,11 @@ a {
 #search .form-control {
   border-radius: 1.5rem;
   background-color:#a3baa34a;
-  border: none;
+  // border: none;
   height: 2.6rem;
   margin-bottom: 0;
+  border: solid 1px #0E0000;
+  text-align: center;
 }
 
 .search-btn {
