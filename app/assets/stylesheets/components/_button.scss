@@ -27,9 +27,13 @@
   border-radius: 37px;
   font-size: 22px;
   width: 100%;
-    a {
-      color:white;
-    }
+  &:hover {
+    color:white;
+  }
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon);
 }
 
 // .btn-grad:hover {
@@ -175,6 +179,6 @@ i.fa-solid.fa-plus {
 }
 
 #create-tip {
-  
+
   content: "Post your tip"
 }
