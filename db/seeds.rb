@@ -82,13 +82,6 @@ challenge_transport1 = Challenge.create!(
   category: 'Transport',
   seniority: seniority1
 )
-challenge_energy1 = Challenge.create!(
-  name: 'Shower fast & dry',
-  description: "Low-down your shower to up to 5 minutes max will allow you to save liters of water.
-  And that's not it: you could save around €95 a year for your energy bills.",
-  category: 'Energy',
-  seniority: seniority1
-)
 challenge_purchase1 = Challenge.create!(
   name: 'Taking it slow (fashion)',
   description: "Only buy from slow fashion brand. Fast fashion is destined for a short life, it is created for temporary wear.
@@ -112,6 +105,13 @@ challenge_waste1 = Challenge.create!(
   name: "Wastes are SORT of a big deal",
   description: "Sort your waste by using the correct bin for each waste.",
   category: 'Waste',
+  seniority: seniority1
+)
+challenge_energy1 = Challenge.create!(
+  name: 'Shower fast & dry',
+  description: "Low-down your shower to up to 5 minutes max will allow you to save liters of water.
+  And that's not it: you could save around €95 a year for your energy bills.",
+  category: 'Energy',
   seniority: seniority1
 )
 challenge_waste4 = Challenge.create!(
@@ -476,13 +476,6 @@ cha_tip1 = Usertip.create!(
   description: "Make a list of slow brands & beware of green washing.",
   user: user4,
   booking: cha_booking1
-)
-
-cha_tip2 = Usertip.create!(
-  name: "I'm lazy and I know it",
-  description: "Try electrical bike.",
-  user: user4,
-  booking: cha_booking2
 )
 
 puts 'puts creating event'
