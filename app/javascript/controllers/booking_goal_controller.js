@@ -7,6 +7,6 @@ export default class extends Controller {
   }
 
   updateGoal(event) {
-    this.goalTarget.innerHTML = `Set your weekly goal: ${event.currentTarget.value}%`
+    this.goalTarget.innerHTML = `Set my weekly goal: ${event.currentTarget.value}%`
   }
 }
