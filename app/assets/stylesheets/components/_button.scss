@@ -188,4 +188,7 @@ i.fa-solid.fa-plus {
   font-size: 18px;
   padding: 10px;
   --bs-link-color: white;
+  &:hover {
+    --bs-link-hover-color: white;
+  }
 }
